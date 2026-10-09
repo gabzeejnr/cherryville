@@ -1,51 +1,19 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
+  "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    // File Layout
     "rootDir": "./src",
     "outDir": "./dist",
-
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
     "module": "es2015",
     "target": "es2025",
-    // "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
-    // "sourceMap": true,
-    // "declaration": true,
-    // "declarationMap": true,
-
-    //  Stricter Typechecking Options
-    // "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    //  Style Options
-    "noImplicitReturns": true,
-    "noImplicitOverride": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noPropertyAccessFromIndexSignature": false,
-
-    // Recommended Options
-    "strict": true,
+    "types": [
+      "node"
+    ],
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
-
-    //Custom add-ons
+    "noUnusedParameters": true,
+    "noPropertyAccessFromIndexSignature": false,
     "allowJs": true,
     "checkJs": false,
-    "moduleResolution": "bundler",
-    "ignoreDeprecations": "6.0",
+    "moduleResolution": "bundler"
   },
   "include": [
     "src",
