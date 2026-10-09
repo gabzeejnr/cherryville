@@ -1,41 +1,17 @@
 {
   "name": "cherryville",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/client",
+    "apps/server"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^7.3.1",
-    "@fortawesome/free-solid-svg-icons": "^7.3.1",
-    "@fortawesome/react-fontawesome": "^3.5.0",
-    "@tailwindcss/cli": "^4.3.3",
-    "aos": "^2.3.4",
-    "lucide-react": "^1.47.0",
-    "react": "^19.2.8",
-    "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.3"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@tailwindcss/vite": "^4.3.3",
-    "@types/aos": "^3.0.8",
-    "@types/node": "^26.6.2",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.4",
-    "@vitejs/plugin-react": "^6.1.0",
-    "autoprefixer": "^10.5.4",
-    "eslint": "^10.9.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.4",
-    "globals": "^17.11.0",
-    "postcss": "^8.5.26",
-    "sass": "^1.104.1",
-    "tailwindcss": "^4.3.3",
-    "vite": "^8.2.2"
+    "dev:client": "npm run dev --workspace=cherryville-client",
+    "build:client": "npm run build --workspace=cherryville-client",
+    "lint": "npm run lint --workspace=cherryville-client",
+    "dev:server": "npm run dev --workspace=cherryville-server",
+    "build:server": "npm run build --workspace=cherryville-server",
+    "start:server": "npm run start --workspace=cherryville-server"
   }
 }
