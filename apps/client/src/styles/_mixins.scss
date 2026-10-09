@@ -1,0 +1,12 @@
+@mixin type($text-width: 20, $text-color: var(--accent)) {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: type 5s steps(20) forwards;
+
+    @keyframes type {
+        from {
+            width: 0;
+        }
+    }
+}

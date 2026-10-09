@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE urlset SYSTEM "sitemap.dtd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <url>
+        <loc>https://cherryville-ecru.vercel.app</loc>
+    </url>
+
+    <url>
+        <loc>https://cherryville-ecru.vercel.app/talent-solutions</loc>
+    </url>
+
+    <url>
+        <loc>https://cherryville-ecru.vercel.app/about</loc>
+    </url>
+
+    <url>
+        <loc>https://cherryville-ecru.vercel.app/programs</loc>
+    </url>
+
+    <url>
+        <loc>https://cherryville-ecru.vercel.app/contact</loc>
+    </url>
+
+</urlset>

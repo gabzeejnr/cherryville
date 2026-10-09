@@ -1,0 +1,3 @@
+<!ELEMENT urlset (url+)>
+<!ELEMENT url (loc)>
+<!ELEMENT loc (#PCDATA)>

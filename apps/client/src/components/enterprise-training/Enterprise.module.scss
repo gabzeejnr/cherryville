@@ -1,0 +1,11 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    overflow: hidden;
+    background-color: #0B2220;
+    background-image: radial-gradient(circle at 50% 35%, rgba(20, 68, 64, 0.65), rgba(10, 31, 29, 0.95) 75%, #081a18 100%), radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
+    background-size: 100% 100%, 34px 34px;
+    // antialiased selection:bg-[#D4F870] selection:text-slate-900
+}

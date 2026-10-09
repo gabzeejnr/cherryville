@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: var(--sans);
+    --font-heading: var(--heading);
+    --font-mono: var(--mono);
+    --color-heading-primary: #0D2115;
+    --color-heading-secondary: #24462F;
+    --color-accent: var(--accent);
+    --color-accent-dark: var(--accent-dark);
+    --color-accent-hover: var(--accent-hover);
+    --color-brand: #C01F2E;
+    --color-brand-hover: #C53342;
+    --color-bg: var(--bg);
+    --color-cherry: var(--cherry);
+}

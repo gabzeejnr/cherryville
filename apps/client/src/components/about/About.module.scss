@@ -1,0 +1,9 @@
+.imageHolder {
+    background: white;
+    overflow: hidden;
+    border-radius: 1rem;
+
+    .image {
+        width: clamp(20rem, 30vw, 30rem);
+    }
+}
