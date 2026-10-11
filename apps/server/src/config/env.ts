@@ -5,4 +5,4 @@ function requireEnv(env: string) {
     return env;
 }
 
-export { };
+export { }
