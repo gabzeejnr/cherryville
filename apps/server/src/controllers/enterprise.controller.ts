@@ -1,6 +1,4 @@
-function proposalRequest() {
-    return "Is this working?"
-}
+function proposalRequest() { }
 
 
 export { proposalRequest }
