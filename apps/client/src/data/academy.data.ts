@@ -1,9 +1,5 @@
-import CTA from "../components/academy/CTA";
-import CourseFinder from "../components/academy/index/CourseFinder";
-import ThreeLevels from "../components/academy/index/ThreeLevels";
-import WhyCherryville from "../components/academy/index/WhyCherryville";
-import type { Heading } from "../types";
-import type { Course, Questions } from "../types/academy.types";
+import type { Heading, Course, Questions } from "../types";
+
 
 const academyHeading: Heading = {
     title: "Start where you are. Train for a job you can name.",
