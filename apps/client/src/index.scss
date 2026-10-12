@@ -75,6 +75,14 @@ h2 {
     color: var(--heading);
 }
 
+p {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    font-size: 0.975rem;
+    line-height: 1.85;
+}
+
 .gray-subheading {
     text-align: center;
     font-size: 18px;
