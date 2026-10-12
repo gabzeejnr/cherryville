@@ -14,12 +14,13 @@ export function RequestAProposalButton({ setIsOpen, arrow, className }: {
     )
 }
 
-export function AccentButton({ text, onClick }: {
+export function AccentButton({ text, onClick, arrow }: {
     text: string,
+    arrow?: true,
     onClick?: React.MouseEventHandler<HTMLButtonElement>
 }) {
     return (
-        <button data-aos="flip-right" className="bg-accent hover:bg-accent-hover text-white px-3 py-2 rounded-full font-medium cursor-pointer"
-            onClick={onClick}>{text}</button>
+        <button data-aos="flip-right" className="accent-button cursor-pointer"
+            onClick={onClick}>{text} {arrow && <FontAwesomeIcon icon={faArrowRight} />}</button>
     )
 }

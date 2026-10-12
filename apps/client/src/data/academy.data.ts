@@ -1,10 +1,15 @@
+import CTA from "../components/academy/CTA";
+import CourseFinder from "../components/academy/index/CourseFinder";
+import ThreeLevels from "../components/academy/index/ThreeLevels";
+import WhyCherryville from "../components/academy/index/WhyCherryville";
 import type { Heading } from "../types";
 import type { Course, Questions } from "../types/academy.types";
 
 const academyHeading: Heading = {
     title: "Start where you are. Train for a job you can name.",
-    highlights: ["start", "train", "job", "name."]
+    highlights: ["start", "train", "job", "you", "name."]
 }
+const subtitle: string = "Cherryville Academy runs courses for individuals at three levels. You do not need a technical background to begin — you only need to know what kind of work interests you."
 
 const beginner: Course[] = [
     {
@@ -548,7 +553,7 @@ const whyCherryville: string[] = [
 ];
 
 export {
-    academyHeading,
+    academyHeading, subtitle,
     questions, courses, beginner,
     intermediate, advanced, threeLevels,
     whyCherryville

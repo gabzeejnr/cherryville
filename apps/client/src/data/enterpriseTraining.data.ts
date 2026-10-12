@@ -5,7 +5,7 @@ const pageMeta: DocumentMeta = {
     description: "Cohort-based technical training, custom curriculum design, capability assessment and white-label delivery for organisations across Nigeria."
 };
 
-const subtitle = "We design and deliver technical programmes for workforces that need to do more with the systems and data they already own and we prove what changed.";
+const enterpriseSubtitle = "We design and deliver technical programmes for workforces that need to do more with the systems and data they already own and we prove what changed.";
 const heading:Heading = {
     title: "Training your Organisation can Measure",
     highlights: ["training", "organisation", "measure"]
@@ -71,4 +71,4 @@ const deliveryFormat: { title: string, text: string }[] = [
     }
 ]
 
-export { pageMeta, subtitle, heading, serviceLines, deliveryStandard, deliveryFormat }
+export { pageMeta, enterpriseSubtitle, heading, serviceLines, deliveryStandard, deliveryFormat }
