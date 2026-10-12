@@ -1,11 +1,11 @@
+
 import { useState } from "react";
 import { questions, courses } from "../../../data";
 import type { AnswerFinder, Course } from "../../../types";
 
 export default function RecommendCourse() {
-
-    const [submitted, setSubmitted] = useState<boolean>(false);
-    const [step, setStep] = useState<number>(1);
+    const [submitted, setSubmitted] = useState(false);
+    const [step, setStep] = useState(1);
     const [answers, setAnswers] = useState<AnswerFinder | {
         workType: "",
         experience: "",
@@ -13,118 +13,165 @@ export default function RecommendCourse() {
     }>({
         workType: "",
         experience: "",
-        timeframe: ""
+        timeframe: "",
     });
-    const [result, setResult] = useState<Course | null>(null)
+    const [result, setResult] = useState<Course | null>(null);
+
+    function resetFinder() {
+        setStep(1);
+        setAnswers({
+            workType: "",
+            experience: "",
+            timeframe: "",
+        });
+        setResult(null);
+        setSubmitted(false);
+    }
 
     function solve() {
-        if (answers.workType === "") return;
+        if (
+            !answers.workType ||
+            !answers.experience ||
+            !answers.timeframe
+        ) {
+            return;
+        }
 
-        const scored = courses.map((course): { course: Course, score: number } => {
-
-            let score: number = 0;
+        const scored = courses.map((course): { course: Course; score: number } => {
+            let score = 0;
 
             if (course.workType.includes(answers.workType)) score++;
             if (course.experience === answers.experience) score++;
-            if (answers.timeframe === "unknown" || course.timeframe.includes(answers.timeframe)) score++;
+            if (
+                answers.timeframe === "unknown" ||
+                course.timeframe.includes(answers.timeframe)
+            ) {
+                score++;
+            }
 
-            return { course, score }
+            return { course, score };
+        });
 
-        })
-
-        const filteredCourses = scored.filter((item) => item.score > 0)
-            .sort((a, b) => b.score - a.score)
+        const filteredCourses = scored
+            .filter((item) => item.score > 0)
+            .sort((a, b) => b.score - a.score);
 
         if (!filteredCourses.length) {
             setResult(null);
             setSubmitted(true);
             return;
-        };
+        }
 
         const max = filteredCourses[0].score;
-        let toReturn: Course;
-        const bestMatches = filteredCourses.filter(item => item.score === max);
+        const bestMatches = filteredCourses.filter(
+            (item) => item.score === max
+        );
 
-        const best = bestMatches.reduce((acc, current) => {
+        const best = bestMatches.reduce((acc, current) =>
+            acc.course.fee < current.course.fee ? current : acc
+        );
 
-            if (acc.course.fee < current.course.fee) {
-                return current
-            }
-            return acc
-
-        }, bestMatches[0]);
-
-        toReturn = best.course;
-
-        console.log(toReturn);
-        setResult(toReturn);
+        setResult(best.course);
         setSubmitted(true);
     }
 
+    const currentQuestion = questions[step - 1];
+    const canContinue = currentQuestion
+        ? Boolean(answers[currentQuestion.id as keyof AnswerFinder])
+        : false;
+
     return (
         !submitted ? (
-            <div>
-                <div className="relative w-full max-h-150 overflow-y-auto overflow-x-hidden scrollbar-none max-w-lg px-4 py-8 border border-gray-200 rounded-xl shadow-sm place-self-center bg-white" data-aos="zoom-in">
-                    <div className="mb-8">
-                        <h2 className="text-3xl font-semibold text-gray-900">Find Your Course</h2>
-                        <p className="mt-2 text-sm text-gray-500">Discover the course that fits your interests, experience and goals.</p>
-                    </div>
-                    <div className="mb-8 flex items-center-safe gap-2">
-                        {[1, 2, 3].map(item => (<div key={item} className={`h-1 flex-1 rounded-full ${item <= step ? "bg-accent" :
-                            "bg-gray-200"}`}
-                        />))}
-                    </div>
-                    <div className="overflow-hidden">
-                        <div className="flex transition-transform duration-500 ease-in-out"
-                            style={{ transform: `translateX(-${(step - 1) * 100}%)` }}>
-                            {questions.map(que => (<div key={que.id} className="mb-10 w-full shrink-0">
-                                <h2 className="mb-4">{que.question}</h2>
-                                <div className="flex flex-col gap-2">
-                                    {que.options.map(q => <label key={q.value}>
-                                        <input type="radio" name={que.id} value={q.value} className="peer sr-only" required
-                                            onChange={(e) => setAnswers(prev => ({ ...prev, [que.id]: e.target.value }))} />
-                                        <div className="rounded-xl border border-gray-200 p-4 py-3 transition peer-checked:border-accent peer-checked:bg-cherry">{q.label}</div>
-                                    </label>)}
+            <div data-aos="zoom-in"
+                className="mx-auto w-full max-w-lg overflow-hidden rounded-2xl border border-accent/10 bg-white px-5 py-7 shadow-lg sm:px-7 sm:py-8">
+                <div className="mb-8">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent">Cherryville Academy</p>
+                    <h2 className="text-2xl font-semibold text-heading sm:text-3xl">Find Your Course</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-gray-500">
+                        Discover the course that fits your interests, experience and goals.
+                    </p>
+                </div>
+
+                <div className="mb-8 flex items-center gap-2" aria-label={`Step ${step} of ${questions.length}`}>
+                    {questions.map((question, index) => (
+                        <div key={question.id} className={`h-1.5 flex-1 rounded-full transition-colors duration-300
+                             ${index + 1 <= step
+                                ? "bg-accent"
+                                : "bg-gray-200"
+                            }`
+                        } />
+                    ))}
+                </div>
+
+                <div className="overflow-hidden">
+                    <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${(step - 1) * 100}%)`, }}>
+                        {questions.map((question) => (
+                            <div key={question.id} className="mb-8 w-full shrink-0">
+                                <h3 className="mb-4 text-lg font-semibold text-heading">{question.question}</h3>
+
+                                <div className="flex flex-col gap-3">
+                                    {question.options.map((option) => (
+                                        <label key={option.value} className="cursor-pointer">
+                                            <input type="radio" name={question.id} value={option.value}
+                                                checked={
+                                                    answers[
+                                                    question.id as keyof AnswerFinder
+                                                    ] === option.value
+                                                } className="peer sr-only" onChange={(event) => setAnswers((prev) => ({ ...prev, [question.id]: event.target.value }))}
+                                            />
+
+                                            <div className="rounded-xl border border-gray-200 p-4 text-sm leading-relaxed text-gray-700 transition duration-200 hover:border-accent/50 peer-checked:border-accent peer-checked:bg-cherry peer-checked:text-heading peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent sm:text-base">
+                                                {option.label}
+                                            </div>
+                                        </label>
+                                    ))}
                                 </div>
-                            </div>))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
-                    <div className="flex justify-between px-4 text-white">
-                        {step > 1
-                            ? <button type="button" className="bg-accent p-2 rounded-sm cursor-pointer"
-                                onClick={() => setStep(p => p - 1)}>Previous</button>
-                            : <span />
-                        }
-                        {step !== 3
-                            ? <button type="button" className="bg-accent p-2 rounded-sm cursor-pointer"
-                                onClick={() => { setStep(p => p + 1) }}>Next</button>
-                            : <button type="button" className="bg-accent p-2 rounded-sm cursor-pointer"
-                                onClick={solve}>Find my course</button>
-                        }
-                    </div>
+                </div>
+
+                <div className="flex items-center justify-between gap-3">
+                    {step > 1 ? (
+                        <button type="button" onClick={() => setStep((prev) => prev - 1)}
+                            className="rounded-full border border-accent/30 px-5 py-3 text-sm font-semibold text-accent transition-colors hover:bg-cherry"
+                        >Previous</button>
+                    ) : (
+                        <span />
+                    )}
+
+                    {step < questions.length ? (
+                        <button
+                            type="button"
+                            disabled={!canContinue}
+                            className="rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-40"
+                            onClick={() => setStep((prev) => prev + 1)}
+                        >Next →</button>
+                    ) : (
+                        <button type="button" disabled={!canContinue} onClick={solve}
+                            className="rounded-full bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-40"
+                        >Find my course →</button>
+                    )}
                 </div>
             </div>
         ) : (
-            <div>
-                {(result !== null) && <div>
-                    {result && <div>{result.name}</div>}
-                    <div className="mt-5 flex justify-center-safe">
-                        <button type="button" className="bg-accent p-2 rounded-sm cursor-pointer text-white"
-                            onClick={() => {
-                                setStep(1);
-                                setSubmitted(false);
-                            }}>Have a different choice?</button>
-                    </div>
-                </div>}
-                {(result === null || !result) && <div className="flex flex-col gap-3 items-center-safe">
-                    <p>No matches found... Click the button to try again</p>
-                    <button type="button" className="bg-accent p-2 rounded-sm cursor-pointer text-white"
-                        onClick={() => {
-                            setStep(1);
-                            setSubmitted(false);
-                        }}>Try Again</button>
-                </div>}
+            <div className="mx-auto w-full max-w-lg rounded-2xl border border-accent/10 bg-white p-6 text-center shadow-lg sm:p-8">
+                {result ? (
+                    <>
+                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">Your recommended course</p>
+                        <h3 className="mt-3 text-xl font-semibold text-heading">{result.name}</h3>
+                        <button type="button" className="accent-button" onClick={resetFinder}>
+                            Have a different choice?
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        <h2 className="text-xl font-semibold text-heading">No matches found</h2>
+                        <p className="mt-2 text-sm text-gray-500">Try different answers to find a suitable course.</p>
+                        <button type="button" className="accent-button" onClick={resetFinder}>Try again</button>
+                    </>
+                )}
             </div>
         )
-    )
+    );
 }
