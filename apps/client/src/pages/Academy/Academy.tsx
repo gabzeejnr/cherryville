@@ -1,7 +1,8 @@
 import { useDocumentMeta } from "../../hooks";
 import { useGoToTopOnLoad } from "../../hooks";
+import Hero from "../../components/Hero";
+import { academyHeading } from "../../data";
 import CourseFinder from "../../components/academy/index/CourseFinder";
-import Hero from "../../components/academy/index/Hero";
 import ThreeLevels from "../../components/academy/index/ThreeLevels";
 import WhyCherryville from "../../components/academy/index/WhyCherryville";
 import CTA from "../../components/academy/CTA";
@@ -17,7 +18,7 @@ export default function Academy() {
 
     return (
         <>
-            <Hero />
+            <Hero page="Academy" heading={academyHeading} />
             <CourseFinder />
             <ThreeLevels />
             <WhyCherryville />

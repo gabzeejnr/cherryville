@@ -1,4 +1,10 @@
+import type { Heading } from "../types";
 import type { Course, Questions } from "../types/academy.types";
+
+const academyHeading: Heading = {
+    title: "Start where you are. Train for a job you can name.",
+    highlights: ["start", "train", "job", "name."]
+}
 
 const beginner: Course[] = [
     {
@@ -542,6 +548,7 @@ const whyCherryville: string[] = [
 ];
 
 export {
+    academyHeading,
     questions, courses, beginner,
     intermediate, advanced, threeLevels,
     whyCherryville
