@@ -1,6 +1,6 @@
 import pool from "../config/db.js";
 import type { Request, Response } from "express";
-import type { AcademyResponse, EnrollmentForm, ErrorType, Message } from "../types/index.js";
+import type { AcademyResponse, EnrollmentForm, ErrorType, Message, Enrollment } from "../types/index.js";
 import type { QueryResult } from "pg";
 
 async function getAcademyApplicants(req: Request, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
@@ -13,7 +13,7 @@ async function getAcademyApplicants(req: Request, res: Response<AcademyResponse[
     }
 }
 
-async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Response<Message<> | ErrorType>): Promise<void> {
+async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Response<Message<Enrollment> | ErrorType>): Promise<void> {
     const {
         name, email, phone,
         course, level, format
@@ -24,15 +24,21 @@ async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Resp
         return
     }
 
+    if (level !== "beginner"
+        && level !== "intermediate"
+        && level !== "advanced") {
+            rmSync.
+    }
+
     try {
-        const { rows } = await pool.query(`INSERT INTO academy_enrollment (applicant_name, email, phone, course_name, level, format
-            VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, status, created_at)`,
+        const { rows }: QueryResult<Enrollment> = await pool.query(`INSERT INTO academy_enrollment (applicant_name, email, phone, course_name, level, format)
+            VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, status, created_at`,
             [name, email, phone, course, level, format]
         );
 
         res.status(201).json({
             message: "Application successful",
-            data: rows
+            data: rows[0]
         });
 
     } catch (err) {

@@ -1,5 +1,5 @@
 type LearningStyle = "virtual" | "weekday" | "weekend";
-type Level = "No experience" | "Some experience" | "Working in Tech";
+type Level = "beginner" | "intermediate" | "advanced";
 
 
 type AcademyResponse = {
@@ -24,7 +24,9 @@ type EnrollmentForm = {
 }
 
 type Enrollment = {
-    id: string | number
+    id: string | number,
+    status: "accepted" | "pending" | "rejected",
+    created_at: Date
 }
 
 type Message<T> = {
@@ -32,4 +34,4 @@ type Message<T> = {
     data: T
 }
 
-export type { AcademyResponse, EnrollmentForm, Message }
+export type { AcademyResponse, EnrollmentForm, Message, Enrollment }
