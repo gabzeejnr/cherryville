@@ -1,14 +1,14 @@
 import { X } from "lucide-react";
 import { courses } from "../../data/academy.data";
 import type { Dispatch, SetStateAction } from "react";
-import type { LearningStyle as Format, EnrollmentForm as Form, Level } from "../../types/academy.types";
+import type { LearningStyle as Format, EnrollmentForm as Form, Level, Course } from "../../types/academy.types";
 import styles from "../../styles/global.module.scss";
 
 function Required() {
     return <span className={styles.required} />
 }
 
-export default function AcademyEnrollment({ setEnroll }: { setEnroll: Dispatch<SetStateAction<boolean>> }) {
+export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll: Dispatch<SetStateAction<boolean>>, thisCourse: Course["name"] }) {
 
     async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -82,7 +82,12 @@ export default function AcademyEnrollment({ setEnroll }: { setEnroll: Dispatch<S
                             <Required />
                         </span>
                         <select name="course" id="course" className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cherry focus:ring-1 focus:ring-cherry">
-                            {courses.map(course => <option key={course.name} value={course.name}>{course.name}</option>)}
+                            {courses.sort((a, b) => {
+                                if (a.name === thisCourse) return -1;
+                                if (b.name === thisCourse) return 1;
+                                return 0;
+                            })
+                                .map(course => <option key={course.name} value={course.name}>{course.name}</option>)}
                         </select>
                     </div>
 

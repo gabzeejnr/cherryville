@@ -1,5 +1,4 @@
 import type { ReactNode, MouseEventHandler } from "react";
-import type { LearningStyle as Format } from "../../types/academy.types";
 
 type WorkType = "numbers" | "design" | "hands-on" | "organising" | "security";
 type Experience = "beginner" | "intermediate" | "advanced"
@@ -50,7 +49,7 @@ type EnrollmentForm = {
     phone: string,
     course: string,
     level: Level,
-    format: Format
+    format: LearningStyle
 }
 
 export type { Questions, Course, AnswerFinder, WorkType, LearningStyle, AcademyCTA, Level, EnrollmentForm }

@@ -467,9 +467,7 @@ const advanced: Course[] = [
         fee: 30_0000
     }
 ];
-const courses: Course[] = [
-    ...beginner, ...intermediate, ...advanced
-]
+const courses: Course[] = [...beginner, ...intermediate, ...advanced]
 const questions: Questions[] = [
     {
         id: "workType",
