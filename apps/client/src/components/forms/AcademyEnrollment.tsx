@@ -1,19 +1,8 @@
 import { X } from "lucide-react";
 import { courses } from "../../data/academy.data";
 import type { Dispatch, SetStateAction } from "react";
-import type { LearningStyle as Format } from "../../types/academy.types";
+import type { LearningStyle as Format, EnrollmentForm as Form, Level } from "../../types/academy.types";
 import styles from "../../styles/global.module.scss";
-
-type Level = "No experience" | "Some experience" | "Working in Tech";
-
-type Form = {
-    name: string,
-    email: string,
-    phone: string,
-    course: string,
-    level: Level,
-    format: Format
-}
 
 function Required() {
     return <span className={styles.required} />

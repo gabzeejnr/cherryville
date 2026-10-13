@@ -1,9 +1,11 @@
 import type { ReactNode, MouseEventHandler } from "react";
+import type { LearningStyle as Format } from "../../types/academy.types";
 
 type WorkType = "numbers" | "design" | "hands-on" | "organising" | "security";
 type Experience = "beginner" | "intermediate" | "advanced"
 type TimeFrame = "3 months" | "6 months" | "1 year" | "unknown";
-type LearningStyle = "virtual" | "weekday" | "weekend"
+type LearningStyle = "virtual" | "weekday" | "weekend";
+type Level = "No experience" | "Some experience" | "Working in Tech";
 
 type Questions = {
     id: string,
@@ -42,4 +44,13 @@ type AcademyCTA = {
     onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-export type { Questions, Course, AnswerFinder, WorkType, LearningStyle, AcademyCTA }
+type EnrollmentForm = {
+    name: string,
+    email: string,
+    phone: string,
+    course: string,
+    level: Level,
+    format: Format
+}
+
+export type { Questions, Course, AnswerFinder, WorkType, LearningStyle, AcademyCTA, Level, EnrollmentForm }
