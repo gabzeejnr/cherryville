@@ -1,4 +1,4 @@
-import type { ReactNode, MouseEventHandler } from "react";
+import type { ReactNode, MouseEventHandler, Dispatch, SetStateAction } from "react";
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons"
 
 
@@ -35,11 +35,35 @@ type HeroType = {
     children?: ReactNode
 }
 
+type RequestAProposalButton = {
+    setIsOpen: Dispatch<SetStateAction<boolean>>,
+    arrow?: true,
+    className?: string
+}
+
 type AccentButton = {
     text: string,
     arrow?: true,
     onClick?: MouseEventHandler<HTMLButtonElement> | undefined
 }
 
+type ListItem = {
+    title: string;
+    text: string;
+}
 
-export type { Navlink, FootLink, Social, Heading, HeroType, AccentButton }
+type SectionType = {
+    className?: string,
+    title?: string,
+    subtitle?: string,
+    subtitleArray?: string[],
+    bg?: "bg-cherry" | "bg-bg" | "bg-white" | null,
+    children?: ReactNode
+}
+
+
+export type {
+    Navlink, FootLink, Social, Heading,
+    HeroType, RequestAProposalButton, AccentButton, ListItem,
+    SectionType
+}

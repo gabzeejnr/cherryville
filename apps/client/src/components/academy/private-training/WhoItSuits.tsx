@@ -1,4 +1,5 @@
 import { AccentButton } from "../../Buttons";
+import { List } from "../../Lists"
 import Section from "../../Section";
 
 export default function WhoItSuits() {
@@ -12,13 +13,7 @@ export default function WhoItSuits() {
 
     return (
         <Section title="Who it Suits" bg="bg-bg">
-            <ul className="list-disc list-inside flex flex-col gap-2" data-aos="fade-up">
-                {data.map(d => (
-                    <div>
-                        <div className="ml-5">{d}</div>
-                    </div>
-                ))}
-            </ul>
+            <List array={data} />
             <div className="flex flex-col mt-25 md:mt-50 mb-30 md:mb-30 gap-8 items-center-safe justify-center-safe">
                 <p className="text-center text-lg font-medium text-gray-600">
                     Every private engagement is governed by a written training agreement setting out scope, schedule, session count and fees before we begin.

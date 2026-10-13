@@ -1,13 +1,6 @@
-import type { ReactNode } from "react";
+import type { SectionType } from "../types";
 
-export default function Section({ className, bg, title, subtitle, subtitleArray, children }: {
-    className?: string,
-    title?: string,
-    subtitle?: string,
-    subtitleArray?: string[],
-    bg?: "bg-cherry" | "bg-bg" | "bg-white" | null,
-    children?: ReactNode
-}) {
+export default function Section({ className, bg, title, subtitle, subtitleArray, children }: SectionType) {
     return (
         <section className={`min-h-screen 2xl:min-h-[70dvh] overflow-hidden px-3 flex flex-col justify-center-safe md:px-10 py-20 ${bg === null ? null : bg ?? "bg-white"} ${className}`}>
             <div className="flex flex-col gap-4 lg:gap-1 2xl:gap-3">

@@ -1,7 +1,4 @@
-type ListItem = {
-    title: string;
-    text: string;
-};
+import type { ListItem } from "../types"
 
 export function List({ array }: { array: string[] }) {
     return (
