@@ -1,10 +1,11 @@
 import pool from "../config/db.js";
 import type { Request, Response } from "express";
-import type { AcademyResponse, EnrollmentForm, ErrorType } from "../types/index.js";
+import type { AcademyResponse, EnrollmentForm, ErrorType, Message } from "../types/index.js";
+import type { QueryResult } from "pg";
 
-async function getAcademyApplicants(req: Request, res: Response<AcademyResponse | ErrorType>): Promise<void> {
+async function getAcademyApplicants(req: Request, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
     try {
-        const { rows } = await pool.query("SELECT * FROM academy_enrollment");
+        const { rows }: QueryResult<AcademyResponse> = await pool.query("SELECT * FROM academy_enrollment");
         res.status(200).json(rows);
     } catch (err) {
         console.error("Couldn't get academy applicants: ", err);
@@ -12,7 +13,7 @@ async function getAcademyApplicants(req: Request, res: Response<AcademyResponse 
     }
 }
 
-async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Response<ErrorType>): Promise<void> {
+async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Response<Message<> | ErrorType>): Promise<void> {
     const {
         name, email, phone,
         course, level, format
@@ -29,7 +30,10 @@ async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Resp
             [name, email, phone, course, level, format]
         );
 
-        res.status(201).json({message: ""});
+        res.status(201).json({
+            message: "Application successful",
+            data: rows
+        });
 
     } catch (err) {
         console.error("Couldn't complete academy enrollment:", err);
