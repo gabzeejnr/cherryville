@@ -7,6 +7,12 @@ const academyHeading: Heading = {
 }
 const subtitle: string = "Cherryville Academy runs courses for individuals at three levels. You do not need a technical background to begin — you only need to know what kind of work interests you."
 
+const intermediateHeading: Heading = {
+    title: "You have the foundations. Now specialise.",
+    highlights: ["you", "foundations", "specialise."]
+}
+const intermediateSubtitle = "These courses take one direction and go deep enough to make you employable in it. Each finishes with work you can put in front of an employer.";
+
 const privateHeading: Heading = {
     title: "One trainer. One learner",
     highlights: ["one"]
@@ -556,7 +562,9 @@ const whyCherryville: string[] = [
 
 export {
     academyHeading, subtitle,
+    intermediateHeading, intermediateSubtitle,
+    privateHeading, privateSubtitle,
     questions, courses, beginner,
     intermediate, advanced, threeLevels,
-    whyCherryville, privateHeading, privateSubtitle
+    whyCherryville
 }
