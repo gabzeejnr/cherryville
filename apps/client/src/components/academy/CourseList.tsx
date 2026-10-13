@@ -8,10 +8,17 @@ import type { Dispatch, SetStateAction } from "react";
 import type { Course } from "../../types";
 
 
-function Card({ course, setEnroll }: { course: Course, setEnroll: Dispatch<SetStateAction<boolean>> }) {
+function Card({ course, setEnroll, setThisCourse }: { course: Course, setEnroll: Dispatch<SetStateAction<boolean>>, setThisCourse: Dispatch<SetStateAction<Course["name"]>> }) {
     const [open, setOpen] = useState(false);
 
     const { name, whoIsItFor, outcome, duration, learningStyle, } = course;
+
+    function enrollFunction(e: React.MouseEvent<HTMLButtonElement>) {
+        e.preventDefault();
+
+        setEnroll(true);
+        setThisCourse(name);
+    }
 
     return (
         <div className="w-full px-3 text-white">
@@ -69,7 +76,7 @@ function Card({ course, setEnroll }: { course: Course, setEnroll: Dispatch<SetSt
                             </div>
 
                             <div className="flex justify-end pt-1">
-                                <button type="button" onClick={() => setEnroll(true)}
+                                <button type="button" onClick={(e) => enrollFunction(e)}
                                     className="rounded-full bg-accent-hover px-5 py-2.5 text-sm font-semibold text-heading transition-colors duration-200 hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry"
                                 >Enroll Now<span aria-hidden="true"> →</span>
                                 </button>
@@ -83,9 +90,10 @@ function Card({ course, setEnroll }: { course: Course, setEnroll: Dispatch<SetSt
 }
 
 
-export default function CourseList({ courses }: { courses: Course[] }) {
+export default function CourseList({ courses }: { courses: Course[], thisCourse: Course["name"] }) {
 
     const [enroll, setEnroll] = useState(false);
+    const [thisCourse, setThisCourse] = useState<Course["name"]>("")
 
     return (
         <>
@@ -95,7 +103,7 @@ export default function CourseList({ courses }: { courses: Course[] }) {
                         <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {courses.map((course) => (
                                 <div data-aos="fade-up" key={course.name} className="min-w-0">
-                                    <Card course={course} setEnroll={setEnroll} />
+                                    <Card setThisCourse={setThisCourse} course={course} setEnroll={setEnroll} />
                                 </div>
                             ))}
                         </div>
@@ -104,7 +112,7 @@ export default function CourseList({ courses }: { courses: Course[] }) {
                     )}
                 </div>
             </Section>
-            {enroll && <AcademyEnrollment setEnroll={setEnroll} />}
+            {enroll && <AcademyEnrollment setEnroll={setEnroll} thisCourse={thisCourse} />}
         </>
     )
 }
