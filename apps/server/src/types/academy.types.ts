@@ -2,6 +2,8 @@ type LearningStyle = "virtual" | "weekday" | "weekend";
 type Level = "No experience" | "Some experience" | "Working in Tech";
 
 
+type AcademyResponse = {}
+
 type EnrollmentForm = {
     name: string,
     email: string,
@@ -11,4 +13,4 @@ type EnrollmentForm = {
     format: LearningStyle
 }
 
-export type { EnrollmentForm }
+export type { AcademyResponse, EnrollmentForm }
