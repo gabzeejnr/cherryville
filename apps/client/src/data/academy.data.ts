@@ -7,6 +7,12 @@ const academyHeading: Heading = {
 }
 const subtitle: string = "Cherryville Academy runs courses for individuals at three levels. You do not need a technical background to begin — you only need to know what kind of work interests you."
 
+const privateHeading: Heading = {
+    title: "One trainer. One learner",
+    highlights: ["one"]
+}
+const privateSubtitle = "Some people learn faster without a room. Others cannot commit to a fixed cohort calendar, or need to cover a specific gap rather than a full curriculum. Private training exists for both."
+
 const beginner: Course[] = [
     {
         name: "Digital Foundations & Office Productivity",
@@ -552,5 +558,5 @@ export {
     academyHeading, subtitle,
     questions, courses, beginner,
     intermediate, advanced, threeLevels,
-    whyCherryville
+    whyCherryville, privateHeading, privateSubtitle
 }
