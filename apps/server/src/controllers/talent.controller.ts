@@ -24,10 +24,17 @@ async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Resp
         return
     }
 
-    if (level !== "beginner"
-        && level !== "intermediate"
-        && level !== "advanced") {
-            rmSync.
+    const validLevels = ["beginner", "intermediate", "advanced"];
+    const validFormats = ["virtual", "weekday", "weekend"];
+
+    if (!validLevels.includes(level)) {
+        res.status(400).json({ error: "Invalid level data." });
+        return;
+    }
+
+    if (!validFormats.includes(format)) {
+        res.status(400).json({ error: "Invalid format." });
+        return;
     }
 
     try {
