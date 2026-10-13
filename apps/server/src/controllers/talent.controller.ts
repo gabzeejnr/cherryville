@@ -23,16 +23,17 @@ async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Resp
         return
     }
 
-    const client = await pool.connect();
     try {
-        const { rows } = await client.query(`INSERT INTO academy_enrollment`)
+        const { rows } = await pool.query(`INSERT INTO academy_enrollment (applicant_name, email, phone, course_name, level, format
+            VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, status, created_at)`,
+            [name, email, phone, course, level, format]
+        );
+
+        res.status(201).json({message: ""});
 
     } catch (err) {
         console.error("Couldn't complete academy enrollment:", err);
-        await client.query("ROLLBACK");
         res.status(500).json({ error: "Internal server error." });
-    } finally {
-        client.end();
     }
 
 }

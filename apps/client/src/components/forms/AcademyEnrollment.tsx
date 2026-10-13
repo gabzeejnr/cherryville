@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
 import { courses } from "../../data/academy.data";
 import type { Dispatch, SetStateAction } from "react";
-import type { LearningStyle as Format, EnrollmentForm as Form, Level, Course } from "../../types/academy.types";
+import type { LearningStyle as Format, EnrollmentForm as Form, Experience, Course } from "../../types/academy.types";
 import styles from "../../styles/global.module.scss";
 
 function Required() {
@@ -19,7 +19,7 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
             email: formData.get("email") as string,
             phone: formData.get("phone") as string,
             course: formData.get("course") as string,
-            level: formData.get("level") as Level,
+            level: formData.get("level") as Experience,
             format: formData.get("format") as Format
         }
 
@@ -115,7 +115,7 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
                         </span>
                         <select name="format" id="format" className="w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-sm outline-none transition focus:border-cherry focus:ring-1 focus:ring-cherry">
                             <option value="weekend">Weekends</option>
-                            <option value="weeekday">Weekdays</option>
+                            <option value="weekday">Weekdays</option>
                             <option value="virtual">Virtual</option>
                         </select>
                     </div>

@@ -48,8 +48,8 @@ type EnrollmentForm = {
     email: string,
     phone: string,
     course: string,
-    level: Level,
+    level: Experience,
     format: LearningStyle
 }
 
-export type { Questions, Course, AnswerFinder, WorkType, LearningStyle, AcademyCTA, Level, EnrollmentForm }
+export type { Questions, Course, AnswerFinder, WorkType, LearningStyle, Experience, AcademyCTA, Level, EnrollmentForm }
