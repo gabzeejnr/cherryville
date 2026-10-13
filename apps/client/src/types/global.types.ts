@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ReactNode, MouseEventHandler } from "react";
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons"
 
 
@@ -35,5 +35,11 @@ type HeroType = {
     children?: ReactNode
 }
 
+type AccentButton = {
+    text: string,
+    arrow?: true,
+    onClick?: MouseEventHandler<HTMLButtonElement> | undefined
+}
 
-export type { Navlink, FootLink, Social, Heading, HeroType }
+
+export type { Navlink, FootLink, Social, Heading, HeroType, AccentButton }

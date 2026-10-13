@@ -1,3 +1,5 @@
+import type { ReactNode, MouseEventHandler } from "react";
+
 type WorkType = "numbers" | "design" | "hands-on" | "organising" | "security";
 type Experience = "beginner" | "intermediate" | "advanced"
 type TimeFrame = "3 months" | "6 months" | "1 year" | "unknown";
@@ -32,4 +34,12 @@ type AnswerFinder = {
     timeframe: TimeFrame
 }
 
-export type { Questions, Course, AnswerFinder, WorkType, LearningStyle }
+type AcademyCTA = {
+    title?: string
+    subtitle: string,
+    children?: ReactNode,
+    button?: string,
+    onClick?: MouseEventHandler<HTMLButtonElement>
+}
+
+export type { Questions, Course, AnswerFinder, WorkType, LearningStyle, AcademyCTA }

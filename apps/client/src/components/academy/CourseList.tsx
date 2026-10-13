@@ -8,22 +8,10 @@ import type { Dispatch, SetStateAction } from "react";
 import type { Course } from "../../types";
 
 
-function Card({
-    course,
-    setEnroll,
-}: {
-    course: Course;
-    setEnroll: Dispatch<SetStateAction<boolean>>;
-}) {
+function Card({ course, setEnroll }: { course: Course, setEnroll: Dispatch<SetStateAction<boolean>> }) {
     const [open, setOpen] = useState(false);
 
-    const {
-        name,
-        whoIsItFor,
-        outcome,
-        duration,
-        learningStyle,
-    } = course;
+    const { name, whoIsItFor, outcome, duration, learningStyle, } = course;
 
     return (
         <div className="w-full px-3 text-white">

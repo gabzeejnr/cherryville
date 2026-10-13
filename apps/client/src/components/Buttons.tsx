@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import type { Dispatch, SetStateAction } from "react";
+import type { AccentButton } from "../types";
 
 export function RequestAProposalButton({ setIsOpen, arrow, className }: {
     setIsOpen: Dispatch<SetStateAction<boolean>>,
@@ -14,11 +15,7 @@ export function RequestAProposalButton({ setIsOpen, arrow, className }: {
     )
 }
 
-export function AccentButton({ text, onClick, arrow }: {
-    text: string,
-    arrow?: true,
-    onClick?: React.MouseEventHandler<HTMLButtonElement>
-}) {
+export function AccentButton({ text, onClick, arrow }: AccentButton) {
     return (
         <button data-aos="flip-right" className="accent-button cursor-pointer"
             onClick={onClick}>{text} {arrow && <FontAwesomeIcon icon={faArrowRight} />}</button>
