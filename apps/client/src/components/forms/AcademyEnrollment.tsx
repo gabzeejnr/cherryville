@@ -1,3 +1,4 @@
+import api from "../../api/axios";
 import { X } from "lucide-react";
 import { courses } from "../../data/academy.data";
 import type { Dispatch, SetStateAction } from "react";
@@ -23,7 +24,13 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
             format: formData.get("format") as Format
         }
 
-        console.log(form)
+        console.log(form);
+
+        try {
+            awa
+        } catch (err) {
+            
+        }
     }
 
     return (
