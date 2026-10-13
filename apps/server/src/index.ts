@@ -2,6 +2,7 @@ import { env } from "node:process";
 import express from "express";
 import cors from "cors";
 import { router as enterpriseRoute } from "./routes/enterprise.routes.js";
+import { router as talentRoute } from "./routes/talent.routes.js";
 import healthRouter from "./routes/health.routes.js";
 import type { Express, Request, Response } from "express";
 
@@ -17,6 +18,7 @@ app.get("/", (req: Request<{}>, res: Response<{}>) => {
 app.use("/api/health", healthRouter);
 
 app.use("/api/enterprise", enterpriseRoute);
+app.use("/api/talent", talentRoute);
 
 
 app.listen(PORT, () => {
