@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
-import type { Dispatch, SetStateAction } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import styles from "../../styles/global.module.scss";
 
 type Sector = | "oil-and-gas" | "banking-and-finance" | "government" | "ngo" | "other";
@@ -24,26 +24,30 @@ function Required() {
 }
 
 export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) {
+    const [loading, setLoading] = useState<boolean>(false)
 
     async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>): Promise<void> {
         e.preventDefault();
-
-        const form = new FormData(e.currentTarget);
-
-        const data: Form = {
-            name: form.get("name") as string,
-            organisation: form.get("organisation") as string,
-            email: form.get("email") as string,
-            phone: form.get("phone") as string,
-            sector: form.get("sector") as Form["sector"],
-            services: form.getAll("services") as Form["services"],
-            number: Number(form.get("number")),
-            timeframe: form.get("timeframe") as Form["timeframe"],
-            message: form.get("message") as string
+        setLoading(true);
+        
+        try {
+            const form = new FormData(e.currentTarget);
+    
+            const data: Form = {
+                name: form.get("name") as string,
+                organisation: form.get("organisation") as string,
+                email: form.get("email") as string,
+                phone: form.get("phone") as string,
+                sector: form.get("sector") as Form["sector"],
+                services: form.getAll("services") as Form["services"],
+                number: Number(form.get("number")),
+                timeframe: form.get("timeframe") as Form["timeframe"],
+                message: form.get("message") as string
+            }
+            
+        } catch (err) {
+            
         }
-
-        console.log(data);
-        alert(`Data stolen successfully...\n\n\nJust kidding, it's not connected to a server\n\n ${Object.entries(data).map(([key, value]) => (`key: ${key}, value:${value}\n`))}`)
     }
 
     return (

@@ -43,7 +43,7 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
             const data: Message<EnrollmentResult> = res.data.message;
             console.log(data)
 
-
+            setEnroll(false);
         } catch (err) {
             if (err instanceof Error) {
                 console.error("Enrollment failed:", err);
