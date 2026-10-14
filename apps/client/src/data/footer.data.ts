@@ -1,4 +1,4 @@
-import { email, phoneNumber, address } from "./companyData";
+import { email, programsEmail, phoneNumber, secondNumber, address } from "./companyData";
 import { faEnvelope, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import type { FootLink, Social } from "../types/global.types";
@@ -75,8 +75,18 @@ const footerLinks: FootLink[] = [
                 icon: faEnvelope
             },
             {
+                text: programsEmail,
+                href: `mailto:${programsEmail.trim()}`,
+                icon: faEnvelope
+            },
+            {
                 text: phoneNumber,
-                href: `tel:${phoneNumber.split(" ").join("")}`,
+                href: `tel:${phoneNumber.split(/\s+/).join("")}`,
+                icon: faPhone
+            },
+            {
+                text: secondNumber,
+                href: `tel:${secondNumber.split(/\s+/).join("")}`,
                 icon: faPhone
             },
             {
