@@ -1,7 +1,10 @@
 import api from "../../api/axios";
+import toast from "react-hot-toast";
 import { X } from "lucide-react";
 import { courses } from "../../data/academy.data";
+import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
+import type { Message, EnrollmentResult } from "@cherryville/shared"
 import type { LearningStyle as Format, EnrollmentForm as Form, Experience, Course } from "../../types/academy.types";
 import styles from "../../styles/global.module.scss";
 
@@ -11,9 +14,13 @@ function Required() {
 
 export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll: Dispatch<SetStateAction<boolean>>, thisCourse: Course["name"] }) {
 
+    const [loading, setLoading] = useState<boolean>(false)
+
     async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
+        setLoading(true);
+
 
         const form: Form = {
             name: formData.get("name") as string,
@@ -27,9 +34,21 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
         console.log(form);
 
         try {
-            awa
+            const res = await toast.promise(api.post("/talent/enroll"), {
+                loading: "Enrolling user.",
+                success: (result) => result.data?.message,
+                error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
+            });
+
+            const data: Message<EnrollmentResult> = res.data.message
+
+
         } catch (err) {
-            
+            if (err instanceof Error) {
+                console.error("Enrollment failed:", err);
+            }
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -127,7 +146,8 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
                         </select>
                     </div>
 
-                    <button type="submit" className="w-full rounded-md bg-accent cursor-pointer px-6 py-3 font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cherry focus:ring-offset-2">
+                    <button type="submit" className={`w-full rounded-md ${loading ? "bg-accent-hover" : "bg-accent"} cursor-pointer px-6 py-3 font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cherry focus:ring-offset-2`}
+                        disabled={loading} aria-disabled={loading}>
                         Submit Enrollment
                     </button>
 

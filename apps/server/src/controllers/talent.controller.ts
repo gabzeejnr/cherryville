@@ -1,6 +1,7 @@
 import pool from "../config/db.js";
 import type { Request, Response } from "express";
-import type { AcademyResponse, EnrollmentForm, ErrorType, Message, Enrollment } from "../types/index.js";
+import type { EnrollmentResult, Message } from "@cherryville/shared";
+import type { AcademyResponse, EnrollmentForm, ErrorType } from "../types/index.js";
 import type { QueryResult } from "pg";
 
 async function getAcademyApplicants(req: Request, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
@@ -13,7 +14,7 @@ async function getAcademyApplicants(req: Request, res: Response<AcademyResponse[
     }
 }
 
-async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Response<Message<Enrollment> | ErrorType>): Promise<void> {
+async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Response<Message<EnrollmentResult> | ErrorType>): Promise<void> {
     const {
         name, email, phone,
         course, level, format
@@ -38,7 +39,7 @@ async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Resp
     }
 
     try {
-        const { rows }: QueryResult<Enrollment> = await pool.query(`INSERT INTO academy_enrollment (applicant_name, email, phone, course_name, level, format)
+        const { rows }: QueryResult<EnrollmentResult> = await pool.query(`INSERT INTO academy_enrollment (applicant_name, email, phone, course_name, level, format)
             VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, status, created_at`,
             [name, email, phone, course, level, format]
         );

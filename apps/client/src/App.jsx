@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import RoutePage from "./routes/Routes";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,6 +16,7 @@ export default function App() {
 
     return (
         <>
+            <Toaster />
             <RoutePage />
         </>
     )

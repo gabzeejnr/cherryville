@@ -23,15 +23,4 @@ type EnrollmentForm = {
     format: LearningStyle
 }
 
-type Enrollment = {
-    id: string | number,
-    status: "accepted" | "pending" | "rejected",
-    created_at: Date
-}
-
-type Message<T> = {
-    message: string,
-    data: T
-}
-
-export type { AcademyResponse, EnrollmentForm, Message, Enrollment }
+export type { AcademyResponse, EnrollmentForm }

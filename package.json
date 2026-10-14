@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "workspaces": [
-    "apps/client",
-    "apps/server"
+    "apps/*",
+    "packages/*"
   ],
   "scripts": {
     "dev:client": "npm run dev --workspace=cherryville-client",
@@ -13,8 +13,5 @@
     "dev:server": "npm run dev --workspace=cherryville-server",
     "build:server": "npm run build --workspace=cherryville-server",
     "start:server": "npm run start --workspace=cherryville-server"
-  },
-  "dependencies": {
-    "axios": "^1.20.0"
   }
 }
