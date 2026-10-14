@@ -5,7 +5,7 @@ import type { QueryResult } from "pg";
 import type { ErrorType, ProposalResponse } from "../types/index.js";
 import type { ProposalQuery } from "@cherryville/shared";
 
-async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Response<ProposalResponse | ErrorType>): Promise<void> {
+async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Response<ProposalResponse[] | ErrorType>): Promise<void> {
 
     const { name, sector, services, timeframe, status } = req.query;
     const conditions: string[] = [];

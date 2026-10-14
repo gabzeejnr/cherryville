@@ -58,6 +58,6 @@ type Message<T> = {
 }
 
 export type {
-    ProposalForm, ProposalQuery,
+    ProposalForm, ProposalQuery, Sector, Service, Timeframe, FormStatus,
     EnrollmentResult, Message, EnrollmentForm, EnrollmentQuery
 }
