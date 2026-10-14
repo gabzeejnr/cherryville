@@ -38,7 +38,7 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
                 loading: "Sending Proposal",
                 success: (res) => res.data?.message,
                 error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
-            })
+            });
 
         } catch (err) {
 
