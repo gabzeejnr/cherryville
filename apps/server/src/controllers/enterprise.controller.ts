@@ -3,6 +3,8 @@ import type { Request, Response } from "express";
 import type { ErrorType } from "../types/index.js";
 
 async function getProposals(req: Request, res: Response<ErrorType>): Promise<void> {
+
+    const {} = req.stat
     try {
         const { rows } = await pool.query("SELECT * FROM proposals")
     } catch (err) {

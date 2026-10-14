@@ -22,7 +22,8 @@ type Level = "beginner" | "intermediate" | "advanced";
 
 type EnrollmentQuery = {
     status?: EnrollmentResult["status"] | EnrollmentResult["status"][],
-    id?: string
+    id?: string,
+    course?: string
 }
 
 type EnrollmentForm = {

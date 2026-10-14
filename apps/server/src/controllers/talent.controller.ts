@@ -6,7 +6,7 @@ import type { EnrollmentQuery, EnrollmentResult, Message, EnrollmentForm } from 
 import type { AcademyResponse, ErrorType } from "../types/index.js";
 
 async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
-    const { status, id } = req.query;
+    const { status, id, course } = req.query;
     const conditions: string[] = [];
     const queryValues: unknown[] = [];
     try {
@@ -19,6 +19,11 @@ async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, r
         if (id) {
             queryValues.push(turnToArray(id));
             conditions.push(`id = ANY($${queryValues.length}::uuid[])`)
+        }
+
+        if(course) {
+            queryValues.push(turnToArray(course));
+            conditions.push(`course_name = ANY($${queryValues.length}::text[])`)
         }
 
         const clause = (conditions.length
