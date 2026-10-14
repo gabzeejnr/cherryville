@@ -1,23 +1,12 @@
+import { useState } from "react"
+import api from "../../api/axios";
+import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
-import { useState, type Dispatch, type SetStateAction } from "react";
+import type { Dispatch, SetStateAction } from "react";
+import type { ProposalForm } from "@cherryville/shared"
 import styles from "../../styles/global.module.scss";
 
-type Sector = | "oil-and-gas" | "banking-and-finance" | "government" | "ngo" | "other";
-type Service = | "staff-training" | "curriculum-design" | "assessment-reporting" | "technical-talent" | "partner-delivery" | ""
-type Timeframe = "one-month" | "one-three-months" | "more-than-three-months" | ""
-
-type Form = {
-    name: string,
-    organisation: string,
-    email: string,
-    phone: string,
-    sector: Sector,
-    services: Service[],
-    number: number,
-    timeframe: Timeframe,
-    message: string
-}
 
 function Required() {
     return <span className={styles.required} />
@@ -29,24 +18,30 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
     async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>): Promise<void> {
         e.preventDefault();
         setLoading(true);
-        
+
         try {
             const form = new FormData(e.currentTarget);
-    
-            const data: Form = {
+
+            const data: ProposalForm = {
                 name: form.get("name") as string,
                 organisation: form.get("organisation") as string,
                 email: form.get("email") as string,
                 phone: form.get("phone") as string,
-                sector: form.get("sector") as Form["sector"],
-                services: form.getAll("services") as Form["services"],
+                sector: form.get("sector") as ProposalForm["sector"],
+                services: form.getAll("services") as ProposalForm["services"],
                 number: Number(form.get("number")),
-                timeframe: form.get("timeframe") as Form["timeframe"],
+                timeframe: form.get("timeframe") as ProposalForm["timeframe"],
                 message: form.get("message") as string
             }
-            
+
+            await toast.promise(api.post("", form), {
+                loading: "Sending Proposal",
+                success: (res) => res.data?.message,
+                error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
+            })
+
         } catch (err) {
-            
+
         }
     }
 
@@ -202,7 +197,8 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
                         />
                     </div>
 
-                    <button type="submit" className="w-full rounded-md bg-accent cursor-pointer px-6 py-3 font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cherry focus:ring-offset-2">
+                    <button type="submit" className="w-full rounded-md bg-accent cursor-pointer px-6 py-3 font-medium text-white transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-cherry focus:ring-offset-2"
+                        disabled={loading} aria-disabled={loading}>
                         Submit Request
                     </button>
 

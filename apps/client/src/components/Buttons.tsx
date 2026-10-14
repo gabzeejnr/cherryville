@@ -16,3 +16,5 @@ export function AccentButton({ text, onClick, arrow }: AccentButton) {
             onClick={onClick}>{text} {arrow && <FontAwesomeIcon icon={faArrowRight} />}</button>
     )
 }
+
+export function FormButton(){}

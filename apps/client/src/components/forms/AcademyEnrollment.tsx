@@ -32,16 +32,11 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
                 format: formData.get("format") as Format
             }
 
-            console.log(form);
-
-            const res = await toast.promise(api.post("/talent/enroll", form), {
+            await toast.promise(api.post("/talent/enroll", form), {
                 loading: "Enrolling user.",
-                success: (result) => result.data?.message,
+                success: (res) => res.data?.message,
                 error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
             });
-
-            const data: Message<EnrollmentResult> = res.data.message;
-            console.log(data)
 
             setEnroll(false);
         } catch (err) {

@@ -1,3 +1,22 @@
+// ENTERPRISES ==================================
+type Sector = | "oil-and-gas" | "banking-and-finance" | "government" | "ngo" | "other";
+type Service = | "staff-training" | "curriculum-design" | "assessment-reporting" | "technical-talent" | "partner-delivery" | ""
+type Timeframe = "one-month" | "one-three-months" | "more-than-three-months" | ""
+
+type ProposalForm = {
+    name: string,
+    organisation: string,
+    email: string,
+    phone: string,
+    sector: Sector,
+    services: Service[],
+    number: number,
+    timeframe: Timeframe,
+    message: string
+}
+
+
+// TALENTS ======================================
 type LearningStyle = "virtual" | "weekday" | "weekend";
 type Level = "beginner" | "intermediate" | "advanced";
 
@@ -21,4 +40,7 @@ type Message<T> = {
     data: T
 }
 
-export type { EnrollmentResult, Message, EnrollmentForm }
+export type {
+    ProposalForm,
+    EnrollmentResult, Message, EnrollmentForm
+}
