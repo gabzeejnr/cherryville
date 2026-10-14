@@ -1,4 +1,5 @@
 import pool from "../config/db.js";
+import { turnToArray } from "../libs/controllers.libs.js";
 import type { Request, Response } from "express";
 import type { QueryResult } from "pg";
 import type { EnrollmentQuery, EnrollmentResult, Message, EnrollmentForm } from "@cherryville/shared";
@@ -11,13 +12,13 @@ async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, r
     try {
 
         if (status) {
-            queryValues.push(status);
+            queryValues.push(turnToArray(status));
             conditions.push(`status = ANY($${queryValues.length}::text[])`)
         }
 
         if (id) {
-            queryValues.push(id);
-            conditions.push(`id = ANY($${queryValues.length}::int[])`)
+            queryValues.push(turnToArray(id));
+            conditions.push(`id = ANY($${queryValues.length}::uuid[])`)
         }
 
         const clause = (conditions.length
