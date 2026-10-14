@@ -1,10 +1,10 @@
 import pool from "../config/db.js";
 import type { Request, Response } from "express";
+import type { QueryResult } from "pg";
 import type { EnrollmentResult, Message, EnrollmentForm } from "@cherryville/shared";
 import type { AcademyResponse, ErrorType } from "../types/index.js";
-import type { QueryResult } from "pg";
 
-async function getAcademyApplicants(req: Request, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
+async function getAcademyApplicants(req: Request<{}, {}, {}>, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
     try {
         const { rows }: QueryResult<AcademyResponse> = await pool.query("SELECT * FROM academy_enrollment");
         res.status(200).json(rows);
