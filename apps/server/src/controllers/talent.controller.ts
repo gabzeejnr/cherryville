@@ -4,8 +4,11 @@ import type { QueryResult } from "pg";
 import type { EnrollmentResult, Message, EnrollmentForm } from "@cherryville/shared";
 import type { AcademyResponse, ErrorType } from "../types/index.js";
 
-async function getAcademyApplicants(req: Request<{}, {}, {}>, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
+async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentResult["status"]>, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
+    const { } = req.query;
     try {
+        let data: AcademyResponse[] = [];
+
         const { rows }: QueryResult<AcademyResponse> = await pool.query("SELECT * FROM academy_enrollment");
         res.status(200).json(rows);
     } catch (err) {

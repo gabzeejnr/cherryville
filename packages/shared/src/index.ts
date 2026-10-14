@@ -20,6 +20,11 @@ type ProposalForm = {
 type LearningStyle = "virtual" | "weekday" | "weekend";
 type Level = "beginner" | "intermediate" | "advanced";
 
+type EnrollmentQuery = {
+    status?: EnrollmentResult["status"],
+    id?: EnrollmentResult[]
+}
+
 type EnrollmentForm = {
     applicant_name: string,
     email: string,
