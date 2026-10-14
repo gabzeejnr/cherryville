@@ -6,17 +6,30 @@ import type { AcademyResponse, ErrorType } from "../types/index.js";
 
 async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
     const { status, id } = req.query;
+    const conditions: string[] = [];
+    const queryValues: unknown[] = [];
     try {
 
-        const data: QueryResult<AcademyResponse> = await pool.query("SELECT * FROM academy_enrollment");
-        let filtered: AcademyResponse[] = data.rows;
+        if (status) {
+            queryValues.push(status);
+            conditions.push(`status = ANY($${queryValues.length}::text[])`)
+        }
 
-        const statuses = Array.isArray(status) ? status : [status]
+        if (id) {
+            queryValues.push(id);
+            conditions.push(`id = ANY($${queryValues.length}::int[])`)
+        }
 
-        if (status) filtered = filtered.filter(row => statuses.includes(row.status));
+        const clause = (conditions.length
+            ? `WHERE ${conditions.join(" AND ")}`
+            : ""
+        )
 
-        if (id) filtered = filtered.filter(row => row.id === id);
-        res.status(200).json(filtered);
+        const query = `SELECT * from academy_enrollment ${clause} ORDER by created_at DESC`
+
+        const { rows }: QueryResult<AcademyResponse> = await pool.query(query, queryValues)
+
+        res.status(200).json(rows);
     } catch (err) {
         console.error("Couldn't get academy applicants: ", err);
         res.status(500).json({ error: "Internal server error." })
