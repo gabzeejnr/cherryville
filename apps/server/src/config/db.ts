@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-dotenv.config({ path: "../" })
+dotenv.config({ path: "../../.env" });
 import { env } from "node:process";
 import { Pool } from "pg";
 

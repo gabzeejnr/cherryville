@@ -41,20 +41,14 @@ async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Resp
     }
 
     try {
-        /* const { rows }: QueryResult<EnrollmentResult> = await pool.query(`INSERT INTO academy_enrollment (applicant_name, email, phone, course_name, level, format)
+        const { rows }: QueryResult<EnrollmentResult> = await pool.query(`INSERT INTO academy_enrollment (applicant_name, email, phone, course_name, level, format)
             VALUES ($1, $2, $3, $4, $5, $6) RETURNING id, status, created_at`,
             [applicant_name, email, phone, course_name, level, format]
-        ); */
-
-        const test: EnrollmentResult = {
-            id: "string",
-            status: "accepted",
-            created_at: "string"
-        }
+        );
 
         res.status(201).json({
             message: "Application successful",
-            data: test
+            data: rows[0]
         });
 
     } catch (err) {
