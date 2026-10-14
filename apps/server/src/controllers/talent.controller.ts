@@ -7,14 +7,16 @@ import type { AcademyResponse, ErrorType } from "../types/index.js";
 async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
     const { status, id } = req.query;
     try {
-        let data: AcademyResponse[] = [];
 
-        const { rows }: QueryResult<AcademyResponse> = await pool.query("SELECT * FROM academy_enrollment");
+        const data: QueryResult<AcademyResponse> = await pool.query("SELECT * FROM academy_enrollment");
+        let filtered: AcademyResponse[] = data.rows;
 
-        if (status) {
-            data = rows.filter(row => row.)
-        }
-        res.status(200).json(rows);
+        const statuses = Array.isArray(status) ? status : [status]
+
+        if (status) filtered = filtered.filter(row => statuses.includes(row.status));
+
+        if (id) filtered = filtered.filter(row => row.id === id);
+        res.status(200).json(filtered);
     } catch (err) {
         console.error("Couldn't get academy applicants: ", err);
         res.status(500).json({ error: "Internal server error." })
