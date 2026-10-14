@@ -6,7 +6,7 @@ type AcademyResponse = {
     course_name: string,
     level: string,
     format: string,
-    status: string,
+    status: "accepted" | "pending" | "rejected",
     created_at: Date
 }
 
