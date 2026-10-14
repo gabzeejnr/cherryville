@@ -1,12 +1,13 @@
 import pool from "../config/db.js";
 import { turnToArray, arrayQueryClause } from "../libs/controllers.libs.js";
 import type { Request, Response } from "express";
-import type { ErrorType } from "../types/index.js";
+import type { QueryResult } from "pg";
+import type { ErrorType, ProposalResponse } from "../types/index.js";
 import type { ProposalQuery } from "@cherryville/shared";
 
-async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Response<ErrorType>): Promise<void> {
+async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Response<ProposalResponse | ErrorType>): Promise<void> {
 
-    const { name, sector, services, timeframe } = req.query;
+    const { name, sector, services, timeframe, status } = req.query;
     const conditions: string[] = [];
     const values: (string | string[])[] = [];
     try {
@@ -26,11 +27,22 @@ async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Respon
             conditions.push(`services = ANY($${values.length}::text[])`)
         }
 
-        if(timeframe) {
+        if (timeframe) {
             values.push(turnToArray(timeframe));
             conditions.push(`timeframe = ANY($${values.length}::text[])`)
         }
-        const { rows } = await pool.query("SELECT * FROM proposals")
+
+        if (status) {
+            values.push(turnToArray(status));
+            conditions.push(`status = ANY($${values.length}::text[])`)
+        }
+
+        const clause = arrayQueryClause(conditions);
+        const query = `SELECT * FROM proposals ${clause} ORDER by created_at DESC`
+
+        const { rows }: QueryResult<ProposalResponse> = await pool.query(query, values);
+
+        res.status(200).json(rows)
     } catch (err) {
         console.error("Couldn't get proposals: ", err);
         res.status(500).json({ error: "Internal server error." })
@@ -42,4 +54,4 @@ async function requestProposal(req: Request, res: Response<ErrorType>): Promise<
 }
 
 
-export { requestProposal }
+export { getProposals, requestProposal }

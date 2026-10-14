@@ -1,5 +1,11 @@
+import type { UUID } from "node:crypto"
+
+type ProposalResponse = {
+    id: string | UUID
+}
+
 type AcademyResponse = {
-    id: string | number,
+    id: UUID,
     applicant_name: string,
     email: string,
     phone: string,
@@ -10,4 +16,4 @@ type AcademyResponse = {
     created_at: Date
 }
 
-export type { AcademyResponse }
+export type { AcademyResponse, ProposalResponse }
