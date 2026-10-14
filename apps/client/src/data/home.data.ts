@@ -120,16 +120,16 @@ const phases: HoverCardType[] = [
 const testimonials: TestimonialType[] = [
     {
         quote: "The training was structured around what our team actually needed and gave participants practical skills they could apply immediately.",
-        name: "Client Name",
+        name: "David Abayomi",
         role: "Learning & Development Manager",
-        organisation: "Organisation Name",
+        organisation: "Sweet Designs and Builds",
         rating: 4
     },
     {
         quote: "Cherryville brought a clear understanding of both the technical requirements and the people who needed to deliver them.",
-        name: "Client Name",
+        name: "John ",
         role: "Technical Manager",
-        organisation: "Organisation Name",
+        organisation: "Zenith Flow Enterprises",
         rating: 4.5
     },
     {

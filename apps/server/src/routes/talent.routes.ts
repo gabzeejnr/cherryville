@@ -4,7 +4,7 @@ import type { Router as RouterType } from "express";
 
 const router: RouterType = Router();
 
-router.get("get-applicants", getAcademyApplicants);
+router.get("/get-applicants", getAcademyApplicants);
 router.post("/enroll", enrollIntoAcademy);
 
 export { router }
