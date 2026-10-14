@@ -1,5 +1,5 @@
 import { env } from "node:process";
-import express from "express";
+import express, { urlencoded } from "express";
 import cors from "cors";
 import { router as enterpriseRoute } from "./routes/enterprise.routes.js";
 import { router as talentRoute } from "./routes/talent.routes.js";
@@ -10,6 +10,7 @@ const PORT = env.PORT || 3000
 const app: Express = express();
 app.use(cors());
 app.use(express.json());
+app.use(urlencoded({ extended: true }))
 
 app.get("/", (req: Request<{}>, res: Response<{}>) => {
     res.send("Is this Working???");
