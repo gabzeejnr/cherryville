@@ -1,3 +1,5 @@
+type FormStatus = "accepted" | "pending" | "rejected" | "reviewing" | "approved"
+
 // ENTERPRISES ==================================
 type Sector = | "oil-and-gas" | "banking-and-finance" | "government" | "ngo" | "other";
 type Service = | "staff-training" | "curriculum-design" | "assessment-reporting" | "technical-talent" | "partner-delivery" | ""
@@ -7,7 +9,8 @@ type ProposalQuery = {
     name?: string,
     sector?: Sector,
     services?: Service[],
-    timeframe?: Timeframe
+    timeframe?: Timeframe,
+    status?: FormStatus
 }
 
 type ProposalForm = {
@@ -30,7 +33,8 @@ type Level = "beginner" | "intermediate" | "advanced";
 type EnrollmentQuery = {
     status?: EnrollmentResult["status"] | EnrollmentResult["status"][],
     id?: string,
-    course?: string
+    course?: string,
+    level?: Level
 }
 
 type EnrollmentForm = {
@@ -44,7 +48,7 @@ type EnrollmentForm = {
 
 type EnrollmentResult = {
     id: string | number,
-    status: "accepted" | "pending" | "rejected",
+    status: FormStatus,
     created_at: Date | string
 }
 

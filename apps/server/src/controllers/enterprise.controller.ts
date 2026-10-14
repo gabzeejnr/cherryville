@@ -11,12 +11,25 @@ async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Respon
     const values: (string | string[])[] = [];
     try {
 
-        if (name) { 
-            values.push(name);
-            conditions.push(`name = ${values.length}`)
+        if (name) {
+            values.push(turnToArray(name));
+            conditions.push(`name = ANY($${values.length}::text[])`)
         }
 
-        if(sector){}
+        if (sector) {
+            values.push(turnToArray(sector));
+            conditions.push(`sector = ANY($${values.length}::text[])`)
+        }
+
+        if (services) {
+            values.push(turnToArray(services));
+            conditions.push(`services = ANY($${values.length}::text[])`)
+        }
+
+        if(timeframe) {
+            values.push(turnToArray(timeframe));
+            conditions.push(`timeframe = ANY($${values.length}::text[])`)
+        }
         const { rows } = await pool.query("SELECT * FROM proposals")
     } catch (err) {
         console.error("Couldn't get proposals: ", err);
