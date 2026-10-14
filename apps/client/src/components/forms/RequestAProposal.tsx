@@ -20,18 +20,18 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
         setLoading(true);
 
         try {
-            const form = new FormData(e.currentTarget);
+            const formData = new FormData(e.currentTarget);
 
-            const data: ProposalForm = {
-                name: form.get("name") as string,
-                organisation: form.get("organisation") as string,
-                email: form.get("email") as string,
-                phone: form.get("phone") as string,
-                sector: form.get("sector") as ProposalForm["sector"],
-                services: form.getAll("services") as ProposalForm["services"],
-                number: Number(form.get("number")),
-                timeframe: form.get("timeframe") as ProposalForm["timeframe"],
-                message: form.get("message") as string
+            const form: ProposalForm = {
+                name: formData.get("name") as string,
+                organisation: formData.get("organisation") as string,
+                email: formData.get("email") as string,
+                phone: formData.get("phone") as string,
+                sector: formData.get("sector") as ProposalForm["sector"],
+                services: formData.getAll("services") as ProposalForm["services"],
+                number: Number(formData.get("number")),
+                timeframe: formData.get("timeframe") as ProposalForm["timeframe"],
+                message: formData.get("message") as string
             }
 
             await toast.promise(api.post("", form), {
