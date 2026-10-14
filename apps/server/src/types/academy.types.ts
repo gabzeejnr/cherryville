@@ -13,7 +13,7 @@ type ProposalResponse = {
     timeframe: Timeframe,
     message: string,
     status: FormStatus,
-    created_at: Date
+    created_at: string
 }
 
 type AcademyResponse = {
@@ -25,7 +25,7 @@ type AcademyResponse = {
     level: string,
     format: string,
     status: "accepted" | "pending" | "rejected",
-    created_at: Date
+    created_at: string
 }
 
 export type { AcademyResponse, ProposalResponse }

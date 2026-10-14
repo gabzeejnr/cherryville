@@ -1,9 +1,9 @@
 import pool from "../config/db.js";
-import { turnToArray, arrayQueryClause } from "../libs/controllers.libs.js";
+import { turnToArray, arrayQueryClause, serverError } from "../libs/controllers.libs.js";
 import type { Request, Response } from "express";
 import type { QueryResult } from "pg";
 import type { ErrorType, ProposalResponse } from "../types/index.js";
-import type { ProposalQuery } from "@cherryville/shared";
+import type { ProposalQuery, ProposalForm } from "@cherryville/shared";
 
 async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Response<ProposalResponse[] | ErrorType>): Promise<void> {
 
@@ -49,8 +49,15 @@ async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Respon
     }
 }
 
-async function requestProposal(req: Request, res: Response<ErrorType>): Promise<void> {
+async function requestProposal(req: Request<{}, {}, ProposalForm>, res: Response<ErrorType>): Promise<void> {
+    const { name, organisation, email, phone, sector, services, number, timeframe, message } = req.body;
 
+    try {
+        
+    } catch (err) {
+        console.error("Couldn't submit proposal. Please try again.: ", err);
+        res.status(500).json({error: serverError})
+    }
 }
 
 
