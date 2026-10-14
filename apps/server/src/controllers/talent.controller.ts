@@ -1,5 +1,5 @@
 import pool from "../config/db.js";
-import { turnToArray } from "../libs/controllers.libs.js";
+import { turnToArray, arrayQueryClause } from "../libs/controllers.libs.js";
 import type { Request, Response } from "express";
 import type { QueryResult } from "pg";
 import type { EnrollmentQuery, EnrollmentResult, Message, EnrollmentForm } from "@cherryville/shared";
@@ -8,7 +8,7 @@ import type { AcademyResponse, ErrorType } from "../types/index.js";
 async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, res: Response<AcademyResponse[] | ErrorType>): Promise<void> {
     const { status, id, course } = req.query;
     const conditions: string[] = [];
-    const queryValues: unknown[] = [];
+    const queryValues: (string | string[])[] = [];
     try {
 
         if (status) {
@@ -21,15 +21,12 @@ async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, r
             conditions.push(`id = ANY($${queryValues.length}::uuid[])`)
         }
 
-        if(course) {
+        if (course) {
             queryValues.push(turnToArray(course));
             conditions.push(`course_name = ANY($${queryValues.length}::text[])`)
         }
 
-        const clause = (conditions.length
-            ? `WHERE ${conditions.join(" AND ")}`
-            : ""
-        )
+        const clause = arrayQueryClause(conditions)
 
         const query = `SELECT * from academy_enrollment ${clause} ORDER by created_at DESC`
 

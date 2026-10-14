@@ -3,6 +3,13 @@ type Sector = | "oil-and-gas" | "banking-and-finance" | "government" | "ngo" | "
 type Service = | "staff-training" | "curriculum-design" | "assessment-reporting" | "technical-talent" | "partner-delivery" | ""
 type Timeframe = "one-month" | "one-three-months" | "more-than-three-months" | ""
 
+type ProposalQuery = {
+    name?: string,
+    sector?: Sector,
+    services?: Service[],
+    timeframe?: Timeframe
+}
+
 type ProposalForm = {
     name: string,
     organisation: string,
@@ -47,6 +54,6 @@ type Message<T> = {
 }
 
 export type {
-    ProposalForm,
+    ProposalForm, ProposalQuery,
     EnrollmentResult, Message, EnrollmentForm, EnrollmentQuery
 }
