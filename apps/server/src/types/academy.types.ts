@@ -1,7 +1,3 @@
-type LearningStyle = "virtual" | "weekday" | "weekend";
-type Level = "beginner" | "intermediate" | "advanced";
-
-
 type AcademyResponse = {
     id: string | number,
     applicant_name: string,
@@ -14,13 +10,4 @@ type AcademyResponse = {
     created_at: Date
 }
 
-type EnrollmentForm = {
-    name: string,
-    email: string,
-    phone: string,
-    course: string,
-    level: Level,
-    format: LearningStyle
-}
-
-export type { AcademyResponse, EnrollmentForm }
+export type { AcademyResponse }

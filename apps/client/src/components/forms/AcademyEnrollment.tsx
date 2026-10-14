@@ -4,8 +4,8 @@ import { X } from "lucide-react";
 import { courses } from "../../data/academy.data";
 import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { Message, EnrollmentResult } from "@cherryville/shared"
-import type { LearningStyle as Format, EnrollmentForm as Form, Experience, Course } from "../../types/academy.types";
+import type { Message, EnrollmentResult, EnrollmentForm } from "@cherryville/shared"
+import type { LearningStyle as Format, Experience, Course } from "../../types/academy.types";
 import styles from "../../styles/global.module.scss";
 
 function Required() {
@@ -22,11 +22,11 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
         setLoading(true);
 
 
-        const form: Form = {
-            name: formData.get("name") as string,
+        const form: EnrollmentForm = {
+            applicant_name: formData.get("name") as string,
             email: formData.get("email") as string,
             phone: formData.get("phone") as string,
-            course: formData.get("course") as string,
+            course_name: formData.get("course") as string,
             level: formData.get("level") as Experience,
             format: formData.get("format") as Format
         }
@@ -40,7 +40,8 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
                 error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
             });
 
-            const data: Message<EnrollmentResult> = res.data.message
+            const data: Message<EnrollmentResult> = res.data.message;
+            console.log(data)
 
 
         } catch (err) {

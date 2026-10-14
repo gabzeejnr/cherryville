@@ -1,3 +1,15 @@
+type LearningStyle = "virtual" | "weekday" | "weekend";
+type Level = "beginner" | "intermediate" | "advanced";
+
+type EnrollmentForm = {
+    applicant_name: string,
+    email: string,
+    phone: string,
+    course_name: string,
+    level: Level,
+    format: LearningStyle
+}
+
 type EnrollmentResult = {
     id: string | number,
     status: "accepted" | "pending" | "rejected",
@@ -9,4 +21,4 @@ type Message<T> = {
     data: T
 }
 
-export type { EnrollmentResult, Message }
+export type { EnrollmentResult, Message, EnrollmentForm }
