@@ -15,6 +15,8 @@ async function getAcademyApplicants(req: Request, res: Response<AcademyResponse[
 }
 
 async function enrollIntoAcademy(req: Request<{}, {}, EnrollmentForm>, res: Response<Message<EnrollmentResult> | ErrorType>): Promise<void> {
+
+    console.log(req.body)
     const {
         applicant_name, email, phone,
         course_name, level, format
