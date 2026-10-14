@@ -21,7 +21,7 @@ type LearningStyle = "virtual" | "weekday" | "weekend";
 type Level = "beginner" | "intermediate" | "advanced";
 
 type EnrollmentQuery = {
-    status?: EnrollmentResult["status"],
+    status?: EnrollmentResult["status"] | EnrollmentResult["status"][],
     id?: EnrollmentResult[]
 }
 
@@ -47,5 +47,5 @@ type Message<T> = {
 
 export type {
     ProposalForm,
-    EnrollmentResult, Message, EnrollmentForm
+    EnrollmentResult, Message, EnrollmentForm, EnrollmentQuery
 }
