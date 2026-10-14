@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import type { AccentButton, RequestAProposalButton } from "../types";
+import type { ReactNode } from "react";
 
 export function RequestAProposalButton({ setIsOpen, arrow, className }: RequestAProposalButton) {
     return (
@@ -18,7 +19,7 @@ export function AccentButton({ text, onClick, arrow }: AccentButton) {
     )
 }
 
-export function FormButton({ loading }: { loading: boolean }) {
+export function FormButton({ loading, text, loadingText }: { loading: boolean, text: string, loadingText: string }) {
     return (
 
         <button type="submit" aria-busy={loading}
@@ -34,7 +35,7 @@ export function FormButton({ loading }: { loading: boolean }) {
             )}
 
             <span aria-live="polite" aria-atomic="true">
-                {loading ? "Submitting Request..." : "Submit Request"}
+                {loading ? loadingText : text}
             </span>
         </button>
     )
