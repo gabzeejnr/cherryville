@@ -3,7 +3,7 @@ import { turnToArray, arrayQueryClause, serverError } from "../libs/controllers.
 import type { Request, Response } from "express";
 import type { QueryResult } from "pg";
 import type { ErrorType, ProposalResponse } from "../types/index.js";
-import type { ProposalQuery, ProposalForm } from "@cherryville/shared";
+import type { ProposalQuery, ProposalForm, Message, ProposalResult } from "@cherryville/shared";
 
 async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Response<ProposalResponse[] | ErrorType>): Promise<void> {
 
@@ -49,14 +49,47 @@ async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Respon
     }
 }
 
-async function requestProposal(req: Request<{}, {}, ProposalForm>, res: Response<ErrorType>): Promise<void> {
-    const { name, organisation, email, phone, sector, services, number, timeframe, message } = req.body;
+async function requestProposal(req: Request<{}, {}, ProposalForm>, res: Response<Message<ProposalResult> | ErrorType>): Promise<void> {
+
+    console.log(req.body);
+
+    const {
+        name, organisation, email,
+        phone, sector, services, number, timeframe, message
+    } = req.body;
+
+    if (!name || !organisation || !email || !sector || !message) {
+        res.status(400).json({ error: "Incomplete form field" })
+    }
+
+    const validsectors = ["oil-and-gas", "banking-and-finance", "government", "ngo", "other"];
+    if (!validsectors.includes(sector)) {
+        res.status(400).json({ error: "Unknown sector type." });
+        return
+    }
+    console.group(sector)
+
+    const allServices = (Array.isArray(services)
+        ? services
+        : [services]
+    )
+    console.log(allServices)
 
     try {
-        
+
+        const { rows }: QueryResult<ProposalResult> = await pool.query(`INSERT INTO proposals (name, organisation, email, phone, sector, services, number, timeframe, message)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id, status, created_at`,
+            [name, organisation, email, phone, sector, allServices, number, timeframe, message]
+        )
+        console.log(rows)
+
+        res.status(201).json({
+            message: "Proposal sent successfully.",
+            data: rows[0]
+        });
     } catch (err) {
         console.error("Couldn't submit proposal. Please try again.: ", err);
-        res.status(500).json({error: serverError})
+        res.status(500).json({ error: serverError })
     }
 }
 

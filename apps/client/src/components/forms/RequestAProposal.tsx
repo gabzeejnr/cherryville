@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import api from "../../api/axios";
 import toast from "react-hot-toast";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -34,14 +34,16 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
                 message: formData.get("message") as string
             }
 
-            await toast.promise(api.post("", form), {
+            await toast.promise(api.post("/enterprise/request-proposal", form), {
                 loading: "Sending Proposal",
                 success: (res) => res.data?.message,
                 error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
             });
 
-        } catch (err) {
+            setIsOpen(false);
 
+        } catch (err) {
+            console.error("Something went wrong.")
         }
     }
 
@@ -77,15 +79,14 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
                     </div>
 
                     <div className="space-y-2">
-                        <label htmlFor="organisation" className="block text-sm font-medium text-gray-700">
-                            Organisation
-                        </label>
-                        <input
-                            type="text"
-                            name="organisation"
-                            id="organisation"
+                        <span className="relative block text-sm font-medium text-gray-700">
+                            <label htmlFor="organisation">
+                                Organisation
+                            </label>
+                            <Required />
+                        </span>
+                        <input type="text" name="organisation" id="organisation" required
                             placeholder="Enter name of organisation"
-                            required
                             className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm outline-none transition focus:border-cherry focus:ring-1 focus:ring-cherry"
                         />
                     </div>

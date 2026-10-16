@@ -6,12 +6,12 @@ import type { Express } from "express";
 
 const PORT = env.PORT || 3000
 const app: Express = express();
-app.use(cors({
-    origin: [
+app.use(cors(/* {
+    origin: [ 
         "http://localhost:5173",
         "https://cherryville-ecru.vercel.app"
     ]
-}));
+} */));
 app.use(express.json());
 app.use(urlencoded({ extended: true }))
 

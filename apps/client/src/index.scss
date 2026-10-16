@@ -53,10 +53,12 @@ body {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: clamp(2.7rem, 4vw, 4rem);
     letter-spacing: -1.68px;
-    margin: 32px 0;
-    font-weight: 900;
+    margin: 0;
+    max-width: 850px;
+    letter-spacing: -0.045em;
+    font-weight: 700;
 
     @media (max-width: 1024px) {
         font-size: 36px;

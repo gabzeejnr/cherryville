@@ -12,6 +12,7 @@
     "lint": "npm run lint --workspace=cherryville-client",
     "dev:server": "npm run dev --workspace=cherryville-server",
     "build:server": "npm run build --workspace=cherryville-server",
-    "start:server": "npm run start --workspace=cherryville-server"
+    "start:server": "npm run start --workspace=cherryville-server",
+    "watch:server": "npm run watch --workspace=cherryville-server"
   }
 }

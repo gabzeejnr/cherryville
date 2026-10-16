@@ -3,6 +3,6 @@ const arrayQueryClause = (conditions: string[]) => (conditions.length
     ? `WHERE ${conditions.join(" AND ")}`
     : ""
 )
-const serverError = "Internal server error. Pleae try again."
+const serverError = "Internal server error. Please try again."
 
 export { turnToArray, arrayQueryClause, serverError }

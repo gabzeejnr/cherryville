@@ -12,7 +12,7 @@ type ProposalResponse = {
     number: number,
     timeframe: Timeframe,
     message: string,
-    status: FormStatus,
+    status: FormStatus<"approved">,
     created_at: string
 }
 
