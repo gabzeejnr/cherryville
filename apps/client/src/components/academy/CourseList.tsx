@@ -90,7 +90,7 @@ function Card({ course, setEnroll, setThisCourse }: { course: Course, setEnroll:
 }
 
 
-export default function CourseList({ courses }: { courses: Course[], thisCourse: Course["name"] }) {
+export default function CourseList({ courses }: { courses: Course[] }) {
 
     const [enroll, setEnroll] = useState(false);
     const [thisCourse, setThisCourse] = useState<Course["name"]>("")

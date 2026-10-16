@@ -1,9 +1,10 @@
 import {useDocumentMeta} from "../../hooks";
-import Hero from "../../components/academy/advanced/Hero";
+import Hero from "../../components/Hero";
+import backgroundImage from "../../assets/images/academy/advancedAcademy.jpg"
 import CourseList from "../../components/academy/CourseList";
 import CTA from "../../components/academy/CTA";
 import WhatToExpect from "../../components/academy/WhatToExpect";
-import { advanced } from "../../data/academy.data";
+import { advanced, advancedHeading as heading, advancedSubtitle as subtitle } from "../../data/academy.data";
 
 export default function Advanced() {
 
@@ -18,7 +19,7 @@ export default function Advanced() {
     ]
     return (
         <>
-            <Hero />
+            <Hero page="Advanced Academy" heading={heading} subtitles={subtitle}  backgroundImage={backgroundImage} />
             <WhatToExpect subtitles={subtitles} />
             <CourseList courses={advanced} />
             <CTA subtitle="Advanced cohorts run to a published calendar and fill early. Register your interest and we will confirm the next start date for your track." button="Register interest"></CTA>

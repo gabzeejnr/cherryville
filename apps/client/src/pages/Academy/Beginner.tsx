@@ -1,10 +1,11 @@
-import { useDocumentMeta } from "../../hooks";
-import Hero from "../../components/academy/beginner/Hero";
+import { useDocumentMeta, useGoToTopOnLoad } from "../../hooks";
+import Hero from "../../components/Hero";
+import backgroundImage from "../../assets/images/academy/beginnerHero.jpg"
 import WhatToExpect from "../../components/academy/WhatToExpect";
 import CourseList from "../../components/academy/CourseList";
 import CTA from "../../components/academy/CTA";
 import AcademyWhatsapp from "../../components/academy/Whatsapp";
-import { beginner } from "../../data/academy.data";
+import { beginner, beginnerHeading as heading, beginnerSubtitle as subtitle } from "../../data/academy.data";
 
 export default function Beginner() {
 
@@ -17,10 +18,11 @@ export default function Beginner() {
         title: "Beginner Tech Courses in Lagos — No Experience Needed",
         description: "Start a career in technology with no prior experience. Beginner courses in Excel, data, web development, design, cybersecurity, cloud and hardware repair."
     })
+    useGoToTopOnLoad("academy/beginner")
 
     return (
         <>
-            <Hero />
+            <Hero page="Beginner's Academy" heading={heading} subtitles={subtitle} backgroundImage={backgroundImage} />
             <WhatToExpect subtitles={subtitles} />
             <CourseList courses={beginner} />
             <CTA title="Still unsure which one?" subtitle="That is normal, and it is the most common reason people delay starting. Speak to an advisor and we will recommend one course based on what interests you, not a list to choose from.">

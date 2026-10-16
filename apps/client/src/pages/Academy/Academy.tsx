@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useDocumentMeta } from "../../hooks";
 import { useGoToTopOnLoad } from "../../hooks";
 import Hero from "../../components/Hero";
+import backgroundImage from "../../assets/images/academy/hubHero.jpg"
 import { academyHeading, subtitle } from "../../data/academy.data";
 import CourseFinder from "../../components/academy/index/CourseFinder";
 import ThreeLevels from "../../components/academy/index/ThreeLevels";
@@ -20,9 +21,9 @@ export default function Academy() {
 
     return (
         <>
-            <Hero page="Academy" heading={academyHeading} subtitles={subtitle}>
+            <Hero page="Academy" heading={academyHeading} subtitles={subtitle} backgroundImage={backgroundImage}>
                 <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
-                    <AccentButton text="Help Me Choose" arrow onClick={() =>
+                    <AccentButton text="Help Me Choose" className="w-full sm:w-auto" arrow onClick={() =>
                         document.getElementById("course-finder")?.scrollIntoView({
                             behavior: "smooth",
                             block: "start",

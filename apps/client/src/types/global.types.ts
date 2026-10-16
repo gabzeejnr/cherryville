@@ -44,7 +44,8 @@ type RequestAProposalButton = {
 type AccentButton = {
     text: string,
     arrow?: true,
-    onClick?: MouseEventHandler<HTMLButtonElement> | undefined
+    onClick?: MouseEventHandler<HTMLButtonElement> | undefined,
+    className?: string
 }
 
 type ListItem = {

@@ -1,9 +1,10 @@
 import { useDocumentMeta } from "../../hooks";
-import Hero from "../../components/academy/intermediate/Hero";
+import Hero from "../../components/Hero";
+import backgroundImage from "../../assets/images/academy/intermediateAcademy.jpg"
 import WhatToExpect from "../../components/academy/WhatToExpect";
 import CourseList from "../../components/academy/CourseList";
 import CTA from "../../components/academy/CTA";
-import { intermediate } from "../../data/academy.data";
+import { intermediate, intermediateHeading as heading, intermediateSubtitle as subtitle } from "../../data/academy.data";
 
 export default function Intermediate() {
 
@@ -19,7 +20,7 @@ export default function Intermediate() {
 
     return (
         <>
-            <Hero />
+            <Hero page="Intermediate's Academy" heading={heading} subtitles={subtitle} backgroundImage={backgroundImage} />
             <WhatToExpect subtitles={subtitles} />
             <CourseList courses={intermediate} />
             <CTA subtitle="If you are unsure whether your foundations are strong enough, take our free placement assessment. It takes twenty minutes and tells you which level to enrol at." button="Take the placement test" />

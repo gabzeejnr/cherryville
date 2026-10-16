@@ -24,7 +24,7 @@ function TestimonialCard({ quote, name, role, organisation, rating, avatar }: Te
                 ))}
             </div>
 
-            <blockquote className={`${styles.quote} text-sm leading-snug`}>
+            <blockquote className={`${styles.quote} text-[13px] leading-snug`}>
                 &ldquo;{quote}&rdquo;
             </blockquote>
 
@@ -32,7 +32,7 @@ function TestimonialCard({ quote, name, role, organisation, rating, avatar }: Te
                 {avatar ? (
                     <img src={avatar} alt={name} className={`${styles.avatar} h-10 w-10 rounded-full object-cover`} />
                 ) : (
-                    <span className={`${styles.avatar} ${styles.avatarFallback} flex h-11 w-11 items-center justify-center rounded-full text-base font-semibold`}>
+                    <span className={`${styles.avatar} ${styles.avatarFallback} flex h-10 w-10 items-center justify-center rounded-full text-base font-semibold`}>
                         {getInitials(name)}
                     </span>
                 )}
