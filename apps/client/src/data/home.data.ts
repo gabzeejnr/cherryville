@@ -134,9 +134,9 @@ const testimonials: TestimonialType[] = [
     },
     {
         quote: "The programme gave our team the confidence and capability to work more effectively with the tools already in our environment.",
-        name: "Client Name",
-        role: "Operations Lead",
-        organisation: "Organisation Name",
+        name: "Gabriel Joseph",
+        role: "Founder",
+        organisation: "Justrite Tech Services",
         rating: 5
     },
     {
