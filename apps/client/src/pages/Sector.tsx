@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDocumentMeta, useGoToTopOnLoad } from "../hooks";
+import { useDocumentMeta, useGoToTopOnLoad, useFormAnalytics } from "../hooks";
 import RequestAProposal from "../components/forms/RequestAProposal";
 import Challenge from "../components/sectors/Challenge";
 import Engage from "../components/sectors/Engage";
@@ -25,6 +25,7 @@ export default function SectorTemplate({
         description: ""
     })
     useGoToTopOnLoad(`sectors/${title}`)
+    useFormAnalytics(isOpen, "request_proposal");
 
 
     return (

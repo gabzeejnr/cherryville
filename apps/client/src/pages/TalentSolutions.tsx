@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDocumentMeta, useGoToTopOnLoad, useSectionId } from "../hooks";
+import { useDocumentMeta, useFormAnalytics, useGoToTopOnLoad, useSectionId } from "../hooks";
 import { pageMeta, subtitles, heading } from "../data/talentSolutions.data";
 import { RequestAProposalButton } from "../components/Buttons";
 import Hero from "../components/Hero";
@@ -17,6 +17,7 @@ export default function TalentSolutions() {
     useDocumentMeta(pageMeta)
     useGoToTopOnLoad("talent-solutions");
     useSectionId();
+    useFormAnalytics(isOpen, "request_proposal")
 
     return (
         <>

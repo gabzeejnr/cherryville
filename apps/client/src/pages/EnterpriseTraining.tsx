@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDocumentMeta, useSectionId } from "../hooks";
+import { useDocumentMeta, useSectionId, useFormAnalytics } from "../hooks";
 import { pageMeta, enterpriseSubtitle, heading } from "../data";
 import Hero from "../components/Hero";
 import backgroundImage from "../assets/images/heroes/enterpriseBackground.jpg";
@@ -16,7 +16,8 @@ export default function EnterpriseTraining() {
     const [isOpen, setIsOpen] = useState(false);
 
     useDocumentMeta(pageMeta)
-    useSectionId()
+    useSectionId();
+    useFormAnalytics(isOpen, "request_proposal");
 
     return (
         <>

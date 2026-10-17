@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useDocumentMeta, useGoToTopOnLoad } from '../hooks';
+import { useDocumentMeta, useGoToTopOnLoad, useFormAnalytics } from '../hooks';
 import { Hero, Marquee, WhatDoWeDo, SectorsWeServe, HowWeWork, Testimonials, AcademyTeaser, Closing } from "../components/home";
 import RequestAProposal from '../components/forms/RequestAProposal';
 
@@ -12,6 +12,7 @@ export default function Home() {
         description: "Technical training and skilled tech talent for organisations in oil and gas, banking, government and the development sector. Delivered by Microsoft Certified Trainers."
     })
     useGoToTopOnLoad("");
+    useFormAnalytics(isOpen, "request_proposal");
 
     return (
         <>
