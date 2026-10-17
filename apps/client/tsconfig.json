@@ -3,7 +3,7 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "module": "es2015",
+    "module": "esnext",
     "target": "es2025",
     "types": [
       "node"
