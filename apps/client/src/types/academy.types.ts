@@ -30,9 +30,9 @@ type Course = {
 }
 
 type AnswerFinder = {
-    workType: WorkType,
-    experience: Experience,
-    timeframe: TimeFrame
+    workType: WorkType | null,
+    experience: Experience | null,
+    timeframe: TimeFrame | null
 }
 
 type AcademyCTA = {

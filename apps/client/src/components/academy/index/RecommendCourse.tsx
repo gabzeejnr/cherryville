@@ -1,50 +1,53 @@
-
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { analytics } from "../../../analytics/events";
 import { questions, courses } from "../../../data";
 import type { AnswerFinder, Course } from "../../../types";
 
 export default function RecommendCourse() {
-    const [submitted, setSubmitted] = useState(false);
-    const [step, setStep] = useState(1);
-    const [answers, setAnswers] = useState<AnswerFinder | {
-        workType: "",
-        experience: "",
-        timeframe: ""
-    }>({
-        workType: "",
-        experience: "",
-        timeframe: "",
+    const analyticsStarted = useRef<boolean>(false)
+    const [submitted, setSubmitted] = useState<boolean>(false);
+    const [step, setStep] = useState<number>(1);
+    const [answers, setAnswers] = useState<AnswerFinder>({
+        workType: null,
+        experience: null,
+        timeframe: null,
     });
     const [result, setResult] = useState<Course | null>(null);
+
+    useEffect(function () {
+        if (!result) return;
+        analytics.courseRecommendationViewed(
+            undefined, result
+        )
+    }, [result])
+
+    function startAnalytics() {
+        if (analyticsStarted.current) return;
+
+        analyticsStarted.current = true;
+        analytics.formStarted("course_recommendation")
+    }
 
     function resetFinder() {
         setStep(1);
         setAnswers({
-            workType: "",
-            experience: "",
-            timeframe: "",
+            workType: null,
+            experience: null,
+            timeframe: null,
         });
         setResult(null);
         setSubmitted(false);
     }
 
     function solve() {
-        if (
-            !answers.workType ||
-            !answers.experience ||
-            !answers.timeframe
-        ) {
-            return;
-        }
-
         const scored = courses.map((course): { course: Course; score: number } => {
             let score = 0;
 
-            if (course.workType.includes(answers.workType)) score++;
+            if (course.workType.includes(answers.workType!)) score++;
             if (course.experience === answers.experience) score++;
             if (
                 answers.timeframe === "unknown" ||
-                course.timeframe.includes(answers.timeframe)
+                course.timeframe.includes(answers.timeframe!)
             ) {
                 score++;
             }
@@ -57,6 +60,7 @@ export default function RecommendCourse() {
             .sort((a, b) => b.score - a.score);
 
         if (!filteredCourses.length) {
+            analytics.noCourseRecommendation()
             setResult(null);
             setSubmitted(true);
             return;
@@ -70,6 +74,8 @@ export default function RecommendCourse() {
         const best = bestMatches.reduce((acc, current) =>
             acc.course.fee < current.course.fee ? current : acc
         );
+
+        analytics.formSubmissionSucceeded("course_recommendation");
 
         setResult(best.course);
         setSubmitted(true);
@@ -112,7 +118,7 @@ export default function RecommendCourse() {
                                 <div className="flex flex-col gap-3">
                                     {question.options.map((option) => (
                                         <label key={option.value} className="cursor-pointer">
-                                            <input type="radio" name={question.id} value={option.value}
+                                            <input type="radio" name={question.id} value={option.value} onClick={startAnalytics}
                                                 checked={
                                                     answers[
                                                     question.id as keyof AnswerFinder
