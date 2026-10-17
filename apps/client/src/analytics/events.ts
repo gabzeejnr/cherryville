@@ -24,7 +24,7 @@ const analytics = {
     },
 
     formSubmissionFailed(form_name: string, properties: Record<string, unknown> = {}) {
-        posthog.capture("form_submission_failed", { form_name });
+        posthog.capture("form_submission_failed", { form_name, ...properties });
     },
 
     noCourseRecommendation(form_name: string = "course_recommendation") {

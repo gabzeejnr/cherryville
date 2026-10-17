@@ -7,7 +7,7 @@ import styles from "./FootNav.module.scss";
 
 function SocialLink({ social }: { social: Social }) {
     return (
-        <Link to={social.link} target="_blank" rel="noopener noreferrer" aria-label={social.id}
+        <Link to={social.link} target="_blank" rel="noopener noreferrer" aria-label={social.id} hrefLang="utf-8"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-white/80 transition hover:border-accent hover:bg-accent hover:text-cherry">
             <FontAwesomeIcon icon={social.icon} />
         </Link>

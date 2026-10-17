@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../../api/axios";
 import toast from "react-hot-toast";
+import { analytics } from "../../analytics/events";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import type { Dispatch, SetStateAction } from "react";
@@ -34,16 +35,21 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
                 message: formData.get("message") as string
             }
 
-            await toast.promise(api.post("/enterprise/request-proposal", form), {
+            const res = await toast.promise(api.post("/enterprise/request-proposal", form), {
                 loading: "Sending Proposal",
                 success: (res) => res.data?.message,
                 error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
             });
 
+            if (res.status === 201) {
+                analytics.formSubmissionSucceeded("proposal");
+            }
+
             setIsOpen(false);
 
         } catch (err) {
-            console.error("Something went wrong.")
+            analytics.formSubmissionFailed("proposal");
+            if(err instanceof Error) console.error("Something went wrong.", err)
         }
     }
 

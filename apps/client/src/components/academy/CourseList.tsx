@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { analytics } from "../../analytics/events";
 import Section from "../Section";
 import AcademyEnrollment from "../forms/AcademyEnrollment";
 import { addDot } from "../../utils";
@@ -15,6 +16,7 @@ function Card({ course, setEnroll, setThisCourse }: { course: Course, setEnroll:
 
     function enrollFunction(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
+        analytics.formStarted("enrollment", { course_name: name })
 
         setEnroll(true);
         setThisCourse(name);

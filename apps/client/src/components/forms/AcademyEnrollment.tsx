@@ -1,10 +1,11 @@
+import { useState } from "react";
 import api from "../../api/axios";
 import toast from "react-hot-toast";
+import { analytics } from "../../analytics/events";
 import { X } from "lucide-react";
 import { courses } from "../../data/academy.data";
-import { useState } from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { Message, EnrollmentResult, EnrollmentForm } from "@cherryville/shared"
+import type { EnrollmentForm } from "@cherryville/shared"
 import type { LearningStyle as Format, Experience, Course } from "../../types/academy.types";
 import styles from "../../styles/global.module.scss";
 
@@ -21,6 +22,7 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
         const formData = new FormData(e.currentTarget);
         setLoading(true);
 
+        const course_name = formData.get("name") as string;
         try {
 
             const form: EnrollmentForm = {
@@ -32,14 +34,19 @@ export default function AcademyEnrollment({ setEnroll, thisCourse }: { setEnroll
                 format: formData.get("format") as Format
             }
 
-            await toast.promise(api.post("/talent/enroll", form), {
+            const res = await toast.promise(api.post("/talent/enroll", form), {
                 loading: "Enrolling user.",
                 success: (res) => res.data?.message,
                 error: (err) => `Enrollment failed: ${err.response?.data?.error || err.message || "Something went wrong"}`
             });
 
+            if (res.status === 201) {
+                analytics.formSubmissionSucceeded("academy_enrollment", { course_name });
+            }
+
             setEnroll(false);
         } catch (err) {
+            analytics.formSubmissionFailed("academy_enrollment", { course_name })
             if (err instanceof Error) {
                 console.error("Enrollment failed:", err);
             }

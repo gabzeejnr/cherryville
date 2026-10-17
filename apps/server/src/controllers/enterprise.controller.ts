@@ -51,8 +51,6 @@ async function getProposals(req: Request<{}, {}, {}, ProposalQuery>, res: Respon
 
 async function requestProposal(req: Request<{}, {}, ProposalForm>, res: Response<Message<ProposalResult> | ErrorType>): Promise<void> {
 
-    console.log(req.body);
-
     const {
         name, organisation, email,
         phone, sector, services, number, timeframe, message
@@ -67,13 +65,11 @@ async function requestProposal(req: Request<{}, {}, ProposalForm>, res: Response
         res.status(400).json({ error: "Unknown sector type." });
         return
     }
-    console.group(sector)
 
     const allServices = (Array.isArray(services)
         ? services
         : [services]
     )
-    console.log(allServices)
 
     try {
 
@@ -81,7 +77,6 @@ async function requestProposal(req: Request<{}, {}, ProposalForm>, res: Response
             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING id, status, created_at`,
             [name, organisation, email, phone, sector, allServices, number, timeframe, message]
         )
-        console.log(rows)
 
         res.status(201).json({
             message: "Proposal sent successfully.",

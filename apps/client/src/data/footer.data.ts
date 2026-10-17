@@ -3,12 +3,14 @@ import { faEnvelope, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-
 import { faLinkedin, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import type { FootLink, Social } from "../types/global.types";
 
+const formattedNumber = (number:string)=> number.split(/\s+/).join("");
+const text = "Hello, I'd like to make enquires on the programs and courses offered."
 
 const socials: Social[] = [
     {
         id: "message",
         icon: faWhatsapp,
-        link: "https://somekindofwhatsappurl.com"
+        link: `https://api.whatsapp.com/send/?phone=${formattedNumber(phoneNumber).slice(1)}&text=${encodeURIComponent(text)}`
     },
     {
         id: "email",
@@ -81,12 +83,12 @@ const footerLinks: FootLink[] = [
             },
             {
                 text: phoneNumber,
-                href: `tel:${phoneNumber.split(/\s+/).join("")}`,
+                href: `tel:${formattedNumber(phoneNumber)}`,
                 icon: faPhone
             },
             {
                 text: secondNumber,
-                href: `tel:${secondNumber.split(/\s+/).join("")}`,
+                href: `tel:${formattedNumber(secondNumber)}`,
                 icon: faPhone
             },
             {

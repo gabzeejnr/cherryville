@@ -1,6 +1,8 @@
 import type { ListItem } from "../types"
 
 export function List({ array }: { array: string[] }) {
+    if (!array) return null;
+
     return (
         <ul className="grid gap-4 sm:grid-cols-2">
             {array.map((arr, index) => (
@@ -16,6 +18,8 @@ export function List({ array }: { array: string[] }) {
 
 
 export function TitleTextList({ array }: { array: ListItem[] }) {
+    if (!array) return null;
+
     return (
         <ul className="grid gap-4 sm:grid-cols-2">
             {array.map((item, index) => (
