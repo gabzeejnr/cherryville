@@ -3,7 +3,8 @@ import { Toaster } from "react-hot-toast";
 import RoutePage from "./routes/Routes";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import './App.css';
+import "./App.css";
+import PageViewTracker from "./analytics/PageViewTracker";
 
 export default function App() {
 
@@ -16,6 +17,7 @@ export default function App() {
 
     return (
         <>
+            <PageViewTracker />
             <Toaster />
             <RoutePage />
         </>
