@@ -108,8 +108,6 @@ export default function SiteNavBar() {
             <nav className="hidden lg:flex items-center gap-1 text-sm">
                 {NAV_LINKS.map(link => {
                     const active = pathname.split("/")[1] === link.link?.split("#")[0].slice(1);
-                    const childActive = hash
-                    console.log(childActive)
                     return (
                         <div key={link.label} className="relative group">
                             <Link to={link.link ?? "#"} className={`flex items-center gap-1 px-3.5 ${isScrolled ? "py-1" : "py-2"}
