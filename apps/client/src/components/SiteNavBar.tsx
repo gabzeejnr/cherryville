@@ -112,7 +112,8 @@ export default function SiteNavBar() {
                     if (link.children) {
                         active = pathname.split("/")[1] === link.children[0].link.split("#")[0].slice(1)
                     } else {
-                        active = pathname.split("/")[1] === link.link
+                        console.log(link.link)
+                        active = pathname === link.link
                     }
                     return (
                         <div key={link.label} className="relative group">
