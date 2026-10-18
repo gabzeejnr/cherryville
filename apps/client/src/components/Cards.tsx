@@ -8,7 +8,7 @@ export function TitleText({ id, title, text, bg }: {
         <div id={id} className={`title-text-card ${bg ?? ""}`}>
             <div>
                 <h3 className="">{title}</h3>
-                {text.map(t => <p>{t}</p>)}
+                {text.map(t => <p key={t}>{t}</p>)}
             </div>
         </div>
     )
