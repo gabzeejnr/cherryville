@@ -108,13 +108,10 @@ export default function SiteNavBar() {
             <nav className="hidden lg:flex items-center gap-1 text-sm">
                 {NAV_LINKS.map(link => {
                     console.log(pathname)
-                    let active: boolean
-                    if (link.children) {
-                        active = pathname.split("/")[1] === link.children[0].link.split("#")[0].slice(1)
-                    } else {
-                        console.log(link.link)
-                        active = pathname === link.link
-                    }
+                    const active = (link.children
+                        ? pathname.split("/")[1] === link.children[0].link.split("#")[0].slice(1)
+                        : pathname === link.link
+                    )
                     return (
                         <div key={link.label} className="relative group">
                             <Link to={link.link ?? "#"} className={`flex items-center gap-1 px-3.5 ${isScrolled ? "py-1" : "py-2"}
