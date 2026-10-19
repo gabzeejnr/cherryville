@@ -2,18 +2,18 @@ import { Link } from "react-router-dom";
 import Section from "../Section";
 import imageCover from "../../assets/images/home/method-image.jpg";
 // import { phases } from "../../data";
-import type { HoverCardType } from "../../types";
+// import type { HoverCardType } from "../../types";
 import styles from "./Home.module.scss";
 
 
-function HoverCard({ background, title, text, top, bottom, left, right, aos }: HoverCardType) {
+/* function HoverCard({ background, title, text, top, bottom, left, right, aos }: HoverCardType) {
     return (
         <div className={styles.phaseCard} style={{ background, top, bottom, left, right }} data-aos={aos}>
             <span className={styles.phaseNumber}>{title}</span>
             <span className={styles.phaseText}>{text}</span>
         </div>
     )
-}
+} */
 
 export function HowWeWork() {
     return (
