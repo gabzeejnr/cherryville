@@ -1,4 +1,11 @@
-export function TitleText({ id, title, text, bg }: {
+import fallback from "../assets/images/home/method-image.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { Clock } from "../assets/svg/courses";
+import { addDot } from "../utils";
+import type { Course as Default } from "../types/index";
+
+function TitleText({ id, title, text, bg }: {
     id?: string,
     title: string,
     text: string[],
@@ -14,6 +21,50 @@ export function TitleText({ id, title, text, bg }: {
     )
 }
 
-function CourseCard(){
-    
+function CourseCard({
+    name,
+    level,
+    description,
+    duration,
+    fee,
+    image,
+}: {
+    name: Default["name"];
+    level: Default["experience"];
+    duration: Default["duration"];
+    fee: Default["fee"];
+    description: Default["outcome"][0];
+    image?: Default["image"];
+}) {
+    return (
+        <article className="group mb-6 flex h-full flex-col overflow-hidden rounded-2xl border border-cherry bg-white p-4 shadow-[0_2px_12px_rgba(104,10,48,0.05)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_28px_rgba(104,10,48,0.12)]">
+            <div className="aspect-16/10 w-full overflow-hidden rounded-xl bg-cherry">
+                <img src={image ?? fallback} alt={name} loading="lazy"
+                    className="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+            </div>
+
+            <span className="mt-5 w-fit rounded-full bg-[#FDF2E9] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wide text-[#680A30]">
+                {level}
+            </span>
+
+            <h3 className="mb-2 mt-3 text-xl font-bold leading-snug text-accent">{name}</h3>
+
+            <p className="text-[15px] leading-relaxed text-[#6B6266]">{addDot(description)}</p>
+
+            <div className="mb-5 mt-5 flex items-center justify-between gap-3">
+                <span className="flex items-center gap-2 text-sm text-[#6B6266]"><Clock />{duration}</span>
+                <span className="text-lg font-bold text-[#AE154D]">₦{fee.toLocaleString("en-NG")}</span>
+            </div>
+
+            <button type="button" className="mt-auto flex w-full items-center justify-center gap-2 rounded-xl border-2 border-accent bg-transparent px-4 py-3.5 text-base font-semibold text-accent transition-colors duration-200 hover:bg-[#AE154D] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AE154D] focus-visible:ring-offset-2">
+                View course details
+                <FontAwesomeIcon icon={faArrowRight}
+                    className="transition-transform duration-200 group-hover:translate-x-1"
+                />
+            </button>
+        </article>
+    )
 }
+
+export { TitleText, CourseCard }
