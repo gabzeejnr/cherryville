@@ -48,7 +48,7 @@ export function HowWeWork() {
                     <Link to={{
                         pathname: "/enterprise-training",
                         hash: "#delivery-standard",
-                    }} className="accent-button" data-aos="flip-left">
+                    }} className="accent-button mt-8" data-aos="flip-left">
                         See how we deliver
                         <span aria-hidden="true">→</span>
                     </Link>

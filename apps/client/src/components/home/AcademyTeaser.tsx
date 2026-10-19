@@ -24,7 +24,7 @@ export function AcademyTeaser() {
                     <div data-aos="flip-left">
                         <Link
                             to="/academy"
-                            className="accent-button"
+                            className="accent-button mt-8"
                         >
                             Find your course
                             <span aria-hidden="true">→</span>

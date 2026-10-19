@@ -20,13 +20,13 @@ function MainHero({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> 
             <p className={styles.description}>
                 Cherryville designs and delivers technical training for
                 organizations across oil and gas, banking, government and the
-                development sector — and supplies the skilled talent to keep
+                development sector and supplies the skilled talent to keep
                 the work moving.
             </p>
 
             <div className={styles.actions}>
                 <button type="button"
-                    onClick={() => setIsOpen(p => !p)} className="accent-button">
+                    onClick={() => setIsOpen(p => !p)} className="accent-button mt-8">
                     <span>Request a Proposal</span>
                     <FontAwesomeIcon icon={faArrowRight} />
                 </button>
