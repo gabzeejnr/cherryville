@@ -107,7 +107,6 @@ export default function SiteNavBar() {
 
             <nav className="hidden lg:flex items-center gap-1 text-sm">
                 {NAV_LINKS.map(link => {
-                    console.log(pathname)
                     const active = (link.children
                         ? pathname.split("/")[1] === link.children[0].link.split("#")[0].slice(1)
                         : pathname === link.link
