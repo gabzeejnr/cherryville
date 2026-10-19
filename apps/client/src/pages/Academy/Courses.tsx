@@ -1,8 +1,9 @@
 import Hero from "../../components/Hero";
+import CourseList from "../../components/academy/courses/CourseList";
 import LearningPath from "../../components/academy/courses/LearningPath";
 import type { Heading } from "../../types";
 
-const heading:Heading = {
+const heading: Heading = {
     title: "Learn skills. Build your future.",
     highlights: ["learn", "build"]
 }
@@ -14,6 +15,7 @@ export default function Courses() {
         <>
             <Hero page="Courses" heading={heading} subtitles={subtitle}></Hero>
             <LearningPath />
+            <CourseList />
         </>
     )
 }

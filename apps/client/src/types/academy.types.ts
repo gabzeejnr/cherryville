@@ -26,7 +26,8 @@ type Course = {
     outcome: string[],
     jobTitle: string,
     duration: string,
-    fee: number
+    fee: number,
+    image?: string
 }
 
 type AnswerFinder = {
