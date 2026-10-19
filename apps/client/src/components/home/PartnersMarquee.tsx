@@ -17,7 +17,7 @@ export function Marquee() {
                         <div key={g} className="flex shrink-0 items-center" aria-hidden={g === 1}>
                             {images.map((m, i) => (
                                 <img key={`${g}-${i}-${m.name}`} src={m.image} alt={g === 0 ? m.name : ""}
-                                    className="max-w-50 h-8 mr-15 shrink-0"
+                                    className="max-w-50 h-8 mr-15 shrink-0" aria-label={m.name}
                                 />
                             ))}
                         </div>
