@@ -44,16 +44,16 @@ const PART_A: Part = {
             n: 3,
             title: 'Definitions',
             definitions: [
-                { term: 'Academy', text: `means Cherryville Academy, our programme of courses for individual learners.` },
+                { term: 'Academy', text: `means Cherryville Academy, our program of courses for individual learners.` },
                 { term: 'Client', text: `means an organisation engaging Cherryville for Enterprise Training or Talent Solutions.` },
                 { term: 'Cohort', text: `means a group of learners enrolled on the same course with the same start date.` },
                 { term: 'Engagement Document', text: `means a proposal, statement of work, engagement letter, purchase order or training agreement accepted by both parties.` },
                 { term: 'Learner', text: `means an individual enrolled on an Academy or Private Training course.` },
                 { term: 'Materials', text: `means all curricula, manuals, workbooks, slides, datasets, assessment instruments, templates, recordings and other content supplied or made available by Cherryville.` },
                 { term: 'NDPA', text: `means the Nigeria Data Protection Act 2023, together with the General Application and Implementation Directive 2025 and any subsequent instrument issued under the Act.` },
-                { term: 'Participant', text: `means an individual attending a programme delivered for a Client.` },
+                { term: 'Participant', text: `means an individual attending a program delivered for a Client.` },
                 { term: 'Personnel', text: `means an individual sourced, trained or supplied by Cherryville under Part C.` },
-                { term: 'Programme', text: `means a training engagement delivered for a Client under Part B.` },
+                { term: 'Program', text: `means a training engagement delivered for a Client under Part B.` },
                 { term: 'Services', text: `means all services offered by Cherryville, comprising Enterprise Training, Talent Solutions, Academy courses and Private Training.` },
             ],
         },
@@ -116,7 +116,7 @@ const PART_B: Part = {
             n: 8,
             title: 'What Cherryville will do',
             clauses: [
-                { num: '8.1', text: `We will deliver the Programme with reasonable care and skill, in accordance with the Engagement Document and our internal programme lifecycle standard.` },
+                { num: '8.1', text: `We will deliver the Program with reasonable care and skill, in accordance with the Engagement Document and our internal program lifecycle standard.` },
                 { num: '8.2', text: `We will assign facilitators whose certification and experience are appropriate to the subject matter. All facilitators are Microsoft Certified Trainers.` },
                 { num: '8.3', text: `We may substitute a facilitator where necessary, provided the replacement holds equivalent certification and experience. A named facilitator is guaranteed only where the Engagement Document expressly says so.` },
                 { num: '8.4', text: `We will conduct assessment before, during and after delivery, and provide a closure report analysing capability movement across the matched cohort.` },
@@ -126,7 +126,7 @@ const PART_B: Part = {
             n: 9,
             title: 'What the Client will do',
             clauses: [
-                { num: '9.1', text: `The Client will provide, in reasonable time, the information, access and Participant details necessary for us to scope and deliver the Programme.` },
+                { num: '9.1', text: `The Client will provide, in reasonable time, the information, access and Participant details necessary for us to scope and deliver the Program.` },
                 { num: '9.2', text: `Where delivery is at the Client’s premises, the Client will provide a suitable training environment including seating, power, lighting, internet access of sufficient bandwidth, and any equipment specified in the Engagement Document.` },
                 { num: '9.3', text: `The Client is responsible for selecting Participants who meet the stated entry requirements. Where Participants are materially below the assumed baseline, we will raise this at the definition gate; if the Client elects to proceed, we are not liable for the resulting effect on outcomes.` },
                 { num: '9.4', text: `The Client will ensure Participants comply with the site rules, safety requirements and conduct standards applicable at the delivery venue.` },
@@ -137,10 +137,10 @@ const PART_B: Part = {
             n: 10,
             title: 'Scheduling, postponement and cancellation',
             clauses: [
-                { num: '10.1', text: `Programme dates are confirmed in writing once the Engagement Document is accepted.` },
+                { num: '10.1', text: `Program dates are confirmed in writing once the Engagement Document is accepted.` },
                 {
                     num: '10.2',
-                    text: `Where the Client postpones or cancels a confirmed Programme, the following charges apply to the affected sessions, reflecting facilitator commitments and venue liabilities already incurred:`,
+                    text: `Where the Client postpones or cancels a confirmed Program, the following charges apply to the affected sessions, reflecting facilitator commitments and venue liabilities already incurred:`,
                     table: {
                         head: ['Notice given before the affected session', 'Charge'],
                         rows: [
@@ -152,8 +152,8 @@ const PART_B: Part = {
                     },
                 },
                 { num: '10.3', text: `Non-recoverable third-party costs already committed — venue deposits, travel and accommodation — are payable in addition to any charge under clause 10.2.` },
-                { num: '10.4', text: `Where Cherryville postpones a session, we will offer replacement dates within [30] days at no additional charge. Where we cancel a Programme outright, we will refund all sums paid for undelivered sessions.` },
-                { num: '10.5', text: `The Client may substitute a Participant at any time before the second session at no charge, provided the substitute meets the entry requirements. Substitution after that point may compromise assessment validity, and the resulting Participant will be recorded as having joined mid-programme.` },
+                { num: '10.4', text: `Where Cherryville postpones a session, we will offer replacement dates within [30] days at no additional charge. Where we cancel a Program outright, we will refund all sums paid for undelivered sessions.` },
+                { num: '10.5', text: `The Client may substitute a Participant at any time before the second session at no charge, provided the substitute meets the entry requirements. Substitution after that point may compromise assessment validity, and the resulting Participant will be recorded as having joined mid-program.` },
             ],
         },
         {
@@ -161,7 +161,7 @@ const PART_B: Part = {
             title: 'Custom curriculum design',
             clauses: [
                 { num: '11.1', text: `Where the Client commissions curriculum design, the deliverables are those listed in the Engagement Document.` },
-                { num: '11.2', text: `On payment in full, the Client receives a non-exclusive, non-transferable licence to use, reproduce and deliver the commissioned curriculum for its own internal training purposes for as long as the Client continues to comply with these Terms and the Engagement Document. The licence continues after the Programme ends, but Cherryville may terminate it on written notice if the Client is in material and unremedied breach of clause 11.3, clause 27, or clause 32, following the process in clause 39.1.` },
+                { num: '11.2', text: `On payment in full, the Client receives a non-exclusive, non-transferable licence to use, reproduce and deliver the commissioned curriculum for its own internal training purposes for as long as the Client continues to comply with these Terms and the Engagement Document. The licence continues after the Program ends, but Cherryville may terminate it on written notice if the Client is in material and unremedied breach of clause 11.3, clause 27, or clause 32, following the process in clause 39.1.` },
                 { num: '11.3', text: `That licence does not permit the Client to sell, sublicense or commercially distribute the curriculum to third parties, or to deliver it as a commercial training service, unless the Engagement Document expressly grants those rights.` },
                 { num: '11.4', text: `Cherryville retains ownership of its pre-existing methodologies, frameworks, assessment instruments and templates, and of any generic component not specific to the Client. Nothing in this clause transfers ownership of those materials.` },
             ],
@@ -413,10 +413,10 @@ const PART_F: Part = {
             n: 31,
             title: 'Intellectual property',
             clauses: [
-                { num: '31.1', text: `All intellectual property in the website, the Cherryville name and logo, the Materials, our methodologies, our programme lifecycle standard and our assessment instruments belongs to Cherryville or its licensors, and is protected under the Copyright Act 2022 and other applicable law.` },
+                { num: '31.1', text: `All intellectual property in the website, the Cherryville name and logo, the Materials, our methodologies, our program lifecycle standard and our assessment instruments belongs to Cherryville or its licensors, and is protected under the Copyright Act 2022 and other applicable law.` },
                 { num: '31.2', text: `Nothing in these Terms transfers ownership of that intellectual property. You receive only the licences expressly granted.` },
                 { num: '31.3', text: `Where Materials incorporate third-party content licensed to Cherryville, your use is additionally subject to that third party’s terms.` },
-                { num: '31.4', text: `Where a Client supplies its own data, systems or content for use in a Programme, that Client retains ownership of it. The Client grants Cherryville a licence to use it for the purpose and duration of the engagement only.` },
+                { num: '31.4', text: `Where a Client supplies its own data, systems or content for use in a Program, that Client retains ownership of it. The Client grants Cherryville a licence to use it for the purpose and duration of the engagement only.` },
                 { num: '31.5', text: `We may describe the general nature of work performed for the purposes of our own marketing, but we will refer to a Client by name,  use aggregated or anonymised outcome data, and display a Client logo for reference purposes unless the Client notifies us in writing that it withholds consent, in which case we will stop that specific use within a reasonable time.` },
             ],
         },
@@ -435,7 +435,7 @@ const PART_F: Part = {
             clauses: [
                 { num: '33.1', text: `Cherryville processes personal data in accordance with the Nigeria Data Protection Act 2023 and the General Application and Implementation Directive 2025. Our Privacy Policy explains what we collect, why, and on what lawful basis, and forms part of these Terms.` },
                 { num: '33.2', text: `Where we process personal data for our own purposes — including enquiries, enrolments, assessment records and marketing where consented to — we act as a data controller.` },
-                { num: '33.3', text: `Where we process Participant data on a Client’s instructions in the course of a Programme, we act as a data processor and the Client acts as controller. In that case the parties will enter into a data processing agreement identifying the parties, purpose, scope, categories of data and lawful basis, as required under the NDPA.` },
+                { num: '33.3', text: `Where we process Participant data on a Client’s instructions in the course of a Program, we act as a data processor and the Client acts as controller. In that case the parties will enter into a data processing agreement identifying the parties, purpose, scope, categories of data and lawful basis, as required under the NDPA.` },
                 { num: '33.4', text: `Each party will implement appropriate technical and organisational measures to protect personal data, and will notify the other without undue delay on becoming aware of a personal data breach affecting data processed under the engagement, so that regulatory notification obligations can be met. Cherryville may engage sub-processors provided it imposes equivalent data protection obligations on them and remains responsible for their performance without undue delay and, in any event, within 72 hours of becoming aware of it."` },
                 { num: '33.5', text: `Data subjects may exercise their rights under the NDPA, including access, rectification, erasure, restriction, objection and portability, by contacting us at [privacy email]. Where you believe your privacy rights have been infringed you may raise the matter with us, and may escalate to the Nigeria Data Protection Commission or seek civil redress.` },
                 { num: '33.6', text: `We retain personal data only as long as necessary for the purposes for which it was collected and to meet legal, tax and regulatory obligations.` },

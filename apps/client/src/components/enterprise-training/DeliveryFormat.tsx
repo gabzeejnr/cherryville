@@ -8,7 +8,7 @@ export default function DeliveryFormat() {
             <div>
                 <TitleTextList array={deliveryFormat} />
             </div>
-            <div className="mt-10 text-gray-500 font-medium">We run concurrent cohorts across multiple cities where the workforce is distributed, and scale the facilitator bench to the size of the programme. </div>
+            <div className="mt-10 text-gray-500 font-medium">We run concurrent cohorts across multiple cities where the workforce is distributed, and scale the facilitator bench to the size of the program. </div>
         </Section>
     )
 }

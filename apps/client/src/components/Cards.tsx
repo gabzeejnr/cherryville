@@ -13,3 +13,7 @@ export function TitleText({ id, title, text, bg }: {
         </div>
     )
 }
+
+function CourseCard(){
+    
+}

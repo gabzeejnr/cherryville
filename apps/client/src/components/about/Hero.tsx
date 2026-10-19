@@ -22,7 +22,7 @@ export default function Hero() {
                         </p>
 
                         <p className="text-base sm:text-lg text-gray-300/90 font-normal mx-auto mb-10 leading-relaxed">
-                            We work at both ends of that problem. For organisations, we design and deliver technical programmes and supply skilled people. For individuals, we run courses that lead to named roles rather than to certificates alone. The two sides feed each other: training the organisations that hire tells us precisely what the people we teach need to be able to do.
+                            We work at both ends of that problem. For organisations, we design and deliver technical programs and supply skilled people. For individuals, we run courses that lead to named roles rather than to certificates alone. The two sides feed each other: training the organisations that hire tells us precisely what the people we teach need to be able to do.
                         </p>
                     </div>
 

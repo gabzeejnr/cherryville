@@ -5,8 +5,8 @@ const pageMeta: DocumentMeta = {
     description: "Cohort-based technical training, custom curriculum design, capability assessment and white-label delivery for organisations across Nigeria."
 };
 
-const enterpriseSubtitle = "We design and deliver technical programmes for workforces that need to do more with the systems and data they already own and we prove what changed.";
-const heading:Heading = {
+const enterpriseSubtitle = "We design and deliver technical programs for workforces that need to do more with the systems and data they already own and we prove what changed.";
+const heading: Heading = {
     title: "Training your Organisation can Measure",
     highlights: ["training", "organisation", "measure"]
 }
@@ -15,7 +15,7 @@ const serviceLines: readonly ServiceLines[] = [
     {
         id: "technical-capability-development",
         title: "Technical Capability Development",
-        text: "Structured cohort-based training that raises the technical capability of your existing workforce. Programs are scoped to your operatig environment, delivered in person or virtually by Microsoft Certified Trainers, and governed end to end by our programme lifecycle standard from definintion through delivery to a formal closure."
+        text: "Structured cohort-based training that raises the technical capability of your existing workforce. Programs are scoped to your operatig environment, delivered in person or virtually by Microsoft Certified Trainers, and governed end to end by our program lifecycle standard from definintion through delivery to a formal closure."
     },
     {
         id: "custom-curriculum-design",
@@ -25,7 +25,7 @@ const serviceLines: readonly ServiceLines[] = [
     {
         id: "measurement-and-reporting",
         title: "Measurement & Reporting",
-        text: "Training you can evidence. We assess capability before, during, and after delivery analyse the matched cohort, and report the movement to your executive team inn terms they can act on. When your board asks what the investment produced, you will have an answer with data behind it."
+        text: "Training you can evidence. We assess capability before, during, and after delivery analyse the matched cohort, and report the movement to your executive team in terms they can act on. When your board asks what the investment produced, you will have an answer with data behind it."
     },
     {
         id: "partner-and-white-label",
@@ -41,7 +41,7 @@ const deliveryStandard: readonly { title: string, text: string[] }[] = [
     },
     {
         title: "Delivery",
-        text: ["Facilitation by certified trainers, with attendance, participation and graded assessment captured throughout. Mid-programme data lets us correct course while the cohort is still in the room."]
+        text: ["Facilitation by certified trainers, with attendance, participation and graded assessment captured throughout. Mid-program data lets us correct course while the cohort is still in the room."]
     },
     {
         title: "Closure",

@@ -49,7 +49,7 @@ function TestimonialCard({ quote, name, role, organisation, rating, avatar }: Te
 
 export function Testimonials() {
     return (
-        <Section bg="bg-cherry" title="Capability That Makes a Difference" subtitle="The measure of a training programme is what people can do differently when it ends.">
+        <Section bg="bg-cherry" title="Capability That Makes a Difference" subtitle="The measure of a training program is what people can do differently when it ends.">
 
             <div className="flex flex-col items-center md:hidden gap-3 mt-10">
                 {testimonialColumns.slice(0, 1).map((column, index) => (

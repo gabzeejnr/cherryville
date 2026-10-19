@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { image } from "../data";
+import { image, brandName } from "../data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { footerLinks, socials } from "../data/footer.data";
 import type { FootLink, Social } from "../types/global.types";
@@ -44,10 +44,10 @@ export default function Footer() {
                     <div className="max-w-sm">
                         <Link to="/" className="mb-5 flex w-fit items-center gap-2.5">
                             <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-md bg-cherry">
-                                <img src={image} alt="Cherryville" className="h-full w-full object-contain" />
+                                <img src={image} alt={brandName} className="h-full w-full object-contain" />
                             </div>
                             <span className="flex flex-col text-lg font-extrabold tracking-tight">
-                                CherryVille
+                                {brandName}
                                 <span className="-mt-1 text-xs text-accent">Limited</span>
                             </span>
                         </Link>

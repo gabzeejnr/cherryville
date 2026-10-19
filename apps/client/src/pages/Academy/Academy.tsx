@@ -29,7 +29,7 @@ export default function Academy() {
                             block: "start",
                         })
                     } />
-                    <Link to="/academy/courses" className="outline-button mt-0 w-full border-white/50 text-white hover:border-accent sm:w-auto">
+                    <Link to="courses" className="outline-button mt-0 w-full border-white/50 text-white hover:border-accent sm:w-auto">
                         Browse all courses
                     </Link>
                 </div>

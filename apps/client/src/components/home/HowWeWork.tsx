@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Section from "../Section";
 import imageCover from "../../assets/images/home/method-image.jpg";
-import { phases } from "../../data";
+// import { phases } from "../../data";
 import type { HoverCardType } from "../../types";
 import styles from "./Home.module.scss";
 
@@ -26,21 +26,21 @@ export function HowWeWork() {
 
                     <div className={styles.methodCopy}>
                         <p>
-                            Every Cherryville programme runs through three
+                            Every Cherryville program runs through three
                             governed phases: Definition, Delivery and Closure,
                             with formal assurance gates between them.
                         </p>
 
                         <p>
                             We agree on the capability gap before designing
-                            anything, measure progress while the programme is
+                            anything, measure progress while the program is
                             live, and close with evidence rather than a
                             certificate ceremony.
                         </p>
 
                         <p>
                             It takes more work at the start. It is also why
-                            our programmes are designed to hold up long after
+                            our programs are designed to hold up long after
                             the training ends.
                         </p>
                     </div>
@@ -59,12 +59,12 @@ export function HowWeWork() {
                         className={styles.methodImage} loading="lazy"
                     />
 
-                    {phases.map((phase) => (
+                    {/* {phases.map((phase) => (
                         <HoverCard aos="fade-up"
                             key={phase.text}
                             {...phase}
                         />
-                    ))}
+                    ))} */}
                 </div>
             </div>
         </Section>

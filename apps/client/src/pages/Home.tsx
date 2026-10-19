@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDocumentMeta, useGoToTopOnLoad, useFormAnalytics } from '../hooks';
-import { Hero, Marquee, WhatDoWeDo, SectorsWeServe, HowWeWork, Testimonials, AcademyTeaser, Closing } from "../components/home";
+import { Hero, Marquee, WhatDoWeDo, SectorsWeServe, HowWeWork, /* Testimonials, */ AcademyTeaser, Closing } from "../components/home";
 import RequestAProposal from '../components/forms/RequestAProposal';
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
             <WhatDoWeDo />
             <SectorsWeServe />
             <HowWeWork />
-            <Testimonials />
+            {/* <Testimonials /> */}
             <AcademyTeaser />
             <Closing setIsOpen={setIsOpen} />
             {isOpen && <RequestAProposal setIsOpen={setIsOpen} />}

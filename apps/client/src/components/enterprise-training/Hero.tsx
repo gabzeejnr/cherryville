@@ -1,7 +1,7 @@
 import type { Dispatch, SetStateAction } from "react";
 import styles from "./Enterprise.module.scss";
 
-export default function Hero({ setIsOpen }: { setIsOpen:  Dispatch<SetStateAction<boolean>> }) {
+export default function Hero({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) {
     return (
         <section className={styles.hero}>
             <div className="flex flex-col min-h-screen py-10 justify-center items-center">
@@ -11,7 +11,7 @@ export default function Hero({ setIsOpen }: { setIsOpen:  Dispatch<SetStateActio
                     </h1>
 
                     <p className="text-base sm:text-lg text-gray-300/90 font-normal max-w-2xl mx-auto mb-10 leading-relaxed">
-                        We design and deliver technical programmes for workforces that need to do more with the systems and data they already own and we prove what changed.
+                        We design and deliver technical programs for workforces that need to do more with the systems and data they already own and we prove what changed.
                     </p>
 
                     <div className="flex flex-col sm:flex-row mt-5 items-center gap-4 w-full sm:w-auto">

@@ -28,7 +28,7 @@ const sectors: Template[] = [
             },
             {
                 title: "Local capacity development",
-                text: "programmes structured to support Nigerian Content capability commitments."
+                text: "programs structured to support Nigerian Content capability commitments."
             }
         ],
         engage: "We deliver in-house at your facility, at venues in Lagos, Port Harcourt and Abuja, or virtually. We work directly with operators and regulators, and equally as a delivery partner to contractors and consultancies who require training capability behind an awarded contract. "
@@ -95,24 +95,24 @@ const sectors: Template[] = [
                 text: "building an internal faculty so capability continues after we leave."
             }
         ],
-        engage: "We run concurrent cohorts across multiple cities and venues, with the documentation, attendance records and closure reporting that procurement and audit processes require. Programmes are structured to fit budget cycles and to produce the evidence trail your oversight functions expect."
+        engage: "We run concurrent cohorts across multiple cities and venues, with the documentation, attendance records and closure reporting that procurement and audit processes require. Programs are structured to fit budget cycles and to produce the evidence trail your oversight functions expect."
     },
     {
         route: "development",
         heading: {
-            text: "Skills programmes that produce evidence, not attendance sheets.",
-            highlights: ["Skills", "programmes", "evidence,", "attendance"]
+            text: "Skills programs that produce evidence, not attendance sheets.",
+            highlights: ["Skills", "programs", "evidence,", "attendance"]
         },
         headingText: "Employability programming and staff capability development for organisations accountable to donors and to the people they serve.",
-        challenge: "Development organisations are held to outcomes, but training vendors typically report outputs. A number of participants trained tells a donor almost nothing about whether capability moved or whether anyone became employable. Meanwhile programme staff are asked to manage increasingly data-heavy monitoring requirements without the analytical skills to do it comfortably. Both problems are capability problems, and both are solvable.",
+        challenge: "Development organisations are held to outcomes, but training vendors typically report outputs. A number of participants trained tells a donor almost nothing about whether capability moved or whether anyone became employable. Meanwhile program staff are asked to manage increasingly data-heavy monitoring requirements without the analytical skills to do it comfortably. Both problems are capability problems, and both are solvable.",
         help: [
             {
-                title: "Beneficiary employability programmes",
+                title: "Beneficiary employability programs",
                 text: "technical skills training designed around named job roles and labour market demand."
             },
             {
                 title: "Monitoring and evaluation capability",
-                text: "data collection, analysis and reporting skills for programme teams."
+                text: "data collection, analysis and reporting skills for program teams."
             },
             {
                 title: "Reporting dashboards",

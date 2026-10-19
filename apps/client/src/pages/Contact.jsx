@@ -11,7 +11,7 @@ export default function Contact() {
 
     useDocumentMeta({
         title: "Request a Proposal",
-        description: "Tell us what your team needs to be able to do. We respond with a scoped programme, timeline and price within two business days."
+        description: "Tell us what your team needs to be able to do. We respond with a scoped program, timeline and price within two business days."
     })
     useGoToTopOnLoad("contact")
 

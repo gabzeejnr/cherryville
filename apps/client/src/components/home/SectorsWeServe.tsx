@@ -26,7 +26,7 @@ export function SectorsWeServe() {
             <Section className="px-3 md:px-5 py-20" bg={null}>
                 <h2 className={`${styles.accentH2} text-center`}>We Work Where Technical Capabilities Carry Weight</h2>
                 <p className="text-center text-lg font-medium text-cherry">
-                    Different sectors buy training for different reasons. We build the programme around yours.
+                    Different sectors buy training for different reasons. We build the program around yours.
                 </p>
                 <div className={styles.sectorGrid}>
                     {sectorsServed.map((sector, i) => (

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import type { Dispatch, SetStateAction } from "react";
@@ -30,9 +31,9 @@ function MainHero({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> 
                     <FontAwesomeIcon icon={faArrowRight} />
                 </button>
 
-                <button type="button" className="outline-button text-white">
+                <Link to={"/enterprise-training"} className="outline-button text-white">
                     Explore Our Services
-                </button>
+                </Link>
             </div>
         </main>
     );

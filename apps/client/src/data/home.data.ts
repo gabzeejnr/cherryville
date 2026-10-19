@@ -88,7 +88,7 @@ const sectorsServed: readonly Serve[] = [
     },
     {
         title: "NGOs & Development Partners",
-        text: "employability programmes and staff capability, measured against your results framework.",
+        text: "employability programs and staff capability, measured against your results framework.",
         icon: Users
     }
 ] as const;
@@ -133,7 +133,7 @@ const testimonials: TestimonialType[] = [
         rating: 4.5
     },
     {
-        quote: "The programme gave our team the confidence and capability to work more effectively with the tools already in our environment.",
+        quote: "The program gave our team the confidence and capability to work more effectively with the tools already in our environment.",
         name: "Gabriel Joseph",
         role: "Founder",
         organisation: "Justrite Tech Services",

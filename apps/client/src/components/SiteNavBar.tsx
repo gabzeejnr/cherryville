@@ -66,7 +66,7 @@ function DropDown({ setMenuOpen }: { setMenuOpen: Dispatch<SetStateAction<boolea
 
 export default function SiteNavBar() {
 
-    const { pathname, hash } = useLocation();
+    const { pathname } = useLocation();
     const [menuOpen, setMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isReady, setIsReady] = useState(false);
@@ -100,7 +100,7 @@ export default function SiteNavBar() {
                     <img src={image} alt={brandName} className="h-full w-full object-contain" />
                 </div>
                 <span className="flex flex-col gap-px text-lg font-extrabold tracking-tight text-slate-800">
-                    CherryVille
+                    {brandName}
                     <span className="text-accent text-xs -mt-1">Limited</span>
                 </span>
             </NavLink>
@@ -125,10 +125,9 @@ export default function SiteNavBar() {
                                     group-hover:visible group-hover:translate-y-0 transition-all duration-200">
                                     <div className="min-w-80 rounded-xl border border-gray-100 bg-white p-2 shadow-lg">
                                         {link.children.map(child => (
-                                            <Link key={child.label} to={child.link} className=" block rounded-lg px-3 py-2.5 text-sm text-gray-600 transition-colors
-                                            hover:bg-accent hover:text-white">
-                                                {child.label}
-                                            </Link>
+                                            <Link key={child.label} to={child.link}
+                                                className=" block rounded-lg px-3 py-2.5 text-sm text-gray-600 transition-colors hover:bg-accent hover:text-white"
+                                            >{child.label}</Link>
                                         ))}
                                     </div>
                                 </div>
