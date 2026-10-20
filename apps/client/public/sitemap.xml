@@ -7,6 +7,10 @@
     </url>
 
     <url>
+        <loc>https://cherryville-ecru.vercel.app/enterprise-training</loc>
+    </url>
+
+    <url>
         <loc>https://cherryville-ecru.vercel.app/talent-solutions</loc>
     </url>
 
@@ -15,11 +19,7 @@
     </url>
 
     <url>
-        <loc>https://cherryville-ecru.vercel.app/programs</loc>
-    </url>
-
-    <url>
-        <loc>https://cherryville-ecru.vercel.app/contact</loc>
+        <loc>https://cherryville-ecru.vercel.app/academy</loc>
     </url>
 
 </urlset>
