@@ -97,7 +97,7 @@ export default function CourseList() {
                     )
                     : paginatedCourses.map((course, i) =>
                         <CourseCard key={`${course.name}-cherryville${(i * Math.random() * 2389).toString()}`} name={course.name} description={course.outcome[0]}
-                            duration={course.duration} fee={course.fee} level={course.experience} image={course.image}
+                            duration={course.duration} fee={course.fee} level={course.experience} image={course.image} slug={course.slug}
                         />
                     )
                 }

@@ -23,7 +23,7 @@ export default function Academy() {
         <>
             <Hero page="Academy" heading={academyHeading} subtitles={subtitle} backgroundImage={backgroundImage}>
                 <div className="flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row sm:gap-4">
-                    <AccentButton text="Help Me Choose" className="w-full sm:w-auto" arrow onClick={() =>
+                    <AccentButton text="Help Me Choose" className="w-full sm:w-auto mt-8" arrow onClick={() =>
                         document.getElementById("course-finder")?.scrollIntoView({
                             behavior: "smooth",
                             block: "start",

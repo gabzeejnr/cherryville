@@ -34,6 +34,7 @@ const privateSubtitle = "Some people learn faster without a room. Others cannot 
 const beginner: Course[] = [
     {
         name: "Digital Foundations & Office Productivity",
+        slug: "digital-foundations-office-productivity",
         whoIsItFor: "People with little or no computer experience, and anyone whose job has become digital faster than their skills have.",
         workType: ["organising"],
         learningStyle: "virtual",
@@ -54,6 +55,7 @@ const beginner: Course[] = [
     },
     {
         name: "Microsoft Excel Essentials",
+        slug: "microsoft-office-essentials",
         whoIsItFor: "Anyone whose job involves numbers, records or reporting, at any level and in any sector.",
         workType: ["numbers"],
         learningStyle: "virtual",
@@ -74,6 +76,7 @@ const beginner: Course[] = [
     },
     {
         name: "Introduction to Data Analysis",
+        slug: "introduction-to-data-analysis",
         whoIsItFor: "Beginners who enjoy patterns and numbers, and who want to know why something happened rather than only that it did.",
         workType: ["numbers"],
         learningStyle: "virtual",
@@ -94,6 +97,7 @@ const beginner: Course[] = [
     },
     {
         name: "Web Development Foundations (HTML, CSS, JavaScript)",
+        slug: "web-development-foundations-html-css-javascript",
         whoIsItFor: "Beginners who want to build things and see the result of their work immediately.",
         workType: ["design", "hands-on"],
         learningStyle: "virtual",
@@ -114,6 +118,7 @@ const beginner: Course[] = [
     },
     {
         name: "Product Design Foundations (UI/UX)",
+        slug: "product-design-foundations-uiux",
         whoIsItFor: "Beginners with an eye for how things look and the patience to understand how people behave.",
         workType: ["design"],
         learningStyle: "virtual",
@@ -134,6 +139,7 @@ const beginner: Course[] = [
     },
     {
         name: "Cybersecurity Fundamentals",
+        slug: "cybersecurity-fundamentals",
         whoIsItFor: "Beginners considering a career in security, and anyone responsible for keeping an organisation’s information safe",
         workType: ["security"],
         learningStyle: "virtual",
@@ -154,6 +160,7 @@ const beginner: Course[] = [
     },
     {
         name: "Cloud Computing Fundamentals (Microsoft Azure AZ-900)",
+        slug: "cloud-computing-fundamentals-microsoft-azure-az-900",
         whoIsItFor: "Beginners who want a recognised first certification, and IT support staff moving towards cloud work.",
         workType: ["hands-on"],
         learningStyle: "virtual",
@@ -176,6 +183,7 @@ const beginner: Course[] = [
 const intermediate: Course[] = [
     {
         name: "Data Analytics with Excel & Power BI",
+        slug: "data-analytics-with-excel-power-bi",
         whoIsItFor: " Learners with solid Excel foundations aiming for analyst, reporting or business intelligence roles.",
         workType: ["numbers"],
         learningStyle: "virtual",
@@ -195,6 +203,7 @@ const intermediate: Course[] = [
     },
     {
         name: "Python for Data Analysis",
+        slug: "python-for-data-analysis",
         whoIsItFor: "Analysts and graduates comfortable with data who want technical depth and greater speed.",
         workType: ["numbers"],
         learningStyle: "virtual",
@@ -214,6 +223,7 @@ const intermediate: Course[] = [
     },
     {
         name: "Frontend Development with React",
+        slug: "frontend-development-with-react",
         whoIsItFor: "Developers with working HTML, CSS and JavaScript who want to be employable as frontend engineers",
         workType: ["design", "hands-on"],
         learningStyle: "virtual",
@@ -233,6 +243,7 @@ const intermediate: Course[] = [
     },
     {
         name: "Backend Development with C# and .NET",
+        slug: "backend-development-with-c-and-net",
         whoIsItFor: "Developers with programming foundations who want enterprise backend skills with strong local demand.",
         workType: ["hands-on"],
         learningStyle: "virtual",
@@ -252,6 +263,7 @@ const intermediate: Course[] = [
     },
     {
         name: "Microsoft Power Platform (Power Apps & Power Automate)",
+        slug: "microsoft-power-platform-power-apps-power-automate",
         whoIsItFor: "Analysts, operations staff and IT officers who want to automate manual work and build internal tools.",
         workType: ["organising", "hands-on"],
         learningStyle: "virtual",
@@ -272,6 +284,7 @@ const intermediate: Course[] = [
     },
     {
         name: "Network & Systems Administration",
+        slug: "network-systems-administration",
         whoIsItFor: "IT support staff and graduates moving into infrastructure and systems roles. ",
         workType: ["hands-on"],
         learningStyle: "virtual",
@@ -288,6 +301,7 @@ const intermediate: Course[] = [
     },
     {
         name: "Cybersecurity Operations",
+        slug: "cybersecurity-operations",
         whoIsItFor: "Those with security foundations targeting a security operations centre analyst role.",
         workType: ["organising"],
         learningStyle: "virtual",
@@ -307,6 +321,7 @@ const intermediate: Course[] = [
     },
     {
         name: "Product Management",
+        slug: "product-management",
         whoIsItFor: "Professionals moving into product roles from analysis, design, engineering or operations.",
         workType: ["organising"],
         learningStyle: "virtual",
@@ -328,6 +343,7 @@ const intermediate: Course[] = [
 const advanced: Course[] = [
     {
         name: "Advanced Excel & Financial Modelling",
+        slug: "advanced-excel-financial-modelling",
         whoIsItFor: "Finance, treasury and analysis professionals whose models inform real decisions.",
         workType: ["numbers"],
         learningStyle: "virtual",
@@ -347,6 +363,7 @@ const advanced: Course[] = [
     },
     {
         name: "Advanced Power BI (DAX, Data Modelling & Deployment)",
+        slug: "advanced-power-bi-dax-data-modelling-deployment",
         whoIsItFor: "Analysts already producing Power BI reports who need enterprise-grade capability.",
         workType: ["numbers"],
         learningStyle: "virtual",
@@ -366,6 +383,7 @@ const advanced: Course[] = [
     },
     {
         name: "Azure Administrator & Solutions Architect (AZ-104, AZ-305)",
+        slug: "azure-administrator-solutions-architect-az-104-az-305",
         whoIsItFor: "Practising IT and cloud professionals pursuing associate and expert-level Microsoft certification.",
         workType: ["hands-on"],
         learningStyle: "virtual",
@@ -385,6 +403,7 @@ const advanced: Course[] = [
     },
     {
         name: "Full-Stack Development with C# and Blazor",
+        slug: "full-stack-development-with-c-and-blazor",
         whoIsItFor: "Developers with either frontend or backend experience who want full-stack range.",
         workType: ["hands-on"],
         learningStyle: "virtual",
@@ -404,6 +423,7 @@ const advanced: Course[] = [
     },
     {
         name: "Advanced Cybersecurity & Network Security",
+        slug: "advanced-cybersecurity-network-security",
         whoIsItFor: "Security and network professionals moving into engineering and architecture responsibility.",
         workType: ["security", "hands-on"],
         learningStyle: "virtual",
@@ -423,6 +443,7 @@ const advanced: Course[] = [
     },
     {
         name: "Data Engineering (SQL, Pipelines & Warehousing)",
+        slug: "data-engineering-sql-pipelines-warehousing",
         whoIsItFor: "Analysts and developers moving into data engineering roles.",
         workType: ["numbers", "hands-on"],
         learningStyle: "virtual",
@@ -441,6 +462,7 @@ const advanced: Course[] = [
     },
     {
         name: "Data Centre Analysis & Infrastructure Management",
+        slug: "data-centre-analysis-infrastructure-management",
         whoIsItFor: "Infrastructure and facilities technical staff in banking, energy and public sector environments.",
         workType: ["numbers", "hands-on"],
         learningStyle: "virtual",
@@ -460,6 +482,7 @@ const advanced: Course[] = [
     },
     {
         name: "AI & Generative AI for Professionals",
+        slug: "ai-generative-ai-for-professionals",
         whoIsItFor: "Analysts, managers and technical professionals who want dependable working use of AI tools.",
         workType: ["numbers", "organising"],
         learningStyle: "virtual",

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import fallback from "../assets/images/home/method-image.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -28,12 +29,14 @@ function CourseCard({
     duration,
     fee,
     image,
+    slug
 }: {
     name: Default["name"];
     level: Default["experience"];
     duration: Default["duration"];
     fee: Default["fee"];
     description: Default["outcome"][0];
+    slug: Default["slug"];
     image?: Default["image"];
 }) {
     return (
@@ -57,12 +60,10 @@ function CourseCard({
                 <span className="text-lg font-bold text-[#AE154D]">₦{fee.toLocaleString("en-NG")}</span>
             </div>
 
-            <button type="button" className="mt-auto flex w-full items-center justify-center gap-2 rounded-xl border-2 border-accent bg-transparent px-4 py-3.5 text-base font-semibold text-accent transition-colors duration-200 hover:bg-[#AE154D] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AE154D] focus-visible:ring-offset-2">
+            <Link to={slug} className="mt-auto flex w-full items-center justify-center gap-2 rounded-xl border-2 border-accent bg-transparent px-4 py-3.5 text-base font-semibold text-accent transition-colors duration-200 hover:bg-[#AE154D] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AE154D] focus-visible:ring-offset-2">
                 View course details
-                <FontAwesomeIcon icon={faArrowRight}
-                    className="transition-transform duration-200 group-hover:translate-x-1"
-                />
-            </button>
+                <FontAwesomeIcon icon={faArrowRight}className="transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
         </article>
     )
 }
