@@ -59,7 +59,8 @@ type SectionType = {
     subtitle?: string,
     subtitleArray?: string[],
     bg?: "bg-cherry" | "bg-bg" | "bg-white" | null,
-    children?: ReactNode
+    children?: ReactNode,
+    compact?: boolean
 }
 
 
