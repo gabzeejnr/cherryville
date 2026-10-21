@@ -16,8 +16,9 @@ type Questions = {
 }
 
 
-type Course = {
+interface Course {
     name: string,
+    slug:string,
     whoIsItFor: string,
     workType: WorkType[],
     learningStyle: LearningStyle,
