@@ -48,8 +48,8 @@ export default function CourseList() {
     }
 
     return (
-        <Section>
-            <div className="flex w-full max-w-7xl flex-col gap-3 sm:flex-row">
+        <Section title="Explore Our Courses">
+            <div className="flex w-full max-w-7xl flex-col gap-3 sm:flex-row mt-10">
                 <form className="search flex w-full max-w-3xl gap-3" onSubmit={handleSearch}>
                     <div className="relative min-w-0 flex-1">
                         <input type="text" placeholder="Search courses by name or skill..." value={searchValue}
