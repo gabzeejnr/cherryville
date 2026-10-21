@@ -15,7 +15,7 @@ const socials: Social[] = [
     {
         id: "email",
         icon: faEnvelope,
-        link: "mailto:cherryvilletech@gmail.com"
+        link: `mailto:${email.trim()}`
     },
     {
         id: "linkedIn",
