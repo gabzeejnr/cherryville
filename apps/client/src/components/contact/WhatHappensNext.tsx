@@ -1,5 +1,6 @@
 import { RequestAProposalButton } from "../Buttons";
 import Section from "../Section";
+import { List } from "../Lists"
 import type { Dispatch, SetStateAction } from "react";
 
 export default function WhatHappensNext({ setIsOpen }: { setIsOpen: Dispatch<SetStateAction<boolean>> }) {
@@ -22,9 +23,7 @@ export default function WhatHappensNext({ setIsOpen }: { setIsOpen: Dispatch<Set
 
             <div className="mt-15 md:mt-10" />
 
-            <ul className="list-disc list-inside">
-                {NEXT.map(next => <li key={next}>{next}</li>)}
-            </ul>
+            <List array={NEXT} />
 
         </Section>
     )

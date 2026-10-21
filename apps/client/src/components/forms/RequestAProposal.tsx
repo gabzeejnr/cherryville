@@ -49,7 +49,7 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
 
         } catch (err) {
             analytics.formSubmissionFailed("proposal");
-            if(err instanceof Error) console.error("Something went wrong.", err)
+            if (err instanceof Error) console.error("Something went wrong.", err)
         }
     }
 
@@ -169,13 +169,7 @@ export default function RequestAProposal({ setIsOpen }: { setIsOpen: Dispatch<Se
                         <label htmlFor="number" className="block text-sm font-medium text-gray-700">
                             Approximate Number of People
                         </label>
-                        <input
-                            type="number"
-                            name="number"
-                            id="number"
-                            min="1"
-                            max="50"
-                            defaultValue={1}
+                        <input type="number" name="number" id="number" min="1" max="50" defaultValue={1}
                             className="w-full rounded-md border border-gray-300 px-4 py-3 text-sm outline-none transition focus:border-cherry focus:ring-1 focus:ring-cherry"
                         />
                     </div>

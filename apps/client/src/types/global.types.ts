@@ -45,7 +45,8 @@ type AccentButton = {
     text: string,
     arrow?: true,
     onClick?: MouseEventHandler<HTMLButtonElement> | undefined,
-    className?: string
+    className?: string,
+    children?: ReactNode
 }
 
 type ListItem = {
