@@ -11,6 +11,7 @@ export default function SectorTemplate({
     route,
     heading,
     subtitle,
+    backgroundImage,
     challenge,
     help,
     engage
@@ -32,7 +33,7 @@ export default function SectorTemplate({
 
     return (
         <div className="bg-cherry pb-10">
-            <Hero page={`${page} sector`} heading={heading} subtitles={subtitle} />
+            <Hero page={`${page} sector`} heading={heading} subtitles={subtitle} backgroundImage={backgroundImage} />
             <Challenge challenge={challenge} />
             <HowWeHelp help={help} />
             <Engage engage={engage} setIsOpen={setIsOpen} />

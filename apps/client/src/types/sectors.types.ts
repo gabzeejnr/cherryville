@@ -4,6 +4,7 @@ type Template = {
     route: "oil-and-gas" | "banking" | "government" | "development",
     heading: Heading,
     subtitle: string,
+    backgroundImage: string,
     challenge: string,
     help: {
         title: string,

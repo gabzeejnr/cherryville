@@ -1,4 +1,8 @@
 import type { Template } from "../types/sectors.types";
+import oilAndGas from "../assets/images/sectors/oil-and-gas.jpg";
+import banking from "../assets/images/sectors/banking.jpg";
+
+import development from "../assets/images/sectors/ngo.jpg";
 
 const sectors: Template[] = [
     {
@@ -8,6 +12,7 @@ const sectors: Template[] = [
             highlights: ["technical", "capability", "energy"]
         },
         subtitle: "Training and talent for operators, service companies and regulatory bodies working across the Nigerian energy value chain.",
+        backgroundImage: oilAndGas,
         challenge: "Energy organisations hold enormous volumes of operational, production and compliance data, but the capability to interpret it sits with a small number of people. Reporting cycles depend on their availability. Digital systems arrive faster than the workforce is trained to use them, and operational technology environments carry exposure that conventional IT training does not address. The result is capable engineers working below their potential and decisions taken later than they should be.",
         help: [
             {
@@ -40,6 +45,7 @@ const sectors: Template[] = [
             highlights: ["capability", "sector", "accuracy", "not", "optional."]
         },
         subtitle: "Technical training for banks, fintechs and financial institutions where errors are expensive and exposure is constant.",
+        backgroundImage: banking,
         challenge: "Financial institutions run on data, yet a great deal of that data still moves through manual spreadsheets maintained by individuals. Reconciliation, reporting and compliance work absorb hours that automation could return. Security capability must keep pace with threats that evolve monthly. Internal academies carry the training mandate but are rarely resourced to cover every technical track at depth, and the gaps tend to appear in exactly the areas that matter most.",
         help: [
             {
@@ -104,6 +110,7 @@ const sectors: Template[] = [
             highlights: ["Skills", "programs", "evidence,", "attendance"]
         },
         subtitle: "Employability programming and staff capability development for organisations accountable to donors and to the people they serve.",
+        backgroundImage: development,
         challenge: "Development organisations are held to outcomes, but training vendors typically report outputs. A number of participants trained tells a donor almost nothing about whether capability moved or whether anyone became employable. Meanwhile program staff are asked to manage increasingly data-heavy monitoring requirements without the analytical skills to do it comfortably. Both problems are capability problems, and both are solvable.",
         help: [
             {
