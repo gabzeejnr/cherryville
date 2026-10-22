@@ -22,11 +22,6 @@ const socials: Social[] = [
         id: "linkedIn",
         icon: faLinkedin,
         link: "https://linkedin.com/company/cherryville-limited"
-    },
-    {
-        id: "x",
-        icon: faTwitter,
-        link: "https://x.com/gabzeejnr"
     }
 ];
 
