@@ -13,7 +13,7 @@ function HighlightText({ heading }: { heading: Heading }) {
             {parts.map((part, index) => {
                 const isMatch = highlights.some(high => high.toLowerCase() === part.toLowerCase());
 
-                return isMatch ? <span key={index} className="text-accent">{part} </span> : <Fragment key={index}>{part} </Fragment>
+                return isMatch ? <span key={index} className="text-accent" style={{color: "#e00a59"}}>{part} </span> : <Fragment key={index}>{part} </Fragment>
             })}
         </p>
     )
