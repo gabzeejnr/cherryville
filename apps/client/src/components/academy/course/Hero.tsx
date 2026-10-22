@@ -1,30 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faArrowLeft,
-    faClock,
-    faGraduationCap,
-} from "@fortawesome/free-solid-svg-icons";
-
+import { faArrowLeft, faClock, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import Section from "../../../components/Section";
 import { AccentButton } from "../../../components/Buttons";
 import type { Course as CourseType } from "../../../types";
 
 interface CourseHeroProps {
     course: CourseType;
+    setEnroll: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function CourseHero({ course }: CourseHeroProps) {
+export default function CourseHero({ course, setEnroll }: CourseHeroProps) {
+
+    const navigate = useNavigate();
     const fee = `₦${course.fee.toLocaleString("en-NG")}`;
 
     return (
         <Section bg={null} compact className="px-5! pt-8! sm:px-8! lg:px-10!">
             <div className="mx-auto w-full max-w-7xl">
                 <header className="border-b border-[#DED8D9] pb-6">
-                    <Link to="/academy/courses" className="inline-flex items-center gap-2 text-sm font-medium text-[#5E4A52] transition-colors hover:text-accent">
+                    <button className="inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-[#5E4A52] transition-colors hover:text-accent"
+                        onClick={() => navigate(-1)}>
                         <FontAwesomeIcon icon={faArrowLeft} />
                         All courses
-                    </Link>
+                    </button>
                 </header>
 
                 <div className="grid items-center gap-12 py-12 lg:grid-cols-12 lg:gap-16 lg:py-16">
@@ -74,7 +73,7 @@ export default function CourseHero({ course }: CourseHeroProps) {
                         </dl>
 
                         <div className="mt-9 flex flex-wrap items-center gap-5">
-                            <AccentButton text="Enroll in this course" arrow />
+                            <AccentButton text="Enroll in this course" arrow onClick={() => setEnroll(true)} />
 
                             <Link to="/academy/courses" className="mt-8 text-sm font-medium text-[#5E4A52] underline-offset-4 hover:text-accent hover:underline">
                                 Compare courses

@@ -4,9 +4,10 @@ import type { Course as CourseType } from "../../../types";
 
 interface CourseCTAProps {
     course: CourseType;
+    setEnroll: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function CourseCTA({ course }: CourseCTAProps) {
+export default function CourseCTA({ course, setEnroll }: CourseCTAProps) {
     return (
         <Section bg={null} compact className="px-5! py-10! sm:px-8! lg:px-10!">
             <div className="mx-auto w-full max-w-7xl overflow-hidden rounded-[28px] bg-[#171315] px-7 py-12 text-white sm:px-12 sm:py-14 lg:px-14">
@@ -20,7 +21,7 @@ export default function CourseCTA({ course }: CourseCTAProps) {
                     </div>
 
                     <div className="shrink-0">
-                        <AccentButton text="Enroll in this course" arrow />
+                        <AccentButton text="Enroll in this course" arrow onClick={() => setEnroll(true)} />
                     </div>
                 </div>
             </div>

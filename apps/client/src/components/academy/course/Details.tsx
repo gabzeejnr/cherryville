@@ -5,9 +5,10 @@ import type { Course as CourseType } from "../../../types";
 
 interface CourseDetailsProps {
     course: CourseType;
+    setEnroll: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-export default function CourseDetails({ course }: CourseDetailsProps) {
+export default function CourseDetails({ course, setEnroll }: CourseDetailsProps) {
     const fee = `₦${course.fee.toLocaleString("en-NG")}`;
 
     return (
@@ -84,7 +85,7 @@ export default function CourseDetails({ course }: CourseDetailsProps) {
                     </dl>
 
                     <AccentButton
-                        text="Enroll now"
+                        text="Enroll now" onClick={() => setEnroll(true)}
                         className="mt-7 flex w-full justify-center"
                     />
                 </aside>

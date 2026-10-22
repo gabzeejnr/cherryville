@@ -1,26 +1,16 @@
 import { useState } from "react";
-import { analytics } from "../../analytics/events";
+import { Link } from "react-router-dom";
 import Section from "../Section";
-import AcademyEnrollment from "../forms/AcademyEnrollment";
 import { addDot } from "../../utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import type { Dispatch, SetStateAction } from "react";
 import type { Course } from "../../types";
 
 
-function Card({ course, setEnroll, setThisCourse }: { course: Course, setEnroll: Dispatch<SetStateAction<boolean>>, setThisCourse: Dispatch<SetStateAction<Course["name"]>> }) {
+function Card({ course }: { course: Course }) {
     const [open, setOpen] = useState(false);
 
-    const { name, whoIsItFor, outcome, duration, learningStyle, } = course;
-
-    function enrollFunction(e: React.MouseEvent<HTMLButtonElement>) {
-        e.preventDefault();
-        analytics.formStarted("enrollment", { course_name: name })
-
-        setEnroll(true);
-        setThisCourse(name);
-    }
+    const { name, whoIsItFor, outcome, duration, learningStyle, slug } = course;
 
     return (
         <div className="w-full px-3 text-white">
@@ -78,10 +68,10 @@ function Card({ course, setEnroll, setThisCourse }: { course: Course, setEnroll:
                             </div>
 
                             <div className="flex justify-end pt-1">
-                                <button type="button" onClick={(e) => enrollFunction(e)}
+                                <Link to={`/academy/courses/${slug}`}
                                     className="rounded-full bg-accent-hover px-5 py-2.5 text-sm font-semibold text-heading transition-colors duration-200 hover:bg-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cherry"
                                 >Enroll Now<span aria-hidden="true"> →</span>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -94,9 +84,6 @@ function Card({ course, setEnroll, setThisCourse }: { course: Course, setEnroll:
 
 export default function CourseList({ courses }: { courses: Course[] }) {
 
-    const [enroll, setEnroll] = useState(false);
-    const [thisCourse, setThisCourse] = useState<Course["name"]>("")
-
     return (
         <>
             <Section title="Courses" bg="bg-bg">
@@ -105,7 +92,7 @@ export default function CourseList({ courses }: { courses: Course[] }) {
                         <div className="grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
                             {courses.map((course) => (
                                 <div data-aos="fade-up" key={course.name} className="min-w-0">
-                                    <Card setThisCourse={setThisCourse} course={course} setEnroll={setEnroll} />
+                                    <Card course={course} />
                                 </div>
                             ))}
                         </div>
@@ -114,7 +101,6 @@ export default function CourseList({ courses }: { courses: Course[] }) {
                     )}
                 </div>
             </Section>
-            {enroll && <AcademyEnrollment setEnroll={setEnroll} thisCourse={thisCourse} />}
         </>
     )
 }
