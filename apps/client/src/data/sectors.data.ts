@@ -4,7 +4,7 @@ const sectors: Template[] = [
     {
         route: "oil-and-gas",
         heading: {
-a            title: "Technical capability for the energy sector.",
+            title: "Technical capability for the energy sector.",
             highlights: ["technical", "capability", "energy"]
         },
         subtitle: "Training and talent for operators, service companies and regulatory bodies working across the Nigerian energy value chain.",
