@@ -26,13 +26,7 @@ export default function RoutePage() {
                 <Route path="enterprise-training" element={<EnterpriseTraining />} />
                 <Route path="sectors/">
                     <Route index element={<NotFound />} />
-                    {sectors.map((sec, i) => {
-                        const { route, heading, headingText, challenge, engage, help } = sec;
-
-                        return (<Route path={route} element={<SectorTemplate heading={heading} headingText={headingText} route={route}
-                            challenge={challenge} engage={engage} help={help} />} key={`${i}-${route}-${String(i)}`}
-                        />)
-                    })}
+                    {sectors.map((sec, i) => <Route path={sec.route} element={<SectorTemplate {...sec} />} key={`${i}-${sec.route}-${i}`} />)}
                 </Route>
                 <Route path="talent-solutions" element={<TalentSolutions />} />
                 <Route path="academy/">

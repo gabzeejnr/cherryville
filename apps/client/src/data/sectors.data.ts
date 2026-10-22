@@ -4,10 +4,10 @@ const sectors: Template[] = [
     {
         route: "oil-and-gas",
         heading: {
-            text: "Technical capability for the energy sector.",
+            title: "Technical capability for the energy sector.",
             highlights: ["technical", "capability", "energy"]
         },
-        headingText: "Training and talent for operators, service companies and regulatory bodies working across the Nigerian energy value chain.",
+        subtitle: "Training and talent for operators, service companies and regulatory bodies working across the Nigerian energy value chain.",
         challenge: "Energy organisations hold enormous volumes of operational, production and compliance data, but the capability to interpret it sits with a small number of people. Reporting cycles depend on their availability. Digital systems arrive faster than the workforce is trained to use them, and operational technology environments carry exposure that conventional IT training does not address. The result is capable engineers working below their potential and decisions taken later than they should be.",
         help: [
             {
@@ -36,10 +36,10 @@ const sectors: Template[] = [
     {
         route: "banking",
         heading: {
-            text: "Capability for a sector where accuracy is not optional.",
+            title: "Capability for a sector where accuracy is not optional.",
             highlights: ["capability", "sector", "accuracy", "not", "optional."]
         },
-        headingText: "Technical training for banks, fintechs and financial institutions where errors are expensive and exposure is constant.",
+        subtitle: "Technical training for banks, fintechs and financial institutions where errors are expensive and exposure is constant.",
         challenge: "Financial institutions run on data, yet a great deal of that data still moves through manual spreadsheets maintained by individuals. Reconciliation, reporting and compliance work absorb hours that automation could return. Security capability must keep pace with threats that evolve monthly. Internal academies carry the training mandate but are rarely resourced to cover every technical track at depth, and the gaps tend to appear in exactly the areas that matter most.",
         help: [
             {
@@ -68,10 +68,10 @@ const sectors: Template[] = [
     {
         route: "government",
         heading: {
-            text: "Digital capability across the public workforce.",
+            title: "Digital capability across the public workforce.",
             highlights: ["capability", "public", "workforce."]
         },
-        headingText: "Capacity development for ministries, departments, agencies and regulatory bodies delivering services at scale.",
+        subtitle: "Capacity development for ministries, departments, agencies and regulatory bodies delivering services at scale.",
         challenge: "Public institutions are digitising faster than their workforces are being trained. Systems are procured and deployed, but adoption stalls where staff confidence is low. Data that could inform policy sits unanalysed because the skills to interrogate it are concentrated in a handful of officers. Cybersecurity awareness across a large workforce lags behind the exposure that comes with putting services online. The scale of the workforce is itself the obstacle, training a few hundred people is a different exercise from training a few dozen.",
         help: [
             {
@@ -100,10 +100,10 @@ const sectors: Template[] = [
     {
         route: "development",
         heading: {
-            text: "Skills programs that produce evidence, not attendance sheets.",
+            title: "Skills programs that produce evidence, not attendance sheets.",
             highlights: ["Skills", "programs", "evidence,", "attendance"]
         },
-        headingText: "Employability programming and staff capability development for organisations accountable to donors and to the people they serve.",
+        subtitle: "Employability programming and staff capability development for organisations accountable to donors and to the people they serve.",
         challenge: "Development organisations are held to outcomes, but training vendors typically report outputs. A number of participants trained tells a donor almost nothing about whether capability moved or whether anyone became employable. Meanwhile program staff are asked to manage increasingly data-heavy monitoring requirements without the analytical skills to do it comfortably. Both problems are capability problems, and both are solvable.",
         help: [
             {

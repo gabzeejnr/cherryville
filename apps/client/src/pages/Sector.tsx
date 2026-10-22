@@ -3,40 +3,39 @@ import { useDocumentMeta, useGoToTopOnLoad, useFormAnalytics } from "../hooks";
 import RequestAProposal from "../components/forms/RequestAProposal";
 import Challenge from "../components/sectors/Challenge";
 import Engage from "../components/sectors/Engage";
-import Hero from "../components/sectors/Hero";
+import Hero from "../components/Hero";
 import HowWeHelp from "../components/sectors/HowWehelp";
 import type { Template } from "../types/sectors.types";
-import { RequestAProposalButton } from "../components/Buttons";
 
 export default function SectorTemplate({
     route,
     heading,
-    headingText,
+    subtitle,
     challenge,
     help,
     engage
 }: Template) {
 
-    const title = route;
-    const [isOpen, setIsOpen] = useState(false)
+    const page = route.split("-").filter(Boolean).map(s => (s === "and"
+        ? s
+        : s.charAt(0).toUpperCase() + s.slice(1)
+    )).join(" ");
+    const [isOpen, setIsOpen] = useState(false);
 
     useDocumentMeta({
-        title,
+        title: page,
         description: ""
     })
-    useGoToTopOnLoad(`sectors/${title}`)
+    useGoToTopOnLoad(`sectors/${route}`)
     useFormAnalytics(isOpen, "request_proposal");
 
 
     return (
         <div className="bg-cherry pb-10">
-            <Hero heading={heading} heroText={headingText} />
+            <Hero page={`${page} sector`} heading={heading} subtitles={subtitle} />
             <Challenge challenge={challenge} />
             <HowWeHelp help={help} />
-            <Engage engage={engage} />
-            <div className="flex justify-center-safe">
-                <RequestAProposalButton setIsOpen={setIsOpen} />
-            </div>
+            <Engage engage={engage} setIsOpen={setIsOpen} />
             {isOpen && <RequestAProposal setIsOpen={setIsOpen} />}
         </div>
     )
