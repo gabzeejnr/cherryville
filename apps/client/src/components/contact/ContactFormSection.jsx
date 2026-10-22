@@ -53,9 +53,9 @@ function SocialIconLink({ href, label, children }) {
 
 export default function ContactFormSection() {
     return (
-        <section className="w-full py-20 px-6 lg:px-15 bg-cherry flex items-center">
+        <section className="w-full py-20 px-6 lg:px-15 bg-cherry flex flex-col md:flex-row items-center">
             <ContactForm />
-            <div className="rounded-2xl p-6 h-fit bg-accent ml-auto lg:mr-10">
+            <div className="rounded-2xl w-100 p-6 h-fit bg-accent md:ml-auto lg:mr-10">
                 <div className="space-y-5">
                     <ContactInfoItem
                         href={whatsappUrl("Hello! I'm interested in learning more about Cherryville Limited's programs.")}
@@ -142,5 +142,5 @@ export default function ContactFormSection() {
                 </div>
             </div>
         </section>
-    );
+    )
 }
