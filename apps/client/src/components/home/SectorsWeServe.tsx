@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 import Section from "../Section";
 import { sectorsServed } from "../../data";
 import type { Serve } from "../../types";
 import styles from "./Home.module.scss";
 
 function Card({ sector }: { sector: Serve }) {
-    const { title, text, icon: Icon } = sector;
+    const { title, text, icon: Icon, link } = sector;
 
     return (
         <article className={styles.sectorCard}>
@@ -16,6 +17,7 @@ function Card({ sector }: { sector: Serve }) {
                 <span>{title}: </span>
                 {text}
             </p>
+            <Link to={link} className="accent-button">Go to Sector</Link>
         </article>
     );
 }

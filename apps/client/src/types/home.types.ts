@@ -23,7 +23,8 @@ type Doings = {
 type Serve = {
     title: string,
     text: string,
-    icon: LucideIcon
+    icon: LucideIcon,
+    link: `/sectors/${string}`
 }
 
 type HoverCardType = {

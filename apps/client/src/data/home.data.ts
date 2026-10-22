@@ -67,22 +67,26 @@ const sectorsServed: readonly Serve[] = [
     {
         title: "Oil & Gas",
         text: "turning operational and production data into decisions, and securing the environments that generate it.",
-        icon: Activity
+        icon: Activity,
+        link: "/sectors/oil-and-gas"
     },
     {
         title: "Banking & Financial Services",
         text: "analytics, security operations and the automation of manual back-office work.",
-        icon: Banknote
+        icon: Banknote,
+        link: "/sectors/banking"
     },
     {
         title: "Government & Public Sector",
         text: "digital capability across large workforces, and data that supports policy.",
-        icon: Dome
+        icon: Dome,
+        link: "/sectors/government"
     },
     {
         title: "NGOs & Development Partners",
         text: "employability programs and staff capability, measured against your results framework.",
-        icon: Users
+        icon: Users,
+        link: "/sectors/development"
     }
 ] as const;
 
