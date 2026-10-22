@@ -2,6 +2,7 @@ import { email, programsEmail, phoneNumber, secondNumber, address } from "./comp
 import { faEnvelope, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import type { FootLink, Social } from "../types/global.types";
+import { courses } from "./academy.data";
 
 const formattedNumber = (number:string)=> number.split(/\s+/).join("");
 const text = "Hello, I'd like to make enquires on the programs and courses offered."
@@ -32,24 +33,10 @@ const socials: Social[] = [
 const footerLinks: FootLink[] = [
     {
         title: "Programs",
-        links: [
-            {
-                text: "Data Analytics & Data Science",
-                href: `/academy`
-            },
-            {
-                text: "Product Management",
-                href: `/academy`
-            },
-            {
-                text: "Artificial Intelligence Fundamentals",
-                href: `/academy`
-            },
-            {
-                text: "Business Analysis",
-                href: `/academy`
-            }
-        ]
+        links: courses.slice(0, 4).map(c => ({
+            text: c.name,
+            href: `/academy/courses/${c.slug}`
+        }))
     },
     {
         title: "Company",

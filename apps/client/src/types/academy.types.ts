@@ -28,7 +28,7 @@ interface Course {
     jobTitle: string,
     duration: string,
     fee: number,
-    image?: string
+    image: string
 }
 
 type AnswerFinder = {

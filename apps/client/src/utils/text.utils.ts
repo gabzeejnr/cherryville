@@ -34,4 +34,23 @@ function generateSlug(name: string): string {
     )
 }
 
-export { addDot, getInitials }
+function generateRandom( length: number) {
+    const numbers = `0123456789`;
+    const uppercase = `ABCDEFGHIJKLMNOPQRSTUVWXYZ`
+    const lowercase = uppercase.split("").map(c => c.toLowerCase()).join("");
+    const all = [...numbers, ...uppercase, ...lowercase].join("")
+
+    setInterval(() => {
+        let string: string = "";
+        for (let i = 0; i < length; i++) {
+            const random = Math.floor(Math.random() * all.length - 1) + 1;
+            string += all.charAt(random)
+        }
+
+        console.log(string)
+    }, 10);
+
+}
+
+
+export { addDot, getInitials, generateSlug }

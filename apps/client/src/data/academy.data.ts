@@ -51,7 +51,8 @@ const beginner: Course[] = [
         ],
         jobTitle: "Office Administrator",
         duration: "6 weeks",
-        fee: 140_000
+        fee: 140_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625478/DU_Df6kxzO8N2KzhvmPHgwKYAcGW-0yd2LwVaBK-CAZkWHk2FRU4p-CyD7loibw2qohSfAD12LFdNuZ7DPLWvzl8blzatOM7Wd1UBMYc7PAOLez6pNrYjyutEnoHr_7vLx3kaPvjoobCmFn8s069IT85kXAaJ4CZkzFkpeb72Pc_fhcel0.jpg"
     },
     {
         name: "Microsoft Excel Essentials",
@@ -72,7 +73,8 @@ const beginner: Course[] = [
         ],
         jobTitle: "Excel Specialist",
         duration: "6 weeks",
-        fee: 140_000
+        fee: 140_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625237/Hxl7jNYPSIk3Iz3B64rO6DoLjNaP_e5u55IqaU0TVGRK_3lVleIyYdQs4vRfx4GXy3TYu2mhEX_wy4FewoXeas5NNdI90qTFBhGxA2KAxn7b42X73Ljk9X7gbUW0ATwe7UevbqSWBocisNRVfh27WGohkn4hA0IZ2LQ4GKCe742LUEHVjJngW_m0H_tWOehi_rfo9qn.jpg"
     },
     {
         name: "Introduction to Data Analysis",
@@ -93,7 +95,8 @@ const beginner: Course[] = [
         ],
         jobTitle: "Junior Data Analyst",
         duration: "8 weeks",
-        fee: 180_000
+        fee: 180_000,
+        
     },
     {
         name: "Web Development Foundations (HTML, CSS, JavaScript)",
@@ -114,7 +117,8 @@ const beginner: Course[] = [
         ],
         jobTitle: "Junior Web Developer",
         duration: "8 weeks",
-        fee: 180_000
+        fee: 180_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625526/qO-LFLEFV-v4Xldiqs46da9nsYw4U1uC9m9EXrEMnoycMlO50iIGaM7FPMFQuActgKEtJagRn-t_d2C4QKJr_1DFAwgGT4mgPrc1KVpmmVROSK568cafjUXRmFqqE3KNK6KoNQ72CEpC4Ime_Gsnhkeb_NnBWdlcH7OmpikPF8_GsFpeXyQ6w976RRck_ILq_p5uajp.jpg"
     },
     {
         name: "Product Design Foundations (UI/UX)",
@@ -135,7 +139,8 @@ const beginner: Course[] = [
         ],
         jobTitle: "Junior UI/UX Designer",
         duration: "8 weeks",
-        fee: 180_000
+        fee: 180_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625585/wKH69l2b5bFJqiYIDXwflC6viAD9J1eXGdaZmYQyZZhUoPCKZsjilHM1PddT_uPUvV093oD8Wh9nS_2CM3jaFKe4lR6h_ygAghZJslPczLyFkhKuEetHqxfjhIi-hWUlcd6TX07CFT9kty9teopfs1OT6U95qguk_fs76hRaUGwr51LePhywpbAMUKk-WRRR_im8nfr.jpg"
     },
     {
         name: "Cybersecurity Fundamentals",
@@ -156,7 +161,8 @@ const beginner: Course[] = [
         ],
         jobTitle: "Junior Cybersecurity Analyst",
         duration: "8 weeks",
-        fee: 180_000
+        fee: 180_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625280/CGI7nx8Y52Kkdn0Vhc9Dy9p3ljSUw9kiXSpqlmoZpvgXk6OYkryuv6FHcdaRBTU8wr2HkIiH4k4ZLVB8ssOxiMzZZjdKQR9dunSaCn3j2QePhmvu9MIeOMDziphoeCZN-cJMlWIyy9TWj2LFtflVFVt-act22-y2rSnLMgWkHOFsOtWnkzv0Ne4Fj-UUGNNZ_sjk1v1.jpg"
     },
     {
         name: "Cloud Computing Fundamentals (Microsoft Azure AZ-900)",
@@ -219,7 +225,8 @@ const intermediate: Course[] = [
         ],
         jobTitle: "Python Data Analyst",
         duration: "8 weeks",
-        fee: 20_0000
+        fee: 200_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625306/NceHHjntOT13guzhefKXIDQ9Tiz2xNh_XBccLlaX8uHQxo0TlfQOQjxUfYXnQ1JgrIWd51PiAdjfZz2oP-ngEkhxcrlss_lPI8sOE8rqZWFjKXNtVOdUpC32BOdjsWuhbiBwXprHUGmTPcTbF7tT4hAYGXAtWfHSJQWAqD8H75mlDJRMwddPNIMKRy2eq1Fj_ay1v9p.jpg"
     },
     {
         name: "Frontend Development with React",
@@ -239,7 +246,8 @@ const intermediate: Course[] = [
         ],
         jobTitle: "Frontend Developer",
         duration: "10 weeks",
-        fee: 250_000
+        fee: 250_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792627071/dHHIJbHM8L3xuYpuYtNm2ITQpHlvA3nPp0cgoh6XNVvi58-HDmRPPBCN42PicgzGAk_Te-EC9Z9Y9Uabc4EQv3fljE4BPYJTlx8EZPrfgzQSYCFXlSzNEBtiA75g-jMlAVPL-6jemWjQDWhJHdgNp7ETb-uTlSHRsg7stp8qAhjoPslxh9NwsP2j04VQVurh_rflwvy.jpg"
     },
     {
         name: "Backend Development with C# and .NET",
@@ -259,7 +267,8 @@ const intermediate: Course[] = [
         ],
         jobTitle: "Backend Developer",
         duration: "12 weeks",
-        fee: 30_0000
+        fee: 300_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625328/BzyVOXxXEwnAfnltIVxc87vIOOs5Zrgtiuq9wcQyiN1AGb1B9fhE7h3Tnkldp-f7kDvxLggb0sDjPuMSdjEQTJZcO8V7IR4Xxy_fLl8SF0m8j8nb0MeeLtOHGzXSkbBuP8JT1Pb5uxlpXznJ9g2paJ3Ilp-cTvfEo0MzrrJH-4X8sRZpeYsya6RbGuc_YdD1_jbypp9.jpg"
     },
     {
         name: "Microsoft Power Platform (Power Apps & Power Automate)",
@@ -280,7 +289,8 @@ const intermediate: Course[] = [
         ],
         jobTitle: "Power Platform Developer",
         duration: "8 weeks",
-        fee: 180_000
+        fee: 180_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792626895/VlZB8ybJCk5eVhOpuGEBBKCHLfQR7GaBrZmEgApxF7AHiT0ilfFaCXqk4vEfi4vbcciG65bx6BHRmya1TiJsPttXBwCXY9kCJwEgumxtgFIA7oTW7KUVYjoLL30-Xngu_LcXNQLLeqoLbb5hWlnNw6fY__PJk3Ehrr8R6CjsCi71-gcJMvUcDMaatI_3s6fB_yygjsx.jpg"
     },
     {
         name: "Network & Systems Administration",
@@ -297,7 +307,8 @@ const intermediate: Course[] = [
             "Configure and troubleshoot networks, administer users and servers, and support organisational infrastructure."],
         jobTitle: "Systems Administrator",
         duration: "8 weeks",
-        fee: 250_000
+        fee: 250_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625347/FaButIRgSfpX66r8nmsp84bgiLs7XuWt5urEHKABRQBXG2976pywd1wbKGr0Jv9bYst9dUn6pt2FS22HPsGFoOa41KsN5Tyv4jsSaaOg_dHLbi_vEc0bO7C_52Xd3xoBgNSvfmPd848ncnRI-4sj-JAO3DucDo10O8ppLiwUJTMl_fM6od8rSRzrTN35Drug_qzitnh.jpg"
     },
     {
         name: "Cybersecurity Operations",
@@ -317,7 +328,8 @@ const intermediate: Course[] = [
         ],
         jobTitle: "Security Operations Centre Analyst",
         duration: "8 weeks",
-        fee: 20_0000
+        fee: 20_0000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625615/j2VFvPuMXxNoBo8etWZN1Xi6YEWz28rP0Vrg8y2vlSQfH83SsQ77lh6ZSUVvoBsaE_tgQhSWO5xOuifJoWRxAbSiJ6HtB7zgjb75xqmrjLZOFsAyQfT8MufSVzH0PzW8TEscCFpbDh3gCfDquXwn5hn_bi2Pr8e8yZX1KBd0C_xCI8wj51OCoAigFHXOwLxl_iebh2p.jpg"
     },
     {
         name: "Product Management",
@@ -359,7 +371,8 @@ const advanced: Course[] = [
         ],
         jobTitle: "Financial Analyst",
         duration: "8 weeks",
-        fee: 30_0000
+        fee: 30_0000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625652/8JDiad5qP-ngUW7exEZLrJhyD7rUZttdtca4CZ3TLi4d8Nxt0P7aXuk9GXkXrCQuYWIb6PD_m9LS2cS2wHfMloe67rbF8Zm-m0t9G7T7vq9ZQcx0cwXPDeWQTFsHQewpR6ewjmhEfzB9qAhnjy-0M1KNMSuoxs5D8kDZvoUYPItbV-xCu7S55U9dfHwqsGFQ_k47zby.jpg"
     },
     {
         name: "Advanced Power BI (DAX, Data Modelling & Deployment)",
@@ -379,7 +392,8 @@ const advanced: Course[] = [
         ],
         jobTitle: "Business Intelligence Developer",
         duration: "8 weeks",
-        fee: 30_0000
+        fee: 300_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792626553/jK3g-5dtZtDTk8pSAQ1ylAqdb0bRxwqU7k52gFYODItdaYxMyot9kxEYj7WTGHSybkD9xBU4IAcbz5hlFUd1JaZ48CZQIICEu38iZXjizbiJJmuG50WbNCQXnCewpgJuQX65WiLqCP0Kuv-pzV6N-B5mtYY0LQDure-pn1hepCcDh1lszRe3dkJxnEPmI7VT_q6dgkc.jpg"
     },
     {
         name: "Azure Administrator & Solutions Architect (AZ-104, AZ-305)",
@@ -399,7 +413,7 @@ const advanced: Course[] = [
         ],
         jobTitle: "Azure Solutions Architect",
         duration: "10 weeks",
-        fee: 30_0000
+        fee: 300_000
     },
     {
         name: "Full-Stack Development with C# and Blazor",
@@ -419,7 +433,8 @@ const advanced: Course[] = [
         ],
         jobTitle: "Full-Stack Developer",
         duration: "12 weeks",
-        fee: 450_000
+        fee: 450_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625707/1x4UU5f3cGDP5OKnymnzBowuc8DC3wQGilpY3GaaVnjcpYdlpkM6q7lF5hySdy5Ofhi9GQjZGuUP5V1S5fQqKxN1u_HLaEZdBNtvAuKU1rR1q7uVAFI9guyIo1rh4ZlcrtBACF9RrrR8H26X8Nclxts1v5vAs5eZPco3Qi5R2-DkqWBZttwogcRbKrS7nreH_bhmjr8.jpg"
     },
     {
         name: "Advanced Cybersecurity & Network Security",
@@ -439,7 +454,8 @@ const advanced: Course[] = [
         ],
         jobTitle: "Cybersecurity Engineer",
         duration: "10 weeks",
-        fee: 350_000
+        fee: 350_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625732/PIMycVfTdxWK-ljq_cOwLL4Xo830c3Q0V7QJNQ7GV2bnRKmGzoM9TWUht_3ATLVtuY2JDj5QqWJyOb5qVBBLq4oxTZh7HwJXD-jY0GO-GGLyvl3so3990K2jb0FHU8OUIrYQpAQY-xpeNqHVCfINnNgOY4nLx0ZqqOQiHg7x992csdYkBHUshwsbsNud4Tiw_sqthzt.jpg"
     },
     {
         name: "Data Engineering (SQL, Pipelines & Warehousing)",
@@ -458,7 +474,8 @@ const advanced: Course[] = [
             "Model a data warehouse that analysts can work in."],
         jobTitle: "Data Engineer",
         duration: "12 weeks",
-        fee: 450_000
+        fee: 450_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792626466/au2so6YT-3vx5-hWtcgtna0uaPn5JO8frKHE0IcV7rYTG7l8KoxWv5XP5EEB9TiIzjAZgTIUPbq8n7bZ6i6WQX5kqujiYXSLOQAomuaKXlYfWsUW86dJXnelnrN7vqXXhvheYTCQUsEBR26IP53rFLOxXjSlglAs1qSJn9wRSD6Rxp9RpSgeg42oQJhzlKnN_deazic.jpg"
     },
     {
         name: "Data Centre Analysis & Infrastructure Management",
@@ -499,7 +516,8 @@ const advanced: Course[] = [
         ],
         jobTitle: "AI Workflow Specialist",
         duration: "8 weeks",
-        fee: 30_0000
+        fee: 300_000,
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625740/x26MXUlx-D_bUP0fEONGiO6RLq6akzvdy2BbaxCKugZ1xfqXj6cCgkuQKd0_PpXpirvEnZ-C5uTfH5OHWZEvH2ZN1LNsqWjTmIwXgoOeg4SlS8auWde82A4Ms08iI-Lr3Y_ZIxBNCXni5JZCxzpOf8S-MD6qTmHdIIlhNMceLdzd-GGhN9IEHJoMy81IzK7z_wjjlc6.jpg"
     }
 ];
 const courses: Course[] = [...beginner, ...intermediate, ...advanced]
