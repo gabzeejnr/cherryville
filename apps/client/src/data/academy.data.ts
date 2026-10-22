@@ -268,7 +268,7 @@ const intermediate: Course[] = [
         jobTitle: "Backend Developer",
         duration: "12 weeks",
         fee: 300_000,
-        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625328/BzyVOXxXEwnAfnltIVxc87vIOOs5Zrgtiuq9wcQyiN1AGb1B9fhE7h3Tnkldp-f7kDvxLggb0sDjPuMSdjEQTJZcO8V7IR4Xxy_fLl8SF0m8j8nb0MeeLtOHGzXSkbBuP8JT1Pb5uxlpXznJ9g2paJ3Ilp-cTvfEo0MzrrJH-4X8sRZpeYsya6RbGuc_YdD1_jbypp9.jpg"
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792627500/slide_new_5_xchosr.jpg"
     },
     {
         name: "Microsoft Power Platform (Power Apps & Power Automate)",
