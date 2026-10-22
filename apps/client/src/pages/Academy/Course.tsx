@@ -1,14 +1,19 @@
+import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { useGoToTopOnLoad } from "../../hooks";
 import { courses } from "../../data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Hero from "../../components/academy/course/Hero";
 import Details from "../../components/academy/course/Details";
 import CTA from "../../components/academy/course/CTA";
+import AcademyEnrollment from "../../components/forms/AcademyEnrollment";
 
 export default function Course() {
     const { slug } = useParams<{ slug: string }>();
-    const course = courses.find((course) => course.slug === slug);
+    const course = courses.find(course => course.slug === slug);
+    const [enroll, setEnroll] = useState<boolean>(false)
+    useGoToTopOnLoad(`academy/courses/${slug}`);
 
     if (!course) {
         return (
@@ -30,14 +35,16 @@ export default function Course() {
             </main>
         );
     }
-    
+
     return (
         <main className="text-[#171414] tracking-[0.18px] bg-cherry">
             <div className="mx-auto max-w-7xl">
-                <Hero course={course} />
-                <Details course={course} />
-                <CTA course={course} />
+                <Hero course={course} setEnroll={setEnroll} />
+                <Details course={course} setEnroll={setEnroll} />
+                <CTA course={course} setEnroll={setEnroll} />
             </div>
+
+            {enroll && <AcademyEnrollment setEnroll={setEnroll} thisCourse={course.name} />}
         </main>
     );
 }
