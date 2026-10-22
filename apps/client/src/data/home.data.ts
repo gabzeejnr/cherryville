@@ -1,5 +1,5 @@
 import { TextSearch, Users, GraduationCap, Dome, Activity, Banknote } from "lucide-react";
-import { microsoft, dreel, ey, ibm, infosys, kpmg } from "../libs";
+import { microsoft, dreel, pivotOne, maxfront } from "../libs";
 import type { Marquee, Doings, Serve, HoverCardType, TestimonialType } from "../types/home.types";
 
 const marquee: Marquee[] = [
@@ -12,19 +12,12 @@ const marquee: Marquee[] = [
         name: "Dreel"
     },
     {
-        image: ey,
-        name: "ey"
+        image: maxfront,
+        name: "Maxfront"
     },
     {
-        image: ibm,
+        image: pivotOne,
         name: "ibm"
-    },
-    {
-        image: infosys,
-        name: "infosys"
-    }, {
-        image: kpmg,
-        name: "kpmg"
     }
 ]
 
