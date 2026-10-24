@@ -140,7 +140,7 @@ const beginner: Course[] = [
         jobTitle: "Junior UI/UX Designer",
         duration: "8 weeks",
         fee: 180_000,
-        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625585/wKH69l2b5bFJqiYIDXwflC6viAD9J1eXGdaZmYQyZZhUoPCKZsjilHM1PddT_uPUvV093oD8Wh9nS_2CM3jaFKe4lR6h_ygAghZJslPczLyFkhKuEetHqxfjhIi-hWUlcd6TX07CFT9kty9teopfs1OT6U95qguk_fs76hRaUGwr51LePhywpbAMUKk-WRRR_im8nfr.jpg"
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792881616/f521ef1c-118b-48d3-b848-17b4b8c65136_ae21lw.jpg"
     },
     {
         name: "Cybersecurity Fundamentals",
@@ -308,7 +308,7 @@ const intermediate: Course[] = [
         jobTitle: "Systems Administrator",
         duration: "8 weeks",
         fee: 250_000,
-        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625347/FaButIRgSfpX66r8nmsp84bgiLs7XuWt5urEHKABRQBXG2976pywd1wbKGr0Jv9bYst9dUn6pt2FS22HPsGFoOa41KsN5Tyv4jsSaaOg_dHLbi_vEc0bO7C_52Xd3xoBgNSvfmPd848ncnRI-4sj-JAO3DucDo10O8ppLiwUJTMl_fM6od8rSRzrTN35Drug_qzitnh.jpg"
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792882891/5ac5cc81-5ec8-47e8-9a66-a2c1000d2344_mxz9ky.jpg"
     },
     {
         name: "Cybersecurity Operations",
@@ -475,7 +475,7 @@ const advanced: Course[] = [
         jobTitle: "Data Engineer",
         duration: "12 weeks",
         fee: 450_000,
-        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792626466/au2so6YT-3vx5-hWtcgtna0uaPn5JO8frKHE0IcV7rYTG7l8KoxWv5XP5EEB9TiIzjAZgTIUPbq8n7bZ6i6WQX5kqujiYXSLOQAomuaKXlYfWsUW86dJXnelnrN7vqXXhvheYTCQUsEBR26IP53rFLOxXjSlglAs1qSJn9wRSD6Rxp9RpSgeg42oQJhzlKnN_deazic.jpg"
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792882676/58d59e1a-b8bf-4eb5-adbd-77f6ab2e307c_vbpyak.jpg"
     },
     {
         name: "Data Centre Analysis & Infrastructure Management",

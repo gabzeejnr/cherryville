@@ -70,9 +70,6 @@ function CourseCard({
 
 function AnotherCourseCard({ image, name, description, slug }: {
     name: Default["name"];
-    // level: Default["experience"];
-    // duration: Default["duration"];
-    // fee: Default["fee"];
     description: Default["outcome"][0];
     slug: Default["slug"];
     image?: Default["image"];
@@ -80,7 +77,7 @@ function AnotherCourseCard({ image, name, description, slug }: {
     return (
         <article className="group h-full pt-2.5 pb-5 px-2.5 bg-cherry border-accent border rounded-xl">
             <Link to={slug} className="block mb-5 relative w-full aspect-250/120 overflow-hidden rounded-xl">
-                <img src={image} alt={`${name}-image`} className="transition-transform duration-500 group-hover:scale-105" />
+                <img src={image ?? "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792882507/e5c90e6e-353b-4768-8861-a23b3d4b73b0_gxg7qi.jpg"} alt={`${name}-image`} className="transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-2.5 left-2.5 py-1 px-2.5 rounded-lg font-medium text-white text-xs bg-accent">Now Open</div>
             </Link>
             <div className="p-0 sm:px-2.5 flex flex-col ">

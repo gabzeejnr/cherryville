@@ -2,6 +2,7 @@
     "beginner": [
         {
             "name": "Digital Foundations & Office Productivity",
+            "slug": "digital-foundations-office-productivity",
             "whoIsItFor": "People with little or no computer experience, and anyone whose job has become digital faster than their skills have.",
             "workType": [
                 "organising"
@@ -20,10 +21,12 @@
             ],
             "jobTitle": "Office Administrator",
             "duration": "6 weeks",
-            "fee": 140000
+            "fee": 140000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625478/DU_Df6kxzO8N2KzhvmPHgwKYAcGW-0yd2LwVaBK-CAZkWHk2FRU4p-CyD7loibw2qohSfAD12LFdNuZ7DPLWvzl8blzatOM7Wd1UBMYc7PAOLez6pNrYjyutEnoHr_7vLx3kaPvjoobCmFn8s069IT85kXAaJ4CZkzFkpeb72Pc_fhcel0.jpg"
         },
         {
             "name": "Microsoft Excel Essentials",
+            "slug": "microsoft-office-essentials",
             "whoIsItFor": "Anyone whose job involves numbers, records or reporting, at any level and in any sector.",
             "workType": [
                 "numbers"
@@ -42,10 +45,12 @@
             ],
             "jobTitle": "Excel Specialist",
             "duration": "6 weeks",
-            "fee": 140000
+            "fee": 140000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625237/Hxl7jNYPSIk3Iz3B64rO6DoLjNaP_e5u55IqaU0TVGRK_3lVleIyYdQs4vRfx4GXy3TYu2mhEX_wy4FewoXeas5NNdI90qTFBhGxA2KAxn7b42X73Ljk9X7gbUW0ATwe7UevbqSWBocisNRVfh27WGohkn4hA0IZ2LQ4GKCe742LUEHVjJngW_m0H_tWOehi_rfo9qn.jpg"
         },
         {
             "name": "Introduction to Data Analysis",
+            "slug": "introduction-to-data-analysis",
             "whoIsItFor": "Beginners who enjoy patterns and numbers, and who want to know why something happened rather than only that it did.",
             "workType": [
                 "numbers"
@@ -68,6 +73,7 @@
         },
         {
             "name": "Web Development Foundations (HTML, CSS, JavaScript)",
+            "slug": "web-development-foundations-html-css-javascript",
             "whoIsItFor": "Beginners who want to build things and see the result of their work immediately.",
             "workType": [
                 "design",
@@ -87,10 +93,12 @@
             ],
             "jobTitle": "Junior Web Developer",
             "duration": "8 weeks",
-            "fee": 180000
+            "fee": 180000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625526/qO-LFLEFV-v4Xldiqs46da9nsYw4U1uC9m9EXrEMnoycMlO50iIGaM7FPMFQuActgKEtJagRn-t_d2C4QKJr_1DFAwgGT4mgPrc1KVpmmVROSK568cafjUXRmFqqE3KNK6KoNQ72CEpC4Ime_Gsnhkeb_NnBWdlcH7OmpikPF8_GsFpeXyQ6w976RRck_ILq_p5uajp.jpg"
         },
         {
             "name": "Product Design Foundations (UI/UX)",
+            "slug": "product-design-foundations-uiux",
             "whoIsItFor": "Beginners with an eye for how things look and the patience to understand how people behave.",
             "workType": [
                 "design"
@@ -109,10 +117,12 @@
             ],
             "jobTitle": "Junior UI/UX Designer",
             "duration": "8 weeks",
-            "fee": 180000
+            "fee": 180000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792881616/f521ef1c-118b-48d3-b848-17b4b8c65136_ae21lw.jpg"
         },
         {
             "name": "Cybersecurity Fundamentals",
+            "slug": "cybersecurity-fundamentals",
             "whoIsItFor": "Beginners considering a career in security, and anyone responsible for keeping an organisation’s information safe",
             "workType": [
                 "security"
@@ -131,10 +141,12 @@
             ],
             "jobTitle": "Junior Cybersecurity Analyst",
             "duration": "8 weeks",
-            "fee": 180000
+            "fee": 180000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625280/CGI7nx8Y52Kkdn0Vhc9Dy9p3ljSUw9kiXSpqlmoZpvgXk6OYkryuv6FHcdaRBTU8wr2HkIiH4k4ZLVB8ssOxiMzZZjdKQR9dunSaCn3j2QePhmvu9MIeOMDziphoeCZN-cJMlWIyy9TWj2LFtflVFVt-act22-y2rSnLMgWkHOFsOtWnkzv0Ne4Fj-UUGNNZ_sjk1v1.jpg"
         },
         {
             "name": "Cloud Computing Fundamentals (Microsoft Azure AZ-900)",
+            "slug": "cloud-computing-fundamentals-microsoft-azure-az-900",
             "whoIsItFor": "Beginners who want a recognised first certification, and IT support staff moving towards cloud work.",
             "workType": [
                 "hands-on"
@@ -159,6 +171,7 @@
     "intermediate": [
         {
             "name": "Data Analytics with Excel & Power BI",
+            "slug": "data-analytics-with-excel-power-bi",
             "whoIsItFor": " Learners with solid Excel foundations aiming for analyst, reporting or business intelligence roles.",
             "workType": [
                 "numbers"
@@ -181,6 +194,7 @@
         },
         {
             "name": "Python for Data Analysis",
+            "slug": "python-for-data-analysis",
             "whoIsItFor": "Analysts and graduates comfortable with data who want technical depth and greater speed.",
             "workType": [
                 "numbers"
@@ -198,10 +212,12 @@
             ],
             "jobTitle": "Python Data Analyst",
             "duration": "8 weeks",
-            "fee": 200000
+            "fee": 200000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625306/NceHHjntOT13guzhefKXIDQ9Tiz2xNh_XBccLlaX8uHQxo0TlfQOQjxUfYXnQ1JgrIWd51PiAdjfZz2oP-ngEkhxcrlss_lPI8sOE8rqZWFjKXNtVOdUpC32BOdjsWuhbiBwXprHUGmTPcTbF7tT4hAYGXAtWfHSJQWAqD8H75mlDJRMwddPNIMKRy2eq1Fj_ay1v9p.jpg"
         },
         {
             "name": "Frontend Development with React",
+            "slug": "frontend-development-with-react",
             "whoIsItFor": "Developers with working HTML, CSS and JavaScript who want to be employable as frontend engineers",
             "workType": [
                 "design",
@@ -220,10 +236,12 @@
             ],
             "jobTitle": "Frontend Developer",
             "duration": "10 weeks",
-            "fee": 250000
+            "fee": 250000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792627071/dHHIJbHM8L3xuYpuYtNm2ITQpHlvA3nPp0cgoh6XNVvi58-HDmRPPBCN42PicgzGAk_Te-EC9Z9Y9Uabc4EQv3fljE4BPYJTlx8EZPrfgzQSYCFXlSzNEBtiA75g-jMlAVPL-6jemWjQDWhJHdgNp7ETb-uTlSHRsg7stp8qAhjoPslxh9NwsP2j04VQVurh_rflwvy.jpg"
         },
         {
             "name": "Backend Development with C# and .NET",
+            "slug": "backend-development-with-c-and-net",
             "whoIsItFor": "Developers with programming foundations who want enterprise backend skills with strong local demand.",
             "workType": [
                 "hands-on"
@@ -241,10 +259,12 @@
             ],
             "jobTitle": "Backend Developer",
             "duration": "12 weeks",
-            "fee": 300000
+            "fee": 300000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792627500/slide_new_5_xchosr.jpg"
         },
         {
             "name": "Microsoft Power Platform (Power Apps & Power Automate)",
+            "slug": "microsoft-power-platform-power-apps-power-automate",
             "whoIsItFor": "Analysts, operations staff and IT officers who want to automate manual work and build internal tools.",
             "workType": [
                 "organising",
@@ -264,10 +284,12 @@
             ],
             "jobTitle": "Power Platform Developer",
             "duration": "8 weeks",
-            "fee": 180000
+            "fee": 180000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792626895/VlZB8ybJCk5eVhOpuGEBBKCHLfQR7GaBrZmEgApxF7AHiT0ilfFaCXqk4vEfi4vbcciG65bx6BHRmya1TiJsPttXBwCXY9kCJwEgumxtgFIA7oTW7KUVYjoLL30-Xngu_LcXNQLLeqoLbb5hWlnNw6fY__PJk3Ehrr8R6CjsCi71-gcJMvUcDMaatI_3s6fB_yygjsx.jpg"
         },
         {
             "name": "Network & Systems Administration",
+            "slug": "network-systems-administration",
             "whoIsItFor": "IT support staff and graduates moving into infrastructure and systems roles. ",
             "workType": [
                 "hands-on"
@@ -283,10 +305,12 @@
             ],
             "jobTitle": "Systems Administrator",
             "duration": "8 weeks",
-            "fee": 250000
+            "fee": 250000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792882891/5ac5cc81-5ec8-47e8-9a66-a2c1000d2344_mxz9ky.jpg"
         },
         {
             "name": "Cybersecurity Operations",
+            "slug": "cybersecurity-operations",
             "whoIsItFor": "Those with security foundations targeting a security operations centre analyst role.",
             "workType": [
                 "organising"
@@ -304,10 +328,12 @@
             ],
             "jobTitle": "Security Operations Centre Analyst",
             "duration": "8 weeks",
-            "fee": 200000
+            "fee": 200000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625615/j2VFvPuMXxNoBo8etWZN1Xi6YEWz28rP0Vrg8y2vlSQfH83SsQ77lh6ZSUVvoBsaE_tgQhSWO5xOuifJoWRxAbSiJ6HtB7zgjb75xqmrjLZOFsAyQfT8MufSVzH0PzW8TEscCFpbDh3gCfDquXwn5hn_bi2Pr8e8yZX1KBd0C_xCI8wj51OCoAigFHXOwLxl_iebh2p.jpg"
         },
         {
             "name": "Product Management",
+            "slug": "product-management",
             "whoIsItFor": "Professionals moving into product roles from analysis, design, engineering or operations.",
             "workType": [
                 "organising"
@@ -331,6 +357,7 @@
     "advanced": [
         {
             "name": "Advanced Excel & Financial Modelling",
+            "slug": "advanced-excel-financial-modelling",
             "whoIsItFor": "Finance, treasury and analysis professionals whose models inform real decisions.",
             "workType": [
                 "numbers"
@@ -348,10 +375,12 @@
             ],
             "jobTitle": "Financial Analyst",
             "duration": "8 weeks",
-            "fee": 300000
+            "fee": 300000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625652/8JDiad5qP-ngUW7exEZLrJhyD7rUZttdtca4CZ3TLi4d8Nxt0P7aXuk9GXkXrCQuYWIb6PD_m9LS2cS2wHfMloe67rbF8Zm-m0t9G7T7vq9ZQcx0cwXPDeWQTFsHQewpR6ewjmhEfzB9qAhnjy-0M1KNMSuoxs5D8kDZvoUYPItbV-xCu7S55U9dfHwqsGFQ_k47zby.jpg"
         },
         {
             "name": "Advanced Power BI (DAX, Data Modelling & Deployment)",
+            "slug": "advanced-power-bi-dax-data-modelling-deployment",
             "whoIsItFor": "Analysts already producing Power BI reports who need enterprise-grade capability.",
             "workType": [
                 "numbers"
@@ -369,10 +398,12 @@
             ],
             "jobTitle": "Business Intelligence Developer",
             "duration": "8 weeks",
-            "fee": 300000
+            "fee": 300000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792626553/jK3g-5dtZtDTk8pSAQ1ylAqdb0bRxwqU7k52gFYODItdaYxMyot9kxEYj7WTGHSybkD9xBU4IAcbz5hlFUd1JaZ48CZQIICEu38iZXjizbiJJmuG50WbNCQXnCewpgJuQX65WiLqCP0Kuv-pzV6N-B5mtYY0LQDure-pn1hepCcDh1lszRe3dkJxnEPmI7VT_q6dgkc.jpg"
         },
         {
             "name": "Azure Administrator & Solutions Architect (AZ-104, AZ-305)",
+            "slug": "azure-administrator-solutions-architect-az-104-az-305",
             "whoIsItFor": "Practising IT and cloud professionals pursuing associate and expert-level Microsoft certification.",
             "workType": [
                 "hands-on"
@@ -394,6 +425,7 @@
         },
         {
             "name": "Full-Stack Development with C# and Blazor",
+            "slug": "full-stack-development-with-c-and-blazor",
             "whoIsItFor": "Developers with either frontend or backend experience who want full-stack range.",
             "workType": [
                 "hands-on"
@@ -411,10 +443,12 @@
             ],
             "jobTitle": "Full-Stack Developer",
             "duration": "12 weeks",
-            "fee": 450000
+            "fee": 450000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625707/1x4UU5f3cGDP5OKnymnzBowuc8DC3wQGilpY3GaaVnjcpYdlpkM6q7lF5hySdy5Ofhi9GQjZGuUP5V1S5fQqKxN1u_HLaEZdBNtvAuKU1rR1q7uVAFI9guyIo1rh4ZlcrtBACF9RrrR8H26X8Nclxts1v5vAs5eZPco3Qi5R2-DkqWBZttwogcRbKrS7nreH_bhmjr8.jpg"
         },
         {
             "name": "Advanced Cybersecurity & Network Security",
+            "slug": "advanced-cybersecurity-network-security",
             "whoIsItFor": "Security and network professionals moving into engineering and architecture responsibility.",
             "workType": [
                 "security",
@@ -433,10 +467,12 @@
             ],
             "jobTitle": "Cybersecurity Engineer",
             "duration": "10 weeks",
-            "fee": 350000
+            "fee": 350000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625732/PIMycVfTdxWK-ljq_cOwLL4Xo830c3Q0V7QJNQ7GV2bnRKmGzoM9TWUht_3ATLVtuY2JDj5QqWJyOb5qVBBLq4oxTZh7HwJXD-jY0GO-GGLyvl3so3990K2jb0FHU8OUIrYQpAQY-xpeNqHVCfINnNgOY4nLx0ZqqOQiHg7x992csdYkBHUshwsbsNud4Tiw_sqthzt.jpg"
         },
         {
             "name": "Data Engineering (SQL, Pipelines & Warehousing)",
+            "slug": "data-engineering-sql-pipelines-warehousing",
             "whoIsItFor": "Analysts and developers moving into data engineering roles.",
             "workType": [
                 "numbers",
@@ -455,10 +491,12 @@
             ],
             "jobTitle": "Data Engineer",
             "duration": "12 weeks",
-            "fee": 450000
+            "fee": 450000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792882676/58d59e1a-b8bf-4eb5-adbd-77f6ab2e307c_vbpyak.jpg"
         },
         {
             "name": "Data Centre Analysis & Infrastructure Management",
+            "slug": "data-centre-analysis-infrastructure-management",
             "whoIsItFor": "Infrastructure and facilities technical staff in banking, energy and public sector environments.",
             "workType": [
                 "numbers",
@@ -481,6 +519,7 @@
         },
         {
             "name": "AI & Generative AI for Professionals",
+            "slug": "ai-generative-ai-for-professionals",
             "whoIsItFor": "Analysts, managers and technical professionals who want dependable working use of AI tools.",
             "workType": [
                 "numbers",
@@ -500,7 +539,8 @@
             ],
             "jobTitle": "AI Workflow Specialist",
             "duration": "8 weeks",
-            "fee": 300000
+            "fee": 300000,
+            "image": "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625740/x26MXUlx-D_bUP0fEONGiO6RLq6akzvdy2BbaxCKugZ1xfqXj6cCgkuQKd0_PpXpirvEnZ-C5uTfH5OHWZEvH2ZN1LNsqWjTmIwXgoOeg4SlS8auWde82A4Ms08iI-Lr3Y_ZIxBNCXni5JZCxzpOf8S-MD6qTmHdIIlhNMceLdzd-GGhN9IEHJoMy81IzK7z_wjjlc6.jpg"
         }
     ]
 }
