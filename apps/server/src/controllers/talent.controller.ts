@@ -1,4 +1,4 @@
-import pool from "../config/db.js";
+import { pool } from "../config/db.js";
 import { turnToArray, arrayQueryClause } from "../libs/controllers.libs.js";
 import type { Request, Response } from "express";
 import type { QueryResult } from "pg";
@@ -26,7 +26,7 @@ async function getAcademyApplicants(req: Request<{}, {}, {}, EnrollmentQuery>, r
             conditions.push(`course_name = ANY($${queryValues.length}::text[])`)
         }
 
-        if(level) {
+        if (level) {
             queryValues.push(turnToArray(level));
             conditions.push(`level = ANY($${queryValues.length}::text[])`)
         }

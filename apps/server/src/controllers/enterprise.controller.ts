@@ -1,4 +1,4 @@
-import pool from "../config/db.js";
+import { pool } from "../config/db.js";
 import { turnToArray, arrayQueryClause, serverError } from "../libs/controllers.libs.js";
 import type { Request, Response } from "express";
 import type { QueryResult } from "pg";
