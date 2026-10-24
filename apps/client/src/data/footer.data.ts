@@ -1,27 +1,30 @@
-import { email, programsEmail, phoneNumber, secondNumber, address } from "./companyData";
+import {
+    email, programsEmail, phoneNumber,
+    secondNumber, address, linkedIn
+} from "./companyData";
 import { faEnvelope, faPhone, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin, faTwitter, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import type { FootLink, Social } from "../types/global.types";
 import { courses } from "./academy.data";
 
-const formattedNumber = (number:string)=> number.split(/\s+/).join("");
+const formattedNumber = (number: string) => number.split(/\s+/).join("");
 const text = "Hello, I'd like to make enquires on the programs and courses offered."
 
 const socials: Social[] = [
     {
-        id: "message",
+        text: "message",
         icon: faWhatsapp,
-        link: `https://api.whatsapp.com/send/?phone=${formattedNumber(phoneNumber).slice(1)}&text=${encodeURIComponent(text)}`
+        href: `https://api.whatsapp.com/send/?phone=${formattedNumber(phoneNumber).slice(1)}&text=${encodeURIComponent(text)}`
     },
     {
-        id: "email",
+        text: "email",
         icon: faEnvelope,
-        link: `mailto:${email.trim()}`
+        href: `mailto:${email.trim()}`
     },
     {
-        id: "linkedIn",
+        text: "linkedIn",
         icon: faLinkedin,
-        link: "https://linkedin.com/company/cherryville-limited"
+        href: linkedIn
     }
 ];
 
@@ -54,26 +57,31 @@ const footerLinks: FootLink[] = [
         title: "Contact",
         links: [
             {
+                id: "email",
                 text: email,
                 href: `mailto:${email.trim()}`,
                 icon: faEnvelope
             },
             {
+                id: "email",
                 text: programsEmail,
                 href: `mailto:${programsEmail.trim()}`,
                 icon: faEnvelope
             },
             {
+                id: "phone",
                 text: phoneNumber,
                 href: `tel:${formattedNumber(phoneNumber)}`,
                 icon: faPhone
             },
             {
+                id: "phone",
                 text: secondNumber,
                 href: `tel:${formattedNumber(secondNumber)}`,
                 icon: faPhone
             },
             {
+                id: "location",
                 text: address,
                 href: null,
                 icon: faLocationDot

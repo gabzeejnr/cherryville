@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 import { initPostHog } from "./analytics";
 import "./App.css";
 import PageViewTracker from "./analytics/PageViewTracker";
+import "./helpers/string";
 
 export default function App() {
 

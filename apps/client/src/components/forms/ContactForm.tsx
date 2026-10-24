@@ -26,7 +26,7 @@ export default function CotactForm() {
 
             <form onSubmit={handleSubmit} className="space-y-6">
 
-                <div className="flex justify-between gap-4">
+                <div className="flex flex-col sm:flex-row justify-between gap-4">
                     <div className="space-y-2 flex-1">
                         <span className="relative block text-sm font-medium text-gray-700">
                             <label htmlFor="name">Full Name</label>

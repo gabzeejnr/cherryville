@@ -14,6 +14,7 @@ type Navlink = {
 type FootLink = {
     title: string,
     links: {
+        id?: string,
         text: string,
         href: string | null,
         icon?: IconDefinition
@@ -21,9 +22,9 @@ type FootLink = {
 }
 
 type Social = {
-    id: string,
+    text: string,
     icon: IconDefinition,
-    link: string
+    href: string
 }
 
 type Heading = { title: string, highlights?: string[] }

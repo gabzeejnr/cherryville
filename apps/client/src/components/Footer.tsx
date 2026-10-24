@@ -7,7 +7,7 @@ import styles from "./FootNav.module.scss";
 
 function SocialLink({ social }: { social: Social }) {
     return (
-        <Link to={social.link} target="_blank" rel="noopener noreferrer" aria-label={social.id} hrefLang="utf-8"
+        <Link to={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.text} hrefLang="utf-8"
             className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-white/80 transition hover:border-accent hover:bg-accent hover:text-cherry">
             <FontAwesomeIcon icon={social.icon} />
         </Link>
@@ -55,7 +55,7 @@ export default function Footer() {
                             Empowering Growth Through Learning
                         </p>
                         <div className="flex items-center gap-3">
-                            {socials.map(social => <SocialLink key={social.id} social={social} />)}
+                            {socials.map(social => <SocialLink key={social.text} social={social} />)}
                         </div>
                     </div>
 
