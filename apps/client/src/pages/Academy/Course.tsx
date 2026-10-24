@@ -25,15 +25,14 @@ export default function Course() {
                 <p className="mt-3 max-w-md text-[#5E4A52]">
                     This course may have been moved or is no longer available.
                 </p>
-                <Link
-                    to="/academy/courses"
+                <Link to="/academy/courses"
                     className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 font-semibold text-white transition-colors hover:bg-accent-hover"
                 >
                     <FontAwesomeIcon icon={faArrowLeft} />
                     Browse all courses
                 </Link>
             </main>
-        );
+        )
     }
 
     return (
@@ -46,5 +45,5 @@ export default function Course() {
 
             {enroll && <AcademyEnrollment setEnroll={setEnroll} thisCourse={course.name} />}
         </main>
-    );
+    )
 }

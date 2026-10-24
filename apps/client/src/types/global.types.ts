@@ -2,7 +2,7 @@ import type { ReactNode, MouseEventHandler, Dispatch, SetStateAction } from "rea
 import type { IconDefinition } from "@fortawesome/free-brands-svg-icons"
 
 
-type Navlink = {
+interface Navlink {
     label: string,
     link?: string
     children?: {
@@ -11,7 +11,7 @@ type Navlink = {
     }[]
 }
 
-type FootLink = {
+interface FootLink {
     title: string,
     links: {
         id?: string,
@@ -21,14 +21,14 @@ type FootLink = {
     }[]
 }
 
-type Social = {
+interface Social {
     text: string,
     icon: IconDefinition,
     href: string
 }
 
-type Heading = { title: string, highlights?: string[] }
-type HeroType = {
+interface Heading { title: string, highlights?: string[] }
+interface HeroType {
     page: string,
     heading: Heading,
     subtitles: string | string[],
@@ -36,26 +36,27 @@ type HeroType = {
     children?: ReactNode
 }
 
-type RequestAProposalButton = {
+interface RequestAProposalButton {
     setIsOpen: Dispatch<SetStateAction<boolean>>,
     arrow?: true,
     className?: string
 }
 
-type AccentButton = {
+interface AccentButton {
     text: string,
     arrow?: true,
     onClick?: MouseEventHandler<HTMLButtonElement> | undefined,
     className?: string,
+    mt?: `mt-${string}`;
     children?: ReactNode
 }
 
-type ListItem = {
+interface ListItem {
     title: string;
     text: string;
 }
 
-type SectionType = {
+interface SectionType {
     className?: string,
     title?: string,
     subtitle?: string,

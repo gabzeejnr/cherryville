@@ -10,9 +10,9 @@ export function RequestAProposalButton({ setIsOpen, arrow, className }: RequestA
     )
 }
 
-export function AccentButton({ text, onClick, arrow, className, children }: AccentButton) {
+export function AccentButton({ text, onClick, arrow, className, children, mt }: AccentButton) {
     return (
-        <button data-aos="flip-right" className={`accent-button cursor-pointer mt-8 ${className}`} onClick={onClick}>
+        <button data-aos="flip-right" className={`accent-button cursor-pointer ${mt ?? "mt-8"} ${className}`} onClick={onClick}>
             {text ?? children} {arrow && <FontAwesomeIcon icon={faArrowRight} />}
         </button>
     )
