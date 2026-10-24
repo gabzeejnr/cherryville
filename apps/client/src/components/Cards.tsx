@@ -78,15 +78,15 @@ function AnotherCourseCard({ image, name, description, slug }: {
     image?: Default["image"];
 }) {
     return (
-        <article className="h-full pt-2.5 pb-5 px-2.5 bg-cherry border-accent border rounded-xl">
+        <article className="group h-full pt-2.5 pb-5 px-2.5 bg-cherry border-accent border rounded-xl">
             <Link to={slug} className="block mb-5 relative w-full aspect-250/120 overflow-hidden rounded-xl">
-                <img src={image} alt={`${name}-image`} />
+                <img src={image} alt={`${name}-image`} className="transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute top-2.5 left-2.5 py-1 px-2.5 rounded-lg font-medium text-white text-xs bg-accent">Now Open</div>
             </Link>
             <div className="p-0 sm:px-2.5 flex flex-col ">
-                <Link to={""} className="text-center font-bold">{name}</Link>
+                <Link to={slug} className="text-center font-bold transition-colors duration-500 group-hover:text-accent">{name}</Link>
                 <div className="text-center sm:text-start flex flex-col gap-4">
-                    <p className="text-center">{description}</p>
+                    <p className="text-center">{addDot(description)}</p>
                 </div>
             </div>
         </article>
