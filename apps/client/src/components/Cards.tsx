@@ -62,10 +62,35 @@ function CourseCard({
 
             <Link to={slug} className="mt-auto flex w-full items-center justify-center gap-2 rounded-xl border-2 border-accent bg-transparent px-4 py-3.5 text-base font-semibold text-accent transition-colors duration-200 hover:bg-[#AE154D] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AE154D] focus-visible:ring-offset-2">
                 View course details
-                <FontAwesomeIcon icon={faArrowRight}className="transition-transform duration-200 group-hover:translate-x-1" />
+                <FontAwesomeIcon icon={faArrowRight} className="transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
         </article>
     )
 }
 
-export { TitleText, CourseCard }
+function AnotherCourseCard({ image, name, description, slug }: {
+    name: Default["name"];
+    // level: Default["experience"];
+    // duration: Default["duration"];
+    // fee: Default["fee"];
+    description: Default["outcome"][0];
+    slug: Default["slug"];
+    image?: Default["image"];
+}) {
+    return (
+        <article className="h-full pt-2.5 pb-5 px-2.5 bg-cherry border-accent border rounded-xl">
+            <Link to={slug} className="block mb-5 relative w-full aspect-250/120 overflow-hidden rounded-xl">
+                <img src={image} alt={`${name}-image`} />
+                <div className="absolute top-2.5 left-2.5 py-1 px-2.5 rounded-lg font-medium text-white text-xs bg-accent">Now Open</div>
+            </Link>
+            <div className="p-0 sm:px-2.5 flex flex-col ">
+                <Link to={""} className="text-center font-bold">{name}</Link>
+                <div className="text-center sm:text-start flex flex-col gap-4">
+                    <p className="text-center">{description}</p>
+                </div>
+            </div>
+        </article>
+    )
+}
+
+export { TitleText, CourseCard, AnotherCourseCard }

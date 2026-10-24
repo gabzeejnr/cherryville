@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Section from "../../Section";
 import { courses } from "../../../data";
-import { CourseCard } from "../../Cards";
+import { AnotherCourseCard, CourseCard } from "../../Cards";
 import { Pagination } from "../../Pagination";
 
 
@@ -96,9 +96,7 @@ export default function CourseList() {
                         <div>Course Not Found.. Please check spelling and try again.</div>
                     )
                     : paginatedCourses.map((course, i) =>
-                        <CourseCard key={`${course.name}-cherryville${(i * Math.random() * 2389).toString()}`} name={course.name} description={course.outcome[0]}
-                            duration={course.duration} fee={course.fee} level={course.experience} image={course.image} slug={course.slug}
-                        />
+                        <AnotherCourseCard key={`${course.name}-cherryville${(i * Math.random() * 2389).toString()}`} description={course.outcome[0]} name={course.name} slug={course.slug} image={course.image} />
                     )
                 }
             </div>
