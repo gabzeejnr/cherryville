@@ -5,8 +5,9 @@ type Experience = "beginner" | "intermediate" | "advanced"
 type TimeFrame = "3 months" | "6 months" | "1 year" | "unknown";
 type LearningStyle = "virtual" | "weekday" | "weekend";
 type Level = "No experience" | "Some experience" | "Working in Tech";
+type FieldFAQKey = "data-analytics" | "data-engineering" | "product-management" | "artificial-intelligence";
 
-type Questions = {
+interface Questions {
     id: string,
     question: string,
     options: {
@@ -15,10 +16,21 @@ type Questions = {
     }[]
 }
 
+interface FieldFAQItem {
+    question: string;
+    answer: string;
+}
+
+interface CourseGroup {
+    slug: string;
+    name: string;
+    description: string;
+    courseSlugs: string[];
+}
 
 interface Course {
     name: string,
-    slug:string,
+    slug: string,
     whoIsItFor: string,
     workType: WorkType[],
     learningStyle: LearningStyle,
@@ -28,7 +40,12 @@ interface Course {
     jobTitle: string,
     duration: string,
     fee: number,
-    image: string
+    image: string,
+    faq?: {
+        forMe: string,
+        learnAndBuild: string,
+        next: string
+    }
 }
 
 type AnswerFinder = {
@@ -54,4 +71,9 @@ type EnrollmentForm = {
     format: LearningStyle
 }
 
-export type { Questions, Course, AnswerFinder, WorkType, LearningStyle, Experience, AcademyCTA, Level, EnrollmentForm }
+export type {
+    Questions, Course, CourseGroup,
+    AnswerFinder, WorkType, LearningStyle,
+    Experience, AcademyCTA, Level, EnrollmentForm,
+    FieldFAQKey, FieldFAQItem
+}

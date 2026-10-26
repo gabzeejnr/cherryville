@@ -25,4 +25,5 @@ test
 *.sln
 *.sw?
 *.env
+docs/
 test.tsx

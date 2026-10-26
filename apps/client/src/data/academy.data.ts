@@ -1,4 +1,4 @@
-import type { Heading, Course, Questions } from "../types";
+import type { Heading, Course, Questions, FieldFAQKey, FieldFAQItem } from "../types";
 
 
 const academyHeading: Heading = {
@@ -31,6 +31,10 @@ const privateHeading: Heading = {
 }
 const privateSubtitle = "Some people learn faster without a room. Others cannot commit to a fixed cohort calendar, or need to cover a specific gap rather than a full curriculum. Private training exists for both."
 
+
+// ================================================================================================
+// COURSES ======================================
+// ================================================================================================
 const beginner: Course[] = [
     {
         name: "Digital Foundations & Office Productivity",
@@ -51,7 +55,7 @@ const beginner: Course[] = [
         ],
         jobTitle: "Office Administrator",
         duration: "6 weeks",
-        fee: 140_000,
+        fee: 150_000,
         image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625478/DU_Df6kxzO8N2KzhvmPHgwKYAcGW-0yd2LwVaBK-CAZkWHk2FRU4p-CyD7loibw2qohSfAD12LFdNuZ7DPLWvzl8blzatOM7Wd1UBMYc7PAOLez6pNrYjyutEnoHr_7vLx3kaPvjoobCmFn8s069IT85kXAaJ4CZkzFkpeb72Pc_fhcel0.jpg"
     },
     {
@@ -73,7 +77,7 @@ const beginner: Course[] = [
         ],
         jobTitle: "Excel Specialist",
         duration: "6 weeks",
-        fee: 140_000,
+        fee: 150_000,
         image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625237/Hxl7jNYPSIk3Iz3B64rO6DoLjNaP_e5u55IqaU0TVGRK_3lVleIyYdQs4vRfx4GXy3TYu2mhEX_wy4FewoXeas5NNdI90qTFBhGxA2KAxn7b42X73Ljk9X7gbUW0ATwe7UevbqSWBocisNRVfh27WGohkn4hA0IZ2LQ4GKCe742LUEHVjJngW_m0H_tWOehi_rfo9qn.jpg"
     },
     {
@@ -94,9 +98,9 @@ const beginner: Course[] = [
             "Present a clear, defensible conclusions from a dataset."
         ],
         jobTitle: "Junior Data Analyst",
-        duration: "8 weeks",
-        fee: 180_000,
-        
+        duration: "6 weeks",
+        fee: 150_000,
+
     },
     {
         name: "Web Development Foundations (HTML, CSS, JavaScript)",
@@ -116,8 +120,8 @@ const beginner: Course[] = [
             "Publish a live website you can show to an employer"
         ],
         jobTitle: "Junior Web Developer",
-        duration: "8 weeks",
-        fee: 180_000,
+        duration: "6 weeks",
+        fee: 150_000,
         image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625526/qO-LFLEFV-v4Xldiqs46da9nsYw4U1uC9m9EXrEMnoycMlO50iIGaM7FPMFQuActgKEtJagRn-t_d2C4QKJr_1DFAwgGT4mgPrc1KVpmmVROSK568cafjUXRmFqqE3KNK6KoNQ72CEpC4Ime_Gsnhkeb_NnBWdlcH7OmpikPF8_GsFpeXyQ6w976RRck_ILq_p5uajp.jpg"
     },
     {
@@ -138,8 +142,8 @@ const beginner: Course[] = [
             "Present a portfolio piece that explains your reasoning "
         ],
         jobTitle: "Junior UI/UX Designer",
-        duration: "8 weeks",
-        fee: 180_000,
+        duration: "6 weeks",
+        fee: 150_000,
         image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792881616/f521ef1c-118b-48d3-b848-17b4b8c65136_ae21lw.jpg"
     },
     {
@@ -160,8 +164,8 @@ const beginner: Course[] = [
             "Apply practical security controls and safe working habits"
         ],
         jobTitle: "Junior Cybersecurity Analyst",
-        duration: "8 weeks",
-        fee: 180_000,
+        duration: "6 weeks",
+        fee: 150_000,
         image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625280/CGI7nx8Y52Kkdn0Vhc9Dy9p3ljSUw9kiXSpqlmoZpvgXk6OYkryuv6FHcdaRBTU8wr2HkIiH4k4ZLVB8ssOxiMzZZjdKQR9dunSaCn3j2QePhmvu9MIeOMDziphoeCZN-cJMlWIyy9TWj2LFtflVFVt-act22-y2rSnLMgWkHOFsOtWnkzv0Ne4Fj-UUGNNZ_sjk1v1.jpg"
     },
     {
@@ -183,7 +187,7 @@ const beginner: Course[] = [
         ],
         jobTitle: "Junior Cloud Support Specialist",
         duration: "6 weeks",
-        fee: 140_000
+        fee: 150_000
     }
 ];
 const intermediate: Course[] = [
@@ -520,7 +524,68 @@ const advanced: Course[] = [
         image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792625740/x26MXUlx-D_bUP0fEONGiO6RLq6akzvdy2BbaxCKugZ1xfqXj6cCgkuQKd0_PpXpirvEnZ-C5uTfH5OHWZEvH2ZN1LNsqWjTmIwXgoOeg4SlS8auWde82A4Ms08iI-Lr3Y_ZIxBNCXni5JZCxzpOf8S-MD6qTmHdIIlhNMceLdzd-GGhN9IEHJoMy81IzK7z_wjjlc6.jpg"
     }
 ];
-const courses: Course[] = [...beginner, ...intermediate, ...advanced]
+const courses: Course[] = [...beginner, ...intermediate, ...advanced];
+const courseFaqGroups: Record<string, FieldFAQKey[]> = {
+    "introduction-to-data-analysis": ["data-analytics"],
+    "microsoft-office-essentials": ["data-analytics"],
+    "data-analytics-with-excel-power-bi": ["data-analytics"],
+    "python-for-data-analysis": ["data-analytics"],
+    "advanced-excel-financial-modelling": ["data-analytics"],
+    "advanced-power-bi-dax-data-modelling-deployment": ["data-analytics"],
+    "data-engineering-sql-pipelines-warehousing": ["data-engineering"],
+    "product-management": ["product-management"],
+    "ai-generative-ai-for-professionals": ["artificial-intelligence"]
+};
+
+const fieldFaqs: Partial<Record<FieldFAQKey, FieldFAQItem[]>> = {
+    "data-analytics": [
+        {
+            question: "What is Data Analytics?",
+            answer: "Collecting, cleaning and examining data to answer business questions, then presenting the findings as dashboards and reports that people can act on. "
+        },
+        {
+            question: "What jobs can I aim for?",
+            answer: "Data analyst and reporting or dashboard roles. With Advanced skills, senior analyst positions or freelance analytics work. "
+        },
+        {
+            question: "Do I need a mathematics or technical background?",
+            answer: "No. Beginner starts from zero. You need to be comfortable with basic arithmetic and using a computer. Statistics is introduced at Advanced."
+        },
+        {
+            question: "What will I be able to do after the course?",
+            answer: "Clean and analyze real datasets with Excel, SQL, Power BI and Python, build dashboards, and explain your findings in plain language to non-technical people."
+        },
+        {
+            question: "Is data analytics in demand?",
+            answer: "Banks, telecoms, retailers, energy companies and government bodies all rely on data to make decisions. [Add a sourced Nigerian or African demand statistic.]"
+        }
+    ],
+    "data-engineering": [
+        {
+            question: "What is data engineering?",
+            answer: "Building and maintaining the systems that collect, move, store and prepare data so analysts, managers and AI models can use it."
+        },
+        {
+            question: "What jobs can I aim for?",
+            answer: "Data engineer, pipeline and ETL developer, and cloud data roles."
+        },
+        {
+            question: "Do I need a mathematics or technical background?",
+            answer: `No advanced mathematics is required. Beginner teaches Python and SQL from the foundations. Logical thinking and patience with detail matter most.`
+        },
+        {
+            question: "What will I be able to do after the course?",
+            answer: "Build automated pipelines, schedule them with Airflow, model a warehouse, stream data with Kafka and run it all on the cloud."
+        },
+        {
+            question: "Is data engineering in demand?",
+            answer: "Every analytics and AI project needs reliable data underneath it."
+        }
+    ],
+    "product-management": [],
+    "artificial-intelligence": []
+}
+
 const questions: Questions[] = [
     {
         id: "workType",
@@ -611,6 +676,34 @@ const whyCherryville: string[] = [
     "We train the same organisations our graduates want to work for, which is how we know what those employers are actually asking for. "
 ];
 
+const academyFAQs = [
+    {
+        question: "Do I have to take the levels in order?",
+        answer:
+            "No. If you already have the skills, a short skills check can place you at Intermediate or Advanced. If you're unsure, start one level lower.",
+    },
+    {
+        question: "Can I pay in instalments?",
+        answer:
+            "Yes. Instalment plans are available on request. Organizations enrolling 10 or more learners can also request group rates.",
+    },
+    {
+        question: "Will I receive a certificate?",
+        answer:
+            "Yes. You'll receive a Cherryville Academy certificate of completion for every tier you complete.",
+    },
+    {
+        question: "Where do I get help during the course?",
+        answer:
+            "Start with your facilitator, or contact the Academy team on WhatsApp at 07048288168 or 08064265176, or email programs@cherryvillelimited.africa.",
+    },
+    {
+        question: "What if I cannot find my answer?",
+        answer:
+            "Use the Ask Us option to message the Academy team. We'll help you find the right answer and recommend the next step for your learning goals.",
+    },
+];
+
 export {
     academyHeading, subtitle,
     beginnerHeading, beginnerSubtitle,
@@ -619,5 +712,6 @@ export {
     privateHeading, privateSubtitle,
     questions, courses, beginner,
     intermediate, advanced, threeLevels,
-    whyCherryville
+    whyCherryville, academyFAQs, courseFaqGroups,
+    fieldFaqs
 }

@@ -20,7 +20,7 @@ export default function CourseHero({ course, setEnroll }: CourseHeroProps) {
             <div className="mx-auto w-full max-w-7xl">
                 <header className="border-b border-[#DED8D9] pb-6">
                     <button className="inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-[#5E4A52] transition-colors hover:text-accent"
-                        onClick={() => navigate(-1)}>
+                        onClick={() => navigate("/academy/courses")}>
                         <FontAwesomeIcon icon={faArrowLeft} />
                         All courses
                     </button>
@@ -58,7 +58,7 @@ export default function CourseHero({ course, setEnroll }: CourseHeroProps) {
                                 </dt>
                                 <dd className="mt-2 flex flex-wrap items-center gap-2 font-heading text-sm font-semibold sm:text-lg">
                                     <FontAwesomeIcon icon={faGraduationCap} className="text-accent" />
-                                    {course.experience}
+                                    {course.experience.capitalize()}
                                 </dd>
                             </div>
 

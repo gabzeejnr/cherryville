@@ -72,7 +72,7 @@ export default function CourseDetails({ course, setEnroll }: CourseDetailsProps)
                         <div className="flex items-start justify-between gap-4">
                             <dt className="text-[#5E4A52]">Experience level</dt>
                             <dd className="text-right font-semibold">
-                                {course.experience}
+                                {course.experience.capitalize()}
                             </dd>
                         </div>
 

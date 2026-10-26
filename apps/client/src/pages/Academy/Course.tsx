@@ -8,6 +8,9 @@ import Hero from "../../components/academy/course/Hero";
 import Details from "../../components/academy/course/Details";
 import CTA from "../../components/academy/course/CTA";
 import AcademyEnrollment from "../../components/forms/AcademyEnrollment";
+import CourseFAQ from "../../components/academy/course/FAQ";
+import AcademyFAQ from "../../components/academy/AcademyFAQ";
+import CourseFieldFAQ from "../../components/academy/course/CourseFieldFAQ";
 
 export default function Course() {
     const { slug } = useParams<{ slug: string }>();
@@ -40,6 +43,9 @@ export default function Course() {
             <div className="mx-auto max-w-7xl">
                 <Hero course={course} setEnroll={setEnroll} />
                 <Details course={course} setEnroll={setEnroll} />
+                <CourseFAQ course={course} />
+                <CourseFieldFAQ courseSlug={course.slug} />
+                <AcademyFAQ />
                 <CTA course={course} setEnroll={setEnroll} />
             </div>
 
