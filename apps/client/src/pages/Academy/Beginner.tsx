@@ -15,7 +15,7 @@ export default function Beginner() {
     ]
 
     useDocumentMeta({
-        title: "Beginner Tech Courses in Lagos — No Experience Needed",
+        title: "Beginner Tech Courses in Lagos | No Experience Needed",
         description: "Start a career in technology with no prior experience. Beginner courses in Excel, data, web development, design, cybersecurity, cloud and hardware repair."
     })
     useGoToTopOnLoad("academy/beginner")

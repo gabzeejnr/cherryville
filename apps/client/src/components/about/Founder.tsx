@@ -12,7 +12,7 @@ export default function Founder() {
                     </div>
                 </div>
                 <div className="flex-1" data-aos="fade-up">
-                    <h2 className="font-bold md:text-lg lg:text-xl text-accent">Gabriel A. Osho — Founder & Principal</h2>
+                    <h2 className="font-bold md:text-lg lg:text-xl text-accent">Gabriel A. Osho - Founder & Principal</h2>
 
                     <div className="mt-7 flex flex-col gap-5 text-sm lg:text-[17px]">
 

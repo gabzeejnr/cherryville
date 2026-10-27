@@ -10,7 +10,7 @@ export default function Intermediate() {
 
     const subtitles: string[] = [
         "Intermediate courses are project-driven. You will build, break and rebuild real work rather than follow along with exercises. Facilitators bring live problems from the organisations we train, so what you practise reflects what employers are actually asking for.",
-        "Entry requires demonstrated foundations — either a Cherryville beginner course or an assessment at enrolment. Most run between twelve and sixteen weeks."
+        "Entry requires demonstrated foundations; either a Cherryville beginner course or an assessment at enrolment. Most run between twelve and sixteen weeks."
     ];
 
     useDocumentMeta({

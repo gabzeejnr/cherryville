@@ -17,7 +17,7 @@ export default function CourseDetails({ course, setEnroll }: CourseDetailsProps)
                 <div>
                     <p className="mb-5 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.16em] text-accent">
                         <span className="h-px w-8 bg-accent" />
-                        01 — Outcomes
+                        01 Outcomes
                     </p>
 
                     <h2 className="font-heading text-3xl font-bold tracking-tight text-[#171516] sm:text-4xl">
@@ -31,7 +31,7 @@ export default function CourseDetails({ course, setEnroll }: CourseDetailsProps)
                     <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:mt-16">
                         <article className="rounded-2xl bg-cherry p-6 sm:p-7">
                             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-dark">
-                                02 — Who it's for
+                                02 Who it's for
                             </p>
                             <p className="text-[16px] leading-7 text-[#171414]">
                                 {course.whoIsItFor}
@@ -40,7 +40,7 @@ export default function CourseDetails({ course, setEnroll }: CourseDetailsProps)
 
                         <article className="rounded-2xl border border-[#DED8D9] bg-[#FAF8F6] p-6 sm:p-7">
                             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.14em] text-accent-dark">
-                                03 — Career path
+                                03 Career path
                             </p>
                             <p className="font-heading text-2xl font-semibold text-[#171516]">
                                 {course.jobTitle}
