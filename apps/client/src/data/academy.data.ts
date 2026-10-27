@@ -251,7 +251,7 @@ const intermediate: Course[] = [
         jobTitle: "Frontend Developer",
         duration: "10 weeks",
         fee: 250_000,
-        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792627071/dHHIJbHM8L3xuYpuYtNm2ITQpHlvA3nPp0cgoh6XNVvi58-HDmRPPBCN42PicgzGAk_Te-EC9Z9Y9Uabc4EQv3fljE4BPYJTlx8EZPrfgzQSYCFXlSzNEBtiA75g-jMlAVPL-6jemWjQDWhJHdgNp7ETb-uTlSHRsg7stp8qAhjoPslxh9NwsP2j04VQVurh_rflwvy.jpg"
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1793104759/8f00f296-3513-41ec-b5bb-1d66d233f0c2_c9dvcp.png"
     },
     {
         name: "Backend Development with C# and .NET",
@@ -272,7 +272,7 @@ const intermediate: Course[] = [
         jobTitle: "Backend Developer",
         duration: "12 weeks",
         fee: 300_000,
-        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1792627500/slide_new_5_xchosr.jpg"
+        image: "https://res.cloudinary.com/mmbgzzzw/image/upload/v1793104737/06e7c719-54da-4710-bc7c-57c26fe4183c_pwwwr6.png"
     },
     {
         name: "Microsoft Power Platform (Power Apps & Power Automate)",
