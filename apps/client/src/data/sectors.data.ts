@@ -1,7 +1,7 @@
 import type { Template } from "../types/sectors.types";
 import oilAndGas from "../assets/images/sectors/oil-and-gas.jpg";
 import banking from "../assets/images/sectors/banking.jpg";
-
+import government from "../assets/images/sectors/government.png";
 import development from "../assets/images/sectors/ngo.jpg";
 
 const sectors: Template[] = [
@@ -73,6 +73,7 @@ const sectors: Template[] = [
     },
     {
         route: "government",
+        backgroundImage: government,
         heading: {
             title: "Digital capability across the public workforce.",
             highlights: ["capability", "public", "workforce."]
